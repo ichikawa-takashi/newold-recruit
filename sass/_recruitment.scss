@@ -1,0 +1,479 @@
+.sub-recruitment__section-wrapper {}
+
+.sub-recruitment__section {
+    padding-top: rem(60);
+
+    @include mq('md') {
+        padding-top: rem(120);
+    }
+}
+
+.sub-recruitment__interview-grid {
+    display: grid;
+    gap: rem(40);
+
+    @include mq('md') {
+        grid-template-columns: 1fr 48.3%;
+        gap: rem(80);
+    }
+}
+
+.sub-recruitment__interview-content {}
+
+.sub-recruitment__interview-lead {
+    margin-top: rem(30);
+    @include font(18, null, 10, $medium);
+
+    @include mq('md') {
+        margin-top: rem(40);
+        font-size: rem(22);
+    }
+}
+
+.sub-recruitment__interview-description {
+    margin-top: rem(20);
+    @include font(14, 200, 10, $medium);
+}
+
+.sub-recruitment__interview-action {
+    margin-top: rem(30);
+    width: rem(278);
+    margin-right: auto;
+
+    @include mq('md') {
+        margin-top: rem(40);
+    }
+}
+
+.sub-recruitment__interview-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(20);
+    background: $bg_black;
+    color: $white;
+    border-radius: rem(3);
+}
+
+.sub-recruitment__interview-button-text {
+    @include f(14, 20, 0, $regular);
+}
+
+.sub-recruitment__interview-button-arrow {}
+
+.sub-recruitment__interview-button-icon {
+    width: rem(19);
+    height: rem(18);
+    border-radius: rem(3);
+}
+
+.sub-recruitment__interview-button-icon img:nth-of-type(1),
+.sub-recruitment__interview-button-icon img:nth-of-type(2) {
+    width: 60%;
+}
+
+.sub-recruitment__interview-media {}
+
+.sub-recruitment__interview-image {
+    width: 100%;
+    aspect-ratio: 335 /226;
+    overflow: hidden;
+
+    @include mq('md') {
+        aspect-ratio: 5 / 4;
+    }
+
+}
+
+// .sub-recruitment__interview-sub-image {
+//     width: 40.3%;
+//     margin-right: auto;
+//     aspect-ratio: 134 / 110;
+//     border-radius: rem(3);
+//     overflow: hidden;
+//     position: relative;
+//     margin-top: -22%;
+//     z-index: 2;
+// }
+
+.sub-recruitment__interview-image img,
+.sub-recruitment__interview-sub-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-recruitment__entry {}
+
+.sub-recruitment__entry-content {
+    display: grid;
+    gap: rem(30);
+    border-radius: rem(5);
+    background: $bg-black;
+    margin-top: rem(40);
+    padding: rem(30) rem(20);
+
+    @include mq('md') {
+        padding: rem(80) rem(40);
+        border-radius: rem(10);
+    }
+
+    @include mq('lg') {
+        padding: rem(100) rem(60);
+    }
+
+    @include mq('md') {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: linear_func_clamp(1440, 60, 768, 30);
+    }
+}
+
+.sub-recruitment__entry-top {
+    color: $white;
+}
+
+.sub-recruitment__entry-label {
+    font-family: $en;
+    font-size: rem(60);
+    font-weight: $regular;
+}
+
+.sub-recruitment__entry-text {
+    margin-top: rem(30);
+    @include font(14, 200, 10, $regular);
+
+    @include mq('md') {
+        font-size: rem(15);
+    }
+}
+
+.sub-recruitment__entry-list {
+    display: grid;
+    gap: rem(10);
+
+    @include mq('md') {
+        gap: rem(20);
+    }
+}
+
+.sub-recruitment__entry-item {}
+
+.sub-recruitment__entry-link {
+    border-radius: rem(3);
+    background: $white;
+    padding: rem(10) rem(20) rem(10) rem(10);
+    display: grid;
+    grid-template-columns: 38% max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(15);
+    color: $black;
+
+    @include mq('md') {
+        grid-template-columns: 35% max-content;
+        padding-right: rem(40);
+        min-height: rem(80);
+    }
+}
+
+.sub-recruitment__entry-image {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+
+    @include mq('md') {
+        aspect-ratio: 13 / 8;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+
+        @include mq('md') {
+            object-position: center top;
+        }
+    }
+}
+
+.sub-recruitment__entry-link-body {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+}
+
+.sub-recruitment__entry-link-text {
+    @include f(16, 20, 0, $medium);
+
+    @include mq('md') {
+        @include f(20, 20);
+    }
+}
+
+.sub-recruitment__entry-link-arrow {}
+
+.sub-recruitment__entry-link-icon {
+    width: rem(18);
+    aspect-ratio: 1 / 1;
+    background-color: $bg-black;
+    border-radius: rem(3);
+}
+
+.sub-recruitment__flow {}
+
+.sub-recruitment__flow-content {
+    color: $bg-black;
+    margin-top: rem(20);
+    display: grid;
+    grid-template-columns: rem(30) minmax(0, 1fr);
+    column-gap: rem(3);
+    align-items: start;
+
+
+    @include mq('md') {
+        margin-top: rem(40);
+        grid-template-columns: rem(98) minmax(0, 1fr);
+        column-gap: rem(10);
+        max-width: rem(856);
+        margin-left: auto;
+    }
+}
+
+.sub-recruitment__flow-duration {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F2EFEC;
+    clip-path: polygon(50% 0,
+            100% rem(10),
+            100% calc(100% - rem(10)),
+            50% 100%,
+            0 calc(100% - rem(10)),
+            0 rem(10));
+
+    @include mq('md') {
+        clip-path: polygon(50% 0, 100% rem(18), 100% calc(100% - rem(18)), 50% 100%, 0 calc(100% - rem(18)), 0 rem(18));
+    }
+}
+
+.sub-recruitment__flow-duration-text {
+    @include font(11, 140, 10, $regular);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    @include mq('md') {
+        font-size: rem(20);
+    }
+}
+
+.sub-recruitment__flow-list {
+    display: grid;
+    gap: rem(3);
+
+    @include mq('md') {
+        gap: rem(10);
+    }
+}
+
+.sub-recruitment__flow-item {
+    padding: rem(20);
+    display: grid;
+    gap: rem(6);
+    align-items: center;
+    --flow-bg-opacity: 0.10;
+    background: rgba(125, 99, 70, var(--flow-bg-opacity));
+
+    @include mq('md') {
+        min-height: rem(100);
+        padding: rem(30) rem(40);
+        grid-template-columns: rem(140) minmax(0, 1fr);
+        align-items: end;
+        gap: 0;
+    }
+}
+
+
+.sub-recruitment__flow-item:nth-child(2) {
+    --flow-bg-opacity: 0.20;
+}
+
+.sub-recruitment__flow-item:nth-child(3) {
+    --flow-bg-opacity: 0.40;
+}
+
+.sub-recruitment__flow-item:nth-child(4) {
+    --flow-bg-opacity: 0.70;
+}
+
+.sub-recruitment__flow-item:nth-child(5) {
+    background: #7D6346;
+}
+
+.sub-recruitment__flow-item-head {}
+
+.sub-recruitment__flow-item-step {
+    @include font(10, 100, 0, $regular);
+    font-family: $en;
+
+    @include mq('md') {
+        @include font(17, 135);
+    }
+}
+
+.sub-recruitment__flow-item-title {
+    @include font(16, null, 0, $bold);
+
+    @include mq('md') {
+        font-size: rem(18);
+    }
+}
+
+.sub-recruitment__flow-item-text {
+    margin-top: rem(6);
+    @include font(13, 160, 0, $regular);
+
+    @include mq('md') {
+        margin-top: 0;
+        @include font(14, 200, 0, $regular);
+    }
+}
+
+.sub-recruitment-faq {}
+
+.sub-recruitment-faq__list {
+    margin-top: rem(40);
+    border-top: 1px solid $bg-black;
+
+    @include mq('md') {
+        max-width: rem(766);
+        margin-left: auto;
+    }
+}
+
+.sub-recruitment-faq__item {
+    border-bottom: 1px solid $bg-black;
+    overflow: hidden;
+}
+
+.sub-recruitment-faq__icon {
+    font-family: $en;
+    font-size: rem(26);
+    font-weight: $regular;
+
+    @include mq('md') {
+        font-size: rem(50);
+    }
+}
+
+.sub-recruitment-faq__icon--answer {
+    color: #888166;
+}
+
+.sub-recruitment-faq__question-text {
+    padding-right: rem(20);
+}
+
+.sub-recruitment-faq__question-text,
+.sub-recruitment-faq__answer-text {
+    @include font(14, 160, 0, $regular);
+
+    @include mq('md') {
+        @include font(16, 200);
+    }
+}
+
+.sub-recruitment-faq__question {
+    padding: rem(10) rem(20);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: rem(20);
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+}
+
+.sub-recruitment-faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.sub-recruitment-faq__question::marker {
+    content: "";
+}
+
+.sub-recruitment-faq__question::before,
+.sub-recruitment-faq__question::after {
+    content: "";
+    width: rem(16);
+    height: 1px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    right: rem(20);
+    transform-origin: center;
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+
+    @include mq('md') {
+        width: rem(25);
+    }
+}
+
+.sub-recruitment-faq__question::before {
+    transform: translateY(-50%);
+}
+
+.sub-recruitment-faq__question::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.sub-recruitment-faq__item[open] .sub-recruitment-faq__question::after {
+    opacity: 0;
+    transform: translateY(-50%) rotate(180deg) scaleY(0.4);
+}
+
+.sub-recruitment-faq__answer {
+    padding-inline: rem(20);
+}
+
+.sub-recruitment-faq__answer-inner {
+    padding-bottom: rem(10);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: rem(20);
+    align-items: start;
+    transform: translateY(rem(-12));
+    transition: transform 0.45s ease;
+}
+
+.sub-recruitment-faq__item[open] .sub-recruitment-faq__answer-inner {
+    transform: translateY(0);
+}
+
+@supports selector(::details-content) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+
+    .sub-recruitment-faq__item::details-content {
+        block-size: 0;
+        opacity: 0;
+        transition:
+            block-size 0.5s ease,
+            opacity 0.35s ease,
+            content-visibility 0.5s ease allow-discrete;
+    }
+
+    .sub-recruitment-faq__item[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+    }
+}
+
+.sub-recruitment__cta {
+    margin-top: rem(60);
+
+    @include mq('md') {
+        margin-top: rem(100);
+    }
+}

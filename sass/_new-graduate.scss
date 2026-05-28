@@ -1,0 +1,1138 @@
+// =============================================
+// NEW GRADUATE PAGE
+// =============================================
+
+.ng-page {
+    color: $bg_black;
+    overflow-x: clip;
+}
+
+.ng-page .sub-page__nav-link.is-current::before,
+.ng-page .sub-page__nav-link:hover::before,
+.ng-page .sub-page__nav-link:focus-visible::before {
+    width: rem(6);
+}
+
+.ng-page .sub-page__nav-link.is-current,
+.ng-page .sub-page__nav-link:hover,
+.ng-page .sub-page__nav-link:focus-visible {
+    color: $green;
+}
+
+.ng-section-header {}
+
+
+.ng-section-header__ja {
+    @include font(20, 120, 0, $regular);
+    color: $white;
+    background: $bg_black;
+    display: block;
+    width: fit-content;
+    padding: rem(2) rem(3);
+
+    @include mq('md') {
+        font-size: rem(26);
+        padding: rem(3);
+    }
+}
+
+.ng-section-header__en {
+    margin-top: rem(10);
+    font-family: $en;
+    display: block;
+    @include font(50, 80, 0, $regular);
+
+    @include mq('md') {
+        font-size: rem(110);
+    }
+}
+
+.ng-inner {
+    padding-inline: rem(10);
+
+    @include mq('md') {
+        padding-inline: rem(25);
+        max-width: 1170px;
+    }
+
+    @include mq('lg') {
+        padding-inline: 0;
+    }
+}
+
+.ng-massage__inner {
+    @include mq('md') {
+        padding-inline: rem(25);
+    }
+}
+
+// =============================================
+// HERO
+// =============================================
+.ng-hero {
+    padding: rem(20) 0 rem(66);
+    position: relative;
+
+    @include mq('md') {
+        padding: 0;
+    }
+}
+
+.ng-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    max-width: 500px;
+    margin-inline: auto;
+
+    @include mq('md') {
+        max-width: 1155px;
+        margin-right: max(0px, calc((100vw - 1440px) / 2));
+        margin-left: auto;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: rem(25);
+        padding-inline: rem(25);
+    }
+}
+
+.ng-hero__image-wrapper {
+    position: relative;
+
+    @include mq('md') {
+        width: min(55vw, rem(780));
+    }
+}
+
+.ng-hero__lead {
+    text-align: right;
+    @include font(54, 100, -8, $bold);
+    padding-right: rem(10);
+
+    @include mq('md') {
+        writing-mode: vertical-rl;
+        text-align: start;
+        font-size: min(8.3vw, rem(120));
+        line-height: 0.93;
+        letter-spacing: 0;
+        padding-left: rem(0);
+        padding-right: linear_func_clamp(1440, 25, 1024, 0);
+        width: auto;
+        margin: 0;
+    }
+}
+
+.ng-hero__deck {
+    position: absolute;
+    z-index: 50;
+    left: rem(10);
+    bottom: rem(-46);
+
+    @include mq('md') {
+        left: linear_func_clamp(768, -90, 1440, -190);
+        bottom: linear_func_clamp(1440, 52, 768, 5);
+    }
+}
+
+.ng-hero__deck-label {
+    font-family: $en;
+    @include f(14, 20, 0, $medium);
+
+    @include mq('md') {
+        @include f(14, 25, 0, $medium);
+    }
+}
+
+.ng-hero__deck-title {
+    @include f(16, 20, 0, $bold);
+
+    @include mq('md') {
+        @include f(20, 25);
+    }
+}
+
+.ng-hero__deck-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+    margin-top: rem(10);
+
+    @include mq('md') {
+        margin-top: rem(20);
+        gap: linear_func_clamp(1440, 20, 768, 5);
+    }
+}
+
+.ng-hero__deck-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ng-hero__deck-group--highlight {}
+
+.ng-hero__deck-item {
+    @include f(13, 20, 0, $bold);
+    background: $white;
+    padding-inline: rem(10);
+
+    @include mq('md') {
+        padding-block: rem(2);
+        font-size: linear_func_clamp(1440, 18, 768, 14);
+        line-height: 1.4;
+    }
+
+    @include mq('lg') {
+
+        background: transparent;
+    }
+}
+
+.ng-hero__deck-group--highlight .ng-hero__deck-item {
+    color: $white;
+    background: $bg_black;
+    @include font(15, null, 0, $bold);
+    padding-inline: rem(6);
+
+
+    @include mq('md') {
+        font-size: linear_func_clamp(1440, 22, 768, 16);
+        padding-inline: rem(10);
+    }
+}
+
+
+.ng-hero__decorations {}
+
+.ng-hero__decoration {
+    position: absolute;
+    z-index: -1;
+}
+
+.ng-hero__decoration--e {
+    width: rem(143);
+    height: auto;
+    left: rem(-98);
+    top: 0;
+
+    @include mq('md') {
+        width: vw(1440, 165);
+        max-width: rem(165);
+        left: linear_func_clamp(768, -45, 1440, -75);
+    }
+}
+
+.ng-hero__decoration--circle {
+    width: rem(242);
+    height: auto;
+    left: rem(-120);
+    bottom: rem(3);
+
+    @include mq('md') {
+        width: vw(1440, 188);
+        max-width: rem(188);
+        left: rem(-52);
+        bottom: rem(-10);
+    }
+
+}
+
+.ng-hero__decoration--w {
+    width: rem(240);
+    height: auto;
+    right: rem(-120);
+    top: rem(192);
+
+    @include mq('md') {
+        width: vw(1440, 240);
+        max-width: rem(240);
+        right: rem(-30);
+        top: auto;
+        bottom: linear_func_clamp(768, -48, 1440, -80);
+    }
+}
+
+// =============================================
+// MESSAGE
+// =============================================
+.ng-message {
+    background-color: $bg_black;
+    color: $white;
+    padding-block: rem(80);
+
+    @include mq('md') {
+        padding-block: rem(140);
+    }
+}
+
+.ng-message__label {
+    font-family: $en;
+    @include font(14, 120, 0, $regular);
+    text-transform: uppercase;
+
+    @include mq('md') {
+        @include font(20, null);
+    }
+}
+
+.ng-message__body {
+    margin-top: rem(40);
+
+    @include mq('md') {
+        margin-top: rem(60);
+    }
+}
+
+.ng-message__texts {}
+
+.ng-message__para {
+    display: flex;
+    flex-direction: column;
+
+    &+& {
+        margin-top: rem(40);
+
+        @include mq('md') {
+            margin-top: rem(60);
+        }
+    }
+}
+
+.ng-message__line {
+    display: block;
+    font-family: $sans;
+    font-weight: $medium;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    font-size: 4.8vw;
+    background: linear-gradient(90deg,
+            #fff var(--ng-reveal, 0%),
+            rgba(255, 255, 255, 0.2) var(--ng-reveal, 0%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    @include mq('md') {
+        font-size: min(3.2vw, rem(46));
+        line-height: 1.45;
+        letter-spacing: 0.1em;
+    }
+}
+
+
+// =============================================
+// LAYOUT
+// =============================================
+.sub-page__layout--new-graduate {
+    @include mq('md') {
+        grid-template-columns: rem(172) 1fr;
+        max-width: 1320px;
+    }
+}
+
+// =============================================
+// SECTION COMMON
+// =============================================
+.ng-culture,
+.ng-flow {
+    padding-top: rem(60);
+
+    @include mq('md') {
+        padding-top: rem(160);
+    }
+}
+
+// =============================================
+// INTERVIEW
+// =============================================
+
+.ng-interview {
+    padding-top: rem(86);
+
+    @include mq('md') {
+        padding-top: rem(160);
+        clip-path: inset(0 -100vw 0 0);
+    }
+}
+
+.ng-interview__inner {
+    padding-right: 0;
+    padding-left: rem(10);
+    max-width: none;
+
+    @include mq('md') {
+        padding-left: rem(25);
+    }
+
+    @include mq('lg') {
+        padding-left: 0;
+    }
+}
+
+.ng-interview__header {}
+
+.swiper.ng-interview__swiper {
+    position: relative;
+    overflow: visible;
+    margin-top: rem(30);
+
+    @include mq('md') {
+        margin-top: rem(60);
+    }
+}
+
+.ng-interview__swiper .ng-interview__slide {
+    width: rem(280);
+    margin-right: rem(20);
+
+    @include mq('md') {
+        width: rem(560);
+        margin-right: rem(40);
+    }
+}
+
+.ng-interview__img-wrap {
+    position: relative;
+}
+
+.ng-interview__counter {
+    position: absolute;
+    top: rem(11);
+    left: rem(10);
+    font-family: $en;
+    @include font(20, 80, 0, $medium);
+
+    @include mq('md') {
+        top: rem(23);
+        left: rem(20);
+        font-size: rem(30);
+    }
+}
+
+.ng-interview__counter-cur {}
+
+.ng-interview__counter-tot {
+    font-size: rem(12);
+
+    @include mq('md') {
+        font-size: rem(16);
+    }
+}
+
+.ng-interview__link-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(36);
+    height: rem(36);
+    background: $green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    svg {
+        width: rem(15);
+        height: auto;
+
+        @include mq('md') {
+            width: rem(22);
+        }
+    }
+
+    @include mq('md') {
+        width: rem(70);
+        height: rem(70);
+    }
+}
+
+.ng-interview__img {
+    border: 1px solid $green;
+    overflow: hidden;
+    aspect-ratio: 14/9;
+    display: block;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.ng-interview__quote {
+    margin-top: rem(-1);
+}
+
+.ng-interview__quote-text {
+    @include font(20, 120, 0, $bold);
+    background: $bg_black;
+    padding: rem(3) rem(10);
+    display: inline-block;
+
+    @include mq('md') {
+        @include font(36, 120);
+    }
+}
+
+.ng-interview__quote-main {
+    color: $green;
+
+    @include mq('md') {
+        padding: rem(10) rem(10) rem(5);
+    }
+}
+
+.ng-interview__quote-sub {
+    color: $white;
+
+    @include mq('md') {
+        padding: rem(5) rem(10) rem(10);
+    }
+}
+
+
+.ng-interview__profile {
+    margin-top: rem(10);
+}
+
+.ng-interview__name {
+    @include font(18, null, 0, $medium);
+
+    @include mq('md') {
+        font-size: rem(26);
+    }
+}
+
+.ng-interview__department {
+    margin-top: rem(3);
+
+    @include mq('md') {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        margin-top: rem(5);
+    }
+}
+
+.ng-interview__pos {
+    @include font(12, 125, 0, $medium);
+
+    @include mq('md') {
+        font-size: rem(15);
+        line-height: 1;
+    }
+}
+
+.ng-interview__header {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(30);
+}
+
+.ng-interview__nav {
+    display: flex;
+    gap: rem(2);
+    flex-shrink: 0;
+}
+
+.ng-interview__prev,
+.ng-interview__next {
+    width: rem(38);
+    height: rem(40);
+    background: $bg_black;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: rem(8);
+        height: rem(12);
+        fill: $white;
+        transition: fill 0.3s;
+    }
+
+    &.is-boundary {
+        pointer-events: none;
+        cursor: default;
+
+        svg {
+            fill: $green;
+        }
+    }
+}
+
+// =============================================
+// CULTURE
+// =============================================
+.ng-culture__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(1);
+    margin-top: rem(30);
+
+    @include mq('md') {
+        margin-top: rem(60);
+    }
+}
+
+.ng-culture__item {
+    background: #191E25;
+    padding: rem(30) rem(20);
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include mq('md') {
+        display: grid;
+        grid-template-columns: 1fr 55%;
+        gap: rem(20);
+        padding: linear_func_clamp(1440, 60, 768, 30) linear_func_clamp(1440, 40, 768, 20)
+    }
+}
+
+.ng-culture__item-head {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    flex-shrink: 0;
+}
+
+.ng-culture__label {
+    font-family: $en;
+    @include font(12, 80, 0, $medium);
+    color: $green;
+
+    @include mq('md') {
+        font-size: rem(13);
+    }
+}
+
+.ng-culture__title {
+    font-family: $sans;
+    @include font(22, 120, 0, $medium);
+    color: $white;
+
+    @include mq('md') {
+        font-size: rem(32);
+    }
+}
+
+.ng-culture__text {
+    font-size: rem(14);
+    font-weight: $regular;
+    line-height: 1.6;
+    color: $white;
+
+    span {
+        color: $green;
+    }
+
+    @include mq('md') {
+        font-size: rem(20);
+    }
+}
+
+// =============================================
+// FLOW
+// =============================================
+.ng-flow__list {
+    margin-top: rem(30);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    padding: 0;
+
+    @include mq('md') {
+        margin-top: rem(60);
+    }
+}
+
+.ng-flow__item {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    background: $white;
+    padding: rem(20) rem(10);
+    border: 1px solid $bg_black;
+
+    @include mq('md') {
+        gap: rem(40);
+        padding: rem(30) rem(40);
+    }
+
+    &--last {
+        background: $bg_black;
+
+        .ng-flow__step-label,
+        .ng-flow__step-num {
+            color: $white;
+        }
+
+        .ng-flow__desc {
+            color: $white;
+            line-height: 1.3;
+
+            @include mq('md') {
+                line-height: 2;
+            }
+        }
+    }
+}
+
+.ng-flow__step-text {}
+
+.ng-flow__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(5);
+    flex-shrink: 0;
+    min-width: rem(34);
+    font-family: $en;
+    padding-top: rem(2);
+
+    @include mq('md') {
+        gap: rem(10);
+    }
+}
+
+.ng-flow__step-triangle {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: rem(-18);
+
+    svg {
+        width: rem(12);
+        height: rem(6);
+    }
+}
+
+.ng-flow__step-label {
+    @include font(15, 80, 0, $medium);
+}
+
+.ng-flow__step-num {
+    @include font(20, 115, 0, $medium);
+
+    @include mq('md') {
+        @include f(30, 23, 0, $medium);
+    }
+}
+
+.ng-flow__label {
+    @include font(13, null, 0, $bold);
+    background: $green;
+    flex-shrink: 0;
+    width: rem(100);
+    text-align: center;
+
+    @include mq('md') {
+        font-size: rem(20);
+        width: rem(140);
+    }
+}
+
+.ng-flow__desc {
+    margin-top: rem(5);
+    @include font(13, 200, 0, $medium);
+
+    @include mq('md') {
+        font-size: rem(18);
+    }
+}
+
+// =============================================
+// IMAGE STRIP
+// =============================================
+.ng-img-strip {
+    overflow: visible;
+    clip-path: inset(0 -100vw 0 rem(10));
+    padding-top: rem(40);
+    padding-left: rem(10);
+
+    @include mq('md') {
+        padding-top: rem(138);
+        padding-left: rem(25);
+        clip-path: inset(0 -100vw 0 rem(25));
+    }
+
+    @include mq('lg') {
+        padding-left: 0;
+        clip-path: inset(0 -100vw 0 0);
+    }
+}
+
+.ng-img-strip__track {
+    display: flex;
+    width: max-content;
+    animation: ng-strip-scroll 14s linear infinite;
+
+    img {
+        width: rem(150);
+        height: rem(187);
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-right: rem(6);
+
+        @include mq('md') {
+            width: rem(320);
+            height: rem(400);
+        }
+    }
+}
+
+@keyframes ng-strip-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// =============================================
+// ENTRY
+// =============================================
+.ng-entry {
+    margin-top: rem(30);
+
+    @include mq('md') {
+        margin-top: rem(100);
+    }
+}
+
+.ng-entry__panel {
+    background: $bg_black;
+    border: rem(3) solid $green;
+    padding: rem(20);
+
+    @include mq('md') {
+        padding: rem(40);
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-width: rem(6);
+        gap: rem(20);
+    }
+}
+
+.ng-entry__label {
+    font-family: $en;
+    @include font(80, 80, 0, $regular);
+    color: $green;
+
+    @include mq('md') {
+        font-size: rem(110);
+    }
+}
+
+.ng-entry__tag {
+    display: flex;
+    align-items: center;
+    margin-top: rem(30);
+
+    @include mq('md') {
+        margin-top: rem(43);
+    }
+}
+
+.ng-entry__tag-line {
+    display: block;
+    height: 2px;
+    width: rem(15);
+    background: $green;
+    flex-shrink: 0;
+    transform: rotate(66deg);
+
+    &--after {
+        transform: rotate(-66deg);
+    }
+
+    @include mq('md') {
+        width: rem(25);
+    }
+}
+
+.ng-entry__tag-text {
+    font-family: $sans;
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: 1.2;
+    color: $green;
+    white-space: nowrap;
+
+    @include mq('md') {
+        font-size: rem(28);
+    }
+}
+
+.ng-entry__desc {
+    margin-top: rem(10);
+    font-size: rem(15);
+    font-weight: $medium;
+    line-height: 1.4;
+    color: $white;
+
+    @include mq('md') {
+        margin-top: rem(20);
+        @include font(18, 150);
+    }
+}
+
+.ng-entry__btn {
+    position: relative;
+    margin-top: rem(30);
+    display: flex;
+    align-items: center;
+    background: $green;
+    color: $bg_black;
+    font-family: $en;
+    font-size: rem(20);
+    font-weight: $medium;
+    line-height: 1.6;
+    padding: rem(20);
+
+    @include mq('md') {
+        font-size: rem(20);
+        flex-shrink: 0;
+        max-width: rem(369);
+    }
+
+    @include mq('xl') {
+        padding: rem(30) rem(40);
+    }
+}
+
+.ng-entry__btn-arrow {
+    position: absolute;
+    background: $bg_black;
+    width: rem(40);
+    aspect-ratio: 1 /1;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: rem(17);
+        height: rem(14);
+        transform: rotate(-45deg);
+    }
+
+    @include mq('md') {
+        width: linear_func_clamp(1440, 40, 768, 25);
+    }
+}
+
+// =============================================
+// FAQ
+// =============================================
+
+.ng-faq {
+    padding-top: rem(70);
+
+    @include mq('md') {
+        padding-top: rem(160);
+    }
+}
+
+.ng-faq__list {
+    margin-top: rem(30);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.8px solid $bg_black;
+
+    @include mq('md') {
+        margin-top: rem(60);
+    }
+
+}
+
+.ng-faq__item {
+    border-top: 0.8px solid $bg_black;
+
+}
+
+.ng-faq__q {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    padding: rem(10);
+    background: $white;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+
+    &::-webkit-details-marker,
+    &::marker {
+        display: none;
+    }
+
+    @include mq('md') {
+        gap: rem(20);
+        padding: rem(10) rem(20);
+    }
+}
+
+.ng-faq__q-label {
+    font-family: $en;
+    font-size: rem(30);
+    font-weight: $regular;
+    line-height: 1;
+    flex-shrink: 0;
+
+    @include mq('md') {
+        font-size: rem(50);
+        line-height: 1.4;
+    }
+}
+
+.ng-faq__q-text {
+    font-family: $sans;
+    @include font(15, 150, 0, $medium);
+    color: $bg_black;
+    flex: 1;
+
+    @include mq('md') {
+        font-size: rem(16);
+        line-height: 2;
+    }
+}
+
+.ng-faq__icon {
+    display: block;
+    width: rem(15);
+    height: rem(15);
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s;
+
+    @include mq('md') {
+        width: rem(25);
+        height: rem(25);
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background: $bg_black;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    &::before {
+        width: rem(15);
+        height: rem(2);
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        @include mq('md') {
+            width: rem(25);
+        }
+    }
+
+    &::after {
+        width: rem(2);
+        height: rem(15);
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+
+        @include mq('md') {
+            height: rem(25);
+        }
+    }
+}
+
+details.ng-faq__item[open] .ng-faq__icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+.ng-faq__a {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    padding: 0 rem(10) rem(10);
+    background: $white;
+    transform: translateY(rem(-8));
+    transition: transform 0.4s ease;
+
+    @include mq('md') {
+        gap: rem(20);
+        padding: 0 rem(20) rem(10);
+    }
+}
+
+details.ng-faq__item[open] .ng-faq__a {
+    transform: translateY(0);
+}
+
+details.ng-faq__item:not([open]) .ng-faq__a {
+    display: none;
+}
+
+@supports selector(::details-content) {
+    details.ng-faq__item:not([open]) .ng-faq__a {
+        display: flex;
+    }
+
+    details.ng-faq__item {
+        interpolate-size: allow-keywords;
+    }
+
+    details.ng-faq__item::details-content {
+        block-size: 0;
+        opacity: 0;
+        transition: block-size 0.4s ease,
+            opacity 0.3s ease,
+            content-visibility 0.4s ease allow-discrete;
+    }
+
+    details.ng-faq__item[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+    }
+}
+
+.ng-faq__a-label {
+    font-family: $en;
+    font-size: rem(30);
+    font-weight: $regular;
+    color: $green;
+    flex-shrink: 0;
+
+    @include mq('md') {
+        font-size: rem(50);
+        line-height: 1.4;
+    }
+}
+
+.ng-faq__a-text {
+    font-family: $sans;
+    font-size: rem(13);
+    font-weight: $medium;
+    line-height: 2;
+    flex: 1;
+
+    @include mq('md') {
+        font-size: rem(13);
+    }
+}
+
+.ng__cta {
+    margin-top: rem(100);
+
+    @include mq('md') {
+        margin-top: rem(190);
+    }
+}

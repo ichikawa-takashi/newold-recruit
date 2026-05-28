@@ -1,0 +1,418 @@
+.sub-page__layout--business {
+    @include mq("lg") {
+        grid-template-columns: rem(130) 1fr;
+    }
+}
+
+.sub-page__side--business {}
+
+.sub-business__section-wrapper {
+    padding-top: rem(60);
+
+    @include mq('md') {
+        padding-top: rem(120);
+    }
+}
+
+
+// ========================================
+// SEC01
+// ========================================
+
+.sub-business__intro {}
+
+.sub-business__intro-body {
+    margin-top: rem(30);
+    display: flex;
+    flex-direction: column;
+
+    @include mq('md') {
+        display: grid;
+        grid-template-columns: 1fr min(40vw, rem(480));
+        grid-template-rows: auto auto;
+        column-gap: linear_func_clamp(1440, 80, 768, 30);
+        row-gap: rem(45);
+        margin-top: rem(40);
+        align-items: start;
+    }
+}
+
+.sub-business__intro-image {
+    order: -1;
+    flex-shrink: 0;
+
+    @include mq('md') {
+        order: 0;
+        grid-column: 2;
+        grid-row: 2;
+        width: auto;
+        align-self: end;
+    }
+}
+
+
+.sub-business__intro-heading {
+    @include font(20, null, 10, $medium);
+    color: #000;
+    margin-top: rem(30);
+
+    @include mq('md') {
+        @include font(32, 156, 0, $medium);
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-top: 0;
+    }
+}
+
+.sub-business__intro-content {
+    color: #000;
+    margin-top: rem(20);
+
+    @include mq('md') {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 0;
+    }
+}
+
+.sub-business__intro-desc {
+    @include font(14, 200, 0, $regular);
+
+
+    @include mq('md') {
+        font-size: rem(15);
+    }
+}
+
+.sub-business__intro-cta {
+    width: rem(261);
+    margin-right: auto;
+    margin-top: rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: rem(3);
+    gap: rem(20);
+    padding: rem(20);
+    background: $bg_black;
+    color: $white;
+    text-decoration: none;
+
+    @include mq('md') {
+        width: 100%;
+        min-width: rem(300);
+        margin-top: rem(55);
+    }
+}
+
+.sub-business__intro-cta-label {
+    @include f(14, 20, 0, $regular);
+
+    @include mq('md') {
+        @include f(15, 20, 3, $regular);
+    }
+}
+
+
+.sub-business__intro-cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: rem(19);
+    height: rem(18);
+    border-radius: rem(3);
+    background-color: $white;
+    margin-top: rem(2);
+
+    @include mq('md') {
+        width: rem(15);
+        height: rem(15);
+    }
+}
+
+
+.sub-business__intro-cta-icon img:nth-of-type(1) {
+    @include mq("md") {
+        width: 70%;
+    }
+}
+
+.sub-business__intro-cta-icon img:nth-of-type(2) {
+    width: 70%;
+}
+
+// ========================================
+// SEC02
+// ========================================
+
+.sub-business__service-wrapper {
+    margin-top: rem(60);
+
+    @include mq('md') {
+        margin-top: rem(80);
+    }
+}
+
+.sub-business__service+.sub-business__service {
+    margin-top: rem(20);
+}
+
+.sub-business__service-card {
+    border: 4px solid #DAE1E7;
+    overflow: hidden;
+    padding: rem(30) rem(11) rem(60);
+
+    @include mq('md') {
+        border: 5px solid #DAE1E7;
+        padding: rem(60);
+    }
+}
+
+.sub-business__service-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: rem(8);
+    border-bottom: rem(3) solid $bg_black;
+    gap: rem(15);
+
+    @include mq('md') {
+        border-bottom: rem(5) solid $bg_black;
+        padding-bottom: rem(15);
+        gap: rem(20);
+    }
+}
+
+.sub-business__service-head-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-business__service-num {
+    font-family: $en;
+    @include f(42, 60, -5, $medium);
+    color: $bg_black;
+
+    @include mq('md') {
+        @include f(70, 60, -5, $medium);
+    }
+}
+
+.sub-business__service-name-ja {
+    @include font(16, 120, 0, $medium);
+    color: $bg_black;
+
+    @include mq('md') {
+        @include font(20, 120, 0, $medium);
+
+    }
+}
+
+.sub-business__service-name-en {
+    font-family: $en;
+    @include font(22, 120, 0, $medium);
+    color: $bg_black;
+
+    @include mq('md') {
+        @include font(40, 120, 0, $medium);
+    }
+}
+
+.sub-business__service-block-wrapper {
+    margin-top: rem(20);
+
+    @include mq('md') {
+        margin-top: rem(55);
+    }
+}
+
+.sub-business__service-block {
+    @include mq('md') {
+        display: grid;
+        grid-template-columns: 1fr linear_func_clamp(1023, 700, 768, 440);
+        gap: rem(40);
+    }
+
+    @include mq('lg') {
+        grid-template-columns: 1fr linear_func_clamp(1440, 763, 1024, 480);
+    }
+}
+
+.sub-business__service-block+.sub-business__service-block {
+    margin-top: rem(30);
+    padding-top: rem(30);
+    border-top: rem(3) solid #EFEDE6;
+
+    @include mq('md') {
+        margin-top: rem(50);
+        padding-top: rem(35);
+    }
+}
+
+
+.sub-business__service-block-label {
+    display: inline-block;
+    background: $bg_black;
+    color: $white;
+    @include f(16, null, 0, $medium);
+    padding: 0 rem(5);
+    width: fit-content;
+    align-self: start;
+
+    @include mq('md') {
+        @include font(18, null, 0, $medium);
+        margin-top: rem(10);
+    }
+}
+
+.sub-business__service-block-body {
+    margin-top: rem(20);
+
+    @include mq('md') {
+        margin-top: 0;
+
+    }
+}
+
+.sub-business__service-text {
+    color: $bg_black;
+
+    h2,
+    h3,
+    h4 {
+        @include font(16, 140, 0, $bold);
+        color: $bg_black;
+
+        @include mq('md') {
+            @include font(20, 200, 0, $bold);
+        }
+    }
+
+    p {
+        @include font(12, 200, 0, $regular);
+
+        @include mq('md') {
+            font-size: rem(14);
+        }
+    }
+
+    h2+p,
+    h3+p,
+    h4+p {
+        margin-top: rem(10);
+
+        @include mq('md') {
+            margin-top: rem(15);
+        }
+    }
+
+    p+h2,
+    p+h3,
+    p+h4 {
+        margin-top: rem(20);
+
+        @include mq('md') {
+            margin-top: rem(30);
+        }
+    }
+}
+
+
+.sub-business__people-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20) rem(10);
+
+    @include mq('md') {
+        gap: rem(30) rem(60);
+    }
+}
+
+.sub-business__people-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sub-business__people-avatar {
+    width: rem(80);
+    height: rem(80);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include mq('md') {
+        width: rem(110);
+        height: rem(110);
+    }
+}
+
+.sub-business__people-name {
+    margin-top: rem(10);
+    @include font(14, null, 5, $regular);
+    color: $bg_black;
+
+    @include mq('md') {
+        font-size: rem(16);
+    }
+}
+
+.sub-business__people-role {
+    margin-top: rem(3);
+    @include font(12, null, 5, $regular);
+    color: $bg_black;
+
+    @include mq('md') {
+        margin-top: rem(8);
+    }
+}
+
+.sub-business__people-link {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(5);
+    margin-top: rem(15);
+    @include font(12, 110, 3, $medium);
+    color: $bg_black;
+
+    @include mq('md') {
+        @include font(16, 110);
+        margin-top: rem(20);
+        gap: rem(10);
+    }
+}
+
+.sub-business__people-link-icon {
+    background: $bg_black;
+    border-radius: rem(3);
+    width: rem(15);
+    height: rem(15);
+    margin-top: rem(2);
+}
+
+.sub-business__people-link-icon img:nth-of-type(1) {
+    @include mq("md") {
+        width: 70%;
+    }
+}
+
+.sub-business__people-link-icon img:nth-of-type(2) {
+    width: 70%;
+}
+
+.sub-business__cta {
+    margin-top: rem(60);
+
+    @include mq('md') {
+        margin-top: rem(140);
+    }
+}

@@ -1,0 +1,561 @@
+.single-people {
+    color: $bg_black;
+    padding-top: rem(20);
+    padding-bottom: rem(60);
+
+    @include mq('md') {
+        padding-top: rem(60);
+        padding-bottom: rem(180);
+    }
+}
+
+.single-people__wrap {}
+
+.single-people__inner {
+    @include mq('md') {
+        max-width: 930px;
+    }
+}
+
+.single-people__lead {}
+
+.single-people__thumbnail {
+
+    img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+}
+
+.single-people__intro {
+    margin-top: rem(20);
+    padding-left: rem(20);
+    border-left: rem(4) solid $bg_black;
+
+    @include mq('md') {
+        margin-top: rem(40);
+        padding-left: rem(30);
+        border-left: rem(6) solid $bg_black;
+    }
+}
+
+.single-people__catch {
+    @include font(26, null, null, $medium);
+    font-family: $mincho;
+
+    @include mq('md') {
+        font-size: rem(40);
+    }
+}
+
+.single-people__profile {
+    margin-top: rem(25);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(10);
+}
+
+.single-people__profile-name {
+    padding-right: rem(20);
+    border-right: 1px solid $bg_black;
+}
+
+.single-people__name-ja {
+    @include font(16, 150, 0, $medium);
+
+    @include mq('md') {
+        @include f(18, 25);
+    }
+}
+
+.single-people__name-en {
+    @include font(10, 150, 5, $regular);
+    font-family: $en;
+
+    @include mq('md') {
+        margin-top: rem(3);
+        @include font(12, 125);
+    }
+
+}
+
+.single-people__department {
+    @include f(13, 20, 5, $regular);
+
+    @include mq('md') {
+        @include f(16, 20, 5, $regular);
+    }
+}
+
+.single-people__year {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(3) rem(6);
+    border: 0.5px solid $bg_black;
+    @include font(10, 150, 10, $medium);
+}
+
+.single-people__video {
+    margin-top: rem(40);
+    padding-inline: rem(15);
+
+    @include mq('md') {
+        margin-top: rem(70);
+        padding-inline: rem(30);
+    }
+}
+
+.single-people__video-wrap {
+    position: relative;
+}
+
+.single-people__video-img {
+    aspect-ratio: 820.00/374.84;
+    object-fit: cover;
+}
+
+.single-people__video-play {
+    position: absolute;
+    width: rem(81);
+    height: rem(32);
+    bottom: rem(16);
+    right: rem(16);
+    background-color: $green;
+
+    @include mq('md') {
+        width: rem(168);
+        height: rem(52);
+        bottom: rem(30);
+        right: rem(30);
+
+    }
+}
+
+.single-people__video-play-button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(10);
+
+    @include mq('md') {
+        gap: rem(20);
+    }
+}
+
+.single-people__video-play-text {}
+
+.single-people__video-play-icon {}
+
+.single-people__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(45);
+
+    @include mq('md') {
+        flex-direction: row;
+        gap: rem(60);
+        align-items: flex-start;
+        margin-top: rem(100);
+    }
+}
+
+.single-people__sidebar-column {
+    margin-top: rem(60);
+    order: 2;
+
+    @include mq('md') {
+        order: unset;
+        flex: 0 0 rem(200);
+        width: rem(200);
+        margin-top: 0;
+        position: sticky;
+        top: rem(20);
+        align-self: flex-start;
+    }
+}
+
+.single-people__sidebar {}
+
+.single-people__portrait {
+
+    @include mq('md') {
+        width: rem(200);
+        height: rem(200);
+        max-width: rem(200);
+    }
+
+    img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+}
+
+.single-people__sidebar-meta {
+    margin-top: rem(20);
+    text-align: center
+}
+
+.single-people__sidebar-name {
+    @include f(18, 25, 0, $medium);
+}
+
+.single-people__sidebar-dept {
+    margin-top: rem(3);
+    @include font(12, 125, 5, $regular);
+}
+
+// サイドバーCTA
+.single-people__sidebar-cta {
+
+    @include mq('md') {
+        margin-top: rem(20);
+    }
+}
+
+.single-people__sidebar-cta-head {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    &::before,
+    &::after {
+        content: "";
+        background: url(../img/people/cta-line.svg)no-repeat center center / contain;
+        width: rem(8);
+        height: rem(16);
+    }
+
+    &::after {
+        transform: rotate(45deg);
+    }
+}
+
+
+.single-people__sidebar-cta-text {
+    @include font(12, 160, 0, $medium);
+    text-align: center;
+    color: $brown;
+}
+
+.single-people__sidebar-cta-buttons {
+    display: grid;
+    gap: rem(10);
+    margin-top: rem(6);
+}
+
+.single-people__sidebar-btn {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(10);
+    width: min(80vw, rem(335));
+    padding: rem(16) rem(20);
+    @include font(12, 160, 10, $medium);
+    color: $white;
+
+    @include mq('md') {
+        width: 100%;
+    }
+}
+
+.single-people__sidebar-btn--casual {
+    background-color: $brown;
+    height: rem(51);
+}
+
+.single-people__sidebar-btn--position {
+    background-color: $bg_black;
+    font-weight: $regular;
+    height: rem(60);
+}
+
+.single-people__sidebar-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: rem(15);
+    height: rem(15);
+    border-radius: rem(3);
+    background-color: $white;
+    margin-top: rem(2);
+}
+
+.single-people__sidebar-btn-icon img:nth-of-type(1) {
+    @include mq("md") {
+        width: 70%;
+    }
+}
+
+.single-people__sidebar-btn-icon img:nth-of-type(2) {
+    width: 70%;
+}
+
+// Q&Aコンテンツ
+.single-people__qa {
+    order: 1;
+
+    @include mq('md') {
+        order: unset;
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+.single-people__qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+}
+
+.single-people__qa-item {}
+
+.single-people__qa-header {
+    position: relative;
+}
+
+.single-people__qa-number {
+    display: block;
+    font-family: $en;
+    @include f(48, 30, 0, $medium);
+    color: $gold;
+
+    @include mq('md') {
+        font-size: rem(58);
+    }
+}
+
+.single-people__qa-num-digit {
+    color: $bg_black;
+}
+
+.single-people__qa-question-wrap {
+    padding: rem(15) rem(10) 0 rem(15);
+    border-top: 3px solid $gold;
+    border-left: 3px solid $gold;
+
+    @include mq('md') {
+        padding: rem(20);
+    }
+}
+
+.single-people__qa-question {
+    font-family: $mincho;
+    @include f(18, 30, 0, $bold);
+
+    @include mq('md') {
+        font-size: rem(20);
+    }
+}
+
+.single-people__qa-answer {
+    margin-top: rem(20);
+    @include font(13, 200, 0, $regular);
+    padding-inline: rem(10);
+
+    @include mq('md') {
+        font-size: rem(15);
+        padding-inline: rem(20);
+    }
+
+    >*+* {
+        margin-top: rem(20);
+    }
+}
+
+.single-people__movie-description {
+    margin-top: rem(20);
+    padding-inline: 0;
+
+    @include mq('md') {
+        margin-top: rem(30);
+    }
+}
+
+// 他のメンバーセクション
+.single-people__others {
+    padding-top: rem(60);
+    overflow-x: clip;
+
+    @include mq('md') {
+        padding-top: rem(108);
+    }
+}
+
+.people-others__inner {
+    padding-right: 0;
+    max-width: 500px;
+
+    @include mq('md') {
+        max-width: 930px;
+    }
+}
+
+// 他のメンバー スライダー
+.people-others__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: $padding-sp;
+
+    @include mq('md') {
+        padding-right: $padding-pc;
+    }
+}
+
+.people-others__title {
+    @include f(23, 60, null, $bold);
+    font-family: $mincho;
+
+    @include mq('md') {
+        font-size: rem(32);
+    }
+}
+
+.people-others__nav {
+    display: flex;
+    gap: rem(10);
+}
+
+.people-others__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(57);
+    height: rem(35);
+    background-color: #191E25;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border-radius: rem(6);
+
+    img {
+        width: rem(8);
+        height: rem(5);
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    &.swiper-button-disabled {
+        cursor: default;
+        pointer-events: none;
+    }
+
+}
+
+.people-others__btn--next {
+
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+.swiper.people-others__swiper {
+    overflow: visible;
+    clip-path: inset(0 -9999px 0 0);
+    margin-top: rem(10);
+
+    @include mq('md') {
+        margin-top: rem(40);
+    }
+}
+
+.people-others__item {
+    margin-right: rem(15);
+    height: auto;
+}
+
+.people-others__swiper .people-others__item {
+    width: rem(120);
+
+    @include mq('md') {
+        width: rem(220);
+    }
+}
+
+.people-others__item-link {
+    display: block;
+
+    @include mq('md') {
+        height: 100%;
+    }
+}
+
+.people-others__image {
+    img {
+        aspect-ratio: 120/132;
+        object-fit: cover;
+
+        @include mq('md') {
+            aspect-ratio: 220 / 260;
+        }
+    }
+}
+
+.people-others__content {
+    margin-top: rem(20);
+    display: grid;
+    gap: rem(6);
+    color: $bg_black;
+    text-align: center;
+
+    @include mq('md') {
+        gap: rem(10)
+    }
+}
+
+.people-others__profile-name {}
+
+.people-others__name-ja {
+    @include f(15, null, 0, $medium);
+
+    @include mq('md') {
+        font-size: rem(18);
+    }
+}
+
+.people-others__name-en {
+    font-family: $en;
+    @include font(10, 150, 5, $regular);
+
+    @include mq('md') {
+        @include font(12, 125);
+    }
+}
+
+.people-others__department {
+    @include f(10, 15, 5, $regular);
+
+    @include mq('md') {
+        @include f(14, 20);
+    }
+}
+
+.people-others__year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    @include f(8, 15, 10, $medium);
+    border: 0.5px solid $black;
+    color: $black;
+    padding: rem(2) rem(3) rem(3);
+
+    @include mq('md') {
+        @include font(10, 150);
+        width: rem(71);
+    }
+}
+
+// 一覧へ戻る
+.single-people__link {
+    margin-top: rem(40);
+    display: flex;
+    justify-content: center;
+}
