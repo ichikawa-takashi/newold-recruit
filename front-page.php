@@ -63,9 +63,9 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <p class="fv__title02">だれと組むか。</p>
                     </h1>
                     <div class="fv__image">
-                        <picture class="">
+                        <picture>
                             <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/fv.jpg" media="(min-width: 768px)" />
-                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/fv_sp.jpg" alt="newoldの社員が写っている写真">
+                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/fv-sp.jpg" alt="newoldの社員が写っている写真">
                         </picture>
                     </div>
                 </div>
@@ -108,25 +108,24 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
         <div class="top-where__inner inner">
             <div class="top-where__heading-group">
                 <h2 class="top-where__title">
-                    Where to go and<br>who to team up with
+                    次世代を担う<br>
+                    「成長実現ファーム」へ
                 </h2>
             </div>
 
             <div class="top-where__lead-group">
                 <p class="top-where__lead-text">
-                    めまぐるしく変化する昨今において私たち、NEWOLD CAPITALは
+                    予測不可能な時代において、私たちNEWOLD CAPITALは
                 </p>
                 <h3 class="top-where__lead-text top-where__lead-text--emphasis">
-                    成長を支える<br class="sp">経営パートナーとして<br>存在しなければならない。
+                    成長を支える<br class="sp">経営パートナーとして<br>
+                    プロ集団であり続ける。
                 </h3>
             </div>
 
             <div class="top-where__image01">
                 <figure class="top-where__figure parallax-image-wrap">
-                    <picture class="">
-                        <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-image02.jpg" media="(min-width: 768px)" />
-                        <img class="parallax-image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-image02_sp.jpg" alt="ノートパソコンを前に笑顔で話すスーツ姿の男性">
-                    </picture>
+                    <img class="parallax-image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-image02.jpg" alt="ノートパソコンを前に笑顔で話すスーツ姿の男性">
                 </figure>
             </div>
 
@@ -183,16 +182,16 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 <div class="top-business__header top-col02__header">
                     <h2 class="top-business__header-title top-sec-title">Business</h2>
                     <p class="top-business__header-description top-sec-description">
-                        社員一人ひとりが最大限の力を発揮できるよう、<br />
-                        働きやすい環境や制度を用意しています。
+                        私たちは、企業・人・地域の成長を実現する<br>
+                        サービスを提供しています。
                     </p>
                     <a href="" class="top-business__header-button top-sec-button sp">詳しく見る</a>
                 </div>
                 <div class="top-business__visual">
                     <div class="top-business__visual__bg">
                         <picture class="">
-                          <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-business-bgi.svg" media="(min-width: 768px)" />
-                          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-business-bgi_sp.svg" alt="未来">
+                            <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-business-bgi.svg" media="(min-width: 768px)" />
+                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/top-business-bgi_sp.svg" alt="未来">
                         </picture>
                     </div>
                     <ul class="top-business__visual-list pc" aria-label="事業一覧">
@@ -280,13 +279,13 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 <div class="top-business__nav">
                     <button class="top-business__nav-btn top-business__nav-btn--prev js-business-prev" aria-label="前の事業">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12.5 4.5L7.5 10L12.5 15.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.5 4.5L7.5 10L12.5 15.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                     <span class="top-business__nav-counter js-business-nav-counter">01 / 04</span>
                     <button class="top-business__nav-btn top-business__nav-btn--next js-business-next" aria-label="次の事業">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M7.5 4.5L12.5 10L7.5 15.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.5 4.5L12.5 10L7.5 15.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </div>
@@ -300,7 +299,8 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-label">NEWOLD M&amp;A</p>
                                 <p class="top-business__detail-title">M&amp;A実行支援</p>
                                 <p class="top-business__detail-text">
-                                    NEWOLD M&amp;Aは、「継ぐ」だけでなく「伸ばす」ことを目的とした成長戦略型M&amp;Aです。業種特化の専門性を活かし、初期段階からPMIや事業計画を議論し、最適な戦略を描きます。その戦略をスキームへと落とし込み、実効性の高いM&amp;Aを実現します。
+                                    NEWOLD M&amp;Aは、「繋ぐ」だけでなく「伸ばす」ことを目的とした成長戦略型M&Aです。<br class="pc">
+                                    業種特化の専門性を活かし、初期段階からPMIや事業計画を議論し、最適な戦略を描きます。その戦略をスキームへと落とし込み、実効性の高いM&Aを実現します。
                                 </p>
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec02')); ?>" class="top-business__detail-link right-up-button">
@@ -323,37 +323,37 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 $ma_department = get_field('people_department', $ma_person->ID);
                                 $ma_img_alt    = !empty($ma_portrait['alt']) ? $ma_portrait['alt'] : esc_attr($ma_name_ja) . ' のポートレート';
                             ?>
-                            <a href="<?php echo esc_url(get_permalink($ma_person->ID)); ?>" class="top-business__voice right-up-button">
-                                <div class="top-business__voice-profile">
-                                    <div class="top-business__voice-image">
-                                        <?php if (!empty($ma_portrait)): ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url($ma_portrait['url']); ?>" alt="<?php echo esc_attr($ma_img_alt); ?>" />
-                                        <?php else: ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($ma_name_ja); ?> のポートレート" />
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="top-business__voice-info">
-                                        <?php if (!empty($ma_name_ja)): ?>
-                                            <p class="top-business__voice-name"><?php echo esc_html($ma_name_ja); ?></p>
-                                        <?php endif; ?>
-                                        <?php if (!empty($ma_department)): ?>
-                                            <p class="top-business__voice-position"><?php echo esc_html($ma_department); ?></p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="top-business__voice-content">
-                                    <p class="top-business__voice-title">Members Voice</p>
-                                    <span class="top-business__voice-link">
-                                        <span class="top-business__voice-link-text">働く人を知る</span>
-                                        <div class="top-business__button-arrow right-up-button__arrow">
-                                            <span class="top-business__button-icon right-up-button__icon">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                            </span>
+                                <a href="<?php echo esc_url(get_permalink($ma_person->ID)); ?>" class="top-business__voice right-up-button">
+                                    <div class="top-business__voice-profile">
+                                        <div class="top-business__voice-image">
+                                            <?php if (!empty($ma_portrait)): ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url($ma_portrait['url']); ?>" alt="<?php echo esc_attr($ma_img_alt); ?>" />
+                                            <?php else: ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($ma_name_ja); ?> のポートレート" />
+                                            <?php endif; ?>
                                         </div>
-                                    </span>
-                                </div>
-                            </a>
+                                        <div class="top-business__voice-info">
+                                            <?php if (!empty($ma_name_ja)): ?>
+                                                <p class="top-business__voice-name"><?php echo esc_html($ma_name_ja); ?></p>
+                                            <?php endif; ?>
+                                            <?php if (!empty($ma_department)): ?>
+                                                <p class="top-business__voice-position"><?php echo esc_html($ma_department); ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="top-business__voice-content">
+                                        <p class="top-business__voice-title">Members Voice</p>
+                                        <span class="top-business__voice-link">
+                                            <span class="top-business__voice-link-text">働く人を知る</span>
+                                            <div class="top-business__button-arrow right-up-button__arrow">
+                                                <span class="top-business__button-icon right-up-button__icon">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                </span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </a>
                             <?php endif; ?>
                         </div>
                     </li>
@@ -365,8 +365,8 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-label">NEWOLD Agent</p>
                                 <p class="top-business__detail-title">経営幹部人材紹介</p>
                                 <p class="top-business__detail-text">
-                                    NEWOLD Agentは、経営課題の解決に特化した幹部人材紹介サービスです。候補者の経験・スキルと企業の課題を深く理解したうえで、最適なマッチングを実現します。
-                                </p>
+                                    NEWOLD Agentは、企業変革を担うキーパーソンの採用を支援します。<br class="pc">
+                                    連続的なM&Aを推進する責任者から、次期後継者やCxOクラスまで、経営課題に応じた最適な人材をご紹介。経営幹部人材の採用を通じて、持続的な成長を実現します。
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec03')); ?>" class="top-business__detail-link right-up-button">
                                         <p class="top-business__detail-link-text">詳細を見る</p>
@@ -388,37 +388,37 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 $agent_department = get_field('people_department', $agent_person->ID);
                                 $agent_img_alt    = !empty($agent_portrait['alt']) ? $agent_portrait['alt'] : esc_attr($agent_name_ja) . ' のポートレート';
                             ?>
-                            <a href="<?php echo esc_url(get_permalink($agent_person->ID)); ?>" class="top-business__voice right-up-button">
-                                <div class="top-business__voice-profile">
-                                    <div class="top-business__voice-image">
-                                        <?php if (!empty($agent_portrait)): ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url($agent_portrait['url']); ?>" alt="<?php echo esc_attr($agent_img_alt); ?>" />
-                                        <?php else: ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($agent_name_ja); ?> のポートレート" />
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="top-business__voice-info">
-                                        <?php if (!empty($agent_name_ja)): ?>
-                                            <p class="top-business__voice-name"><?php echo esc_html($agent_name_ja); ?></p>
-                                        <?php endif; ?>
-                                        <?php if (!empty($agent_department)): ?>
-                                            <p class="top-business__voice-position"><?php echo esc_html($agent_department); ?></p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="top-business__voice-content">
-                                    <p class="top-business__voice-title">Members Voice</p>
-                                    <span class="top-business__voice-link">
-                                        <span class="top-business__voice-link-text">働く人を知る</span>
-                                        <div class="top-business__button-arrow right-up-button__arrow">
-                                            <span class="top-business__button-icon right-up-button__icon">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                            </span>
+                                <a href="<?php echo esc_url(get_permalink($agent_person->ID)); ?>" class="top-business__voice right-up-button">
+                                    <div class="top-business__voice-profile">
+                                        <div class="top-business__voice-image">
+                                            <?php if (!empty($agent_portrait)): ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url($agent_portrait['url']); ?>" alt="<?php echo esc_attr($agent_img_alt); ?>" />
+                                            <?php else: ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($agent_name_ja); ?> のポートレート" />
+                                            <?php endif; ?>
                                         </div>
-                                    </span>
-                                </div>
-                            </a>
+                                        <div class="top-business__voice-info">
+                                            <?php if (!empty($agent_name_ja)): ?>
+                                                <p class="top-business__voice-name"><?php echo esc_html($agent_name_ja); ?></p>
+                                            <?php endif; ?>
+                                            <?php if (!empty($agent_department)): ?>
+                                                <p class="top-business__voice-position"><?php echo esc_html($agent_department); ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="top-business__voice-content">
+                                        <p class="top-business__voice-title">Members Voice</p>
+                                        <span class="top-business__voice-link">
+                                            <span class="top-business__voice-link-text">働く人を知る</span>
+                                            <div class="top-business__button-arrow right-up-button__arrow">
+                                                <span class="top-business__button-icon right-up-button__icon">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                </span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </a>
                             <?php endif; ?>
                         </div>
                     </li>
@@ -430,7 +430,8 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-label">NEWOLD Exparts</p>
                                 <p class="top-business__detail-title">エキスパート活用ソリューション</p>
                                 <p class="top-business__detail-text">
-                                    NEWOLD Expartsは、高度な専門知識を持つエキスパート人材を活用したソリューションサービスです。短期集中型のプロジェクト支援から長期的な伴走まで、企業のフェーズに合わせた柔軟な支援を提供します。
+                                    NEWOLD Expartsは、企業の新しい挑戦において不足するリソースを、最適なエキスパートで補うソリューションです。<br class="pc">
+                                    経営課題を正確に把握し、最適なエキスパートを迅速にアサイン。スピーディーな課題解決と、未来に向けた成長の実現を支援します。
                                 </p>
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec04')); ?>" class="top-business__detail-link right-up-button">
@@ -453,37 +454,37 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 $experts_department = get_field('people_department', $experts_person->ID);
                                 $experts_img_alt    = !empty($experts_portrait['alt']) ? $experts_portrait['alt'] : esc_attr($experts_name_ja) . ' のポートレート';
                             ?>
-                            <a href="<?php echo esc_url(get_permalink($experts_person->ID)); ?>" class="top-business__voice right-up-button">
-                                <div class="top-business__voice-profile">
-                                    <div class="top-business__voice-image">
-                                        <?php if (!empty($experts_portrait)): ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url($experts_portrait['url']); ?>" alt="<?php echo esc_attr($experts_img_alt); ?>" />
-                                        <?php else: ?>
-                                            <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($experts_name_ja); ?> のポートレート" />
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="top-business__voice-info">
-                                        <?php if (!empty($experts_name_ja)): ?>
-                                            <p class="top-business__voice-name"><?php echo esc_html($experts_name_ja); ?></p>
-                                        <?php endif; ?>
-                                        <?php if (!empty($experts_department)): ?>
-                                            <p class="top-business__voice-position"><?php echo esc_html($experts_department); ?></p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="top-business__voice-content">
-                                    <p class="top-business__voice-title">Members Voice</p>
-                                    <span class="top-business__voice-link">
-                                        <span class="top-business__voice-link-text">働く人を知る</span>
-                                        <div class="top-business__button-arrow right-up-button__arrow">
-                                            <span class="top-business__button-icon right-up-button__icon">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
-                                            </span>
+                                <a href="<?php echo esc_url(get_permalink($experts_person->ID)); ?>" class="top-business__voice right-up-button">
+                                    <div class="top-business__voice-profile">
+                                        <div class="top-business__voice-image">
+                                            <?php if (!empty($experts_portrait)): ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url($experts_portrait['url']); ?>" alt="<?php echo esc_attr($experts_img_alt); ?>" />
+                                            <?php else: ?>
+                                                <img class="top-business__voice-photo" src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($experts_name_ja); ?> のポートレート" />
+                                            <?php endif; ?>
                                         </div>
-                                    </span>
-                                </div>
-                            </a>
+                                        <div class="top-business__voice-info">
+                                            <?php if (!empty($experts_name_ja)): ?>
+                                                <p class="top-business__voice-name"><?php echo esc_html($experts_name_ja); ?></p>
+                                            <?php endif; ?>
+                                            <?php if (!empty($experts_department)): ?>
+                                                <p class="top-business__voice-position"><?php echo esc_html($experts_department); ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="top-business__voice-content">
+                                        <p class="top-business__voice-title">Members Voice</p>
+                                        <span class="top-business__voice-link">
+                                            <span class="top-business__voice-link-text">働く人を知る</span>
+                                            <div class="top-business__button-arrow right-up-button__arrow">
+                                                <span class="top-business__button-icon right-up-button__icon">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-black.svg')); ?>" alt="→">
+                                                </span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </a>
                             <?php endif; ?>
                         </div>
                     </li>
@@ -493,9 +494,9 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <div class="top-business__detail-inner">
                             <div class="top-business__detail-content">
                                 <p class="top-business__detail-label">NEWOLD Asia</p>
-                                <p class="top-business__detail-title">ダミーテキスト</p>
+                                <p class="top-business__detail-title">東南アジアM&A・進出支援</p>
                                 <p class="top-business__detail-text">
-                                    ここにNEWOLD Asiaの説明文が入ります。サービス内容や支援領域に合わせて、後から正式なテキストへ差し替えてください。
+                                    NEWOLD Asiaは東南アジアにおける市場調査・戦略立案から、M&Aのソーシング・実行、PMIまでを一気通貫で支援。現地事情に精通したプロフェッショナルが、日本企業の海外成長を実現します。
                                 </p>
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec05')); ?>" class="top-business__detail-link right-up-button">
@@ -562,8 +563,9 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <div class="top-people__header-inner">
                         <p class="top-people__header-title top-sec-title">People</p>
                         <p class="top-people__header-description top-sec-description">
-                            社員一人ひとりが最大限の力を発揮できるよう、<br />
-                            働きやすい環境や制度を用意しています。
+                            多様なバックグラウンドを持つプロフェッショナルたちが、<br>
+                            それぞれの強みを活かしながら、<br>
+                            経営パートナーとして企業の成長に向き合っています。
                         </p>
                         <a href="#" class="top-people__header-button top-sec-button sp">詳しく見る</a>
                     </div>
@@ -658,17 +660,14 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
 
                 <div class="top-environment__content">
                     <div class="top-environment__media">
-                        <picture class="">
-                            <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/environment-image.jpg" media="(min-width: 768px)" />
-                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/environment-image_sp.jpg" alt="ノートパソコンを操作する女性社員の笑顔" />
-                        </picture>
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/environment-image.jpg" alt="スーツ姿で話す男性のインタビュー風景" />
                     </div>
 
                     <ul class="top-environment__list">
                         <li class="top-environment__item">
                             <a href="<?php echo esc_url(home_url('/environment/#sec01')); ?>" class="top-environment__link right-up-button">
                                 <dl class="top-environment__item-head">
-                                    <dt class="top-environment__item-label">Career Step</dt>
+                                    <dt class="top-environment__item-label">NEWOLD Growth Path</dt>
                                     <dd class="top-environment__item-title">キャリアステップ・アップ</dd>
                                 </dl>
                                 <div class="top-environment__button-arrow right-up-button__arrow">
@@ -683,7 +682,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <li class="top-environment__item">
                             <a href="<?php echo esc_url(home_url('/environment/#sec02')); ?>" class="top-environment__link right-up-button">
                                 <dl class="top-environment__item-head">
-                                    <dt class="top-environment__item-label">Training</dt>
+                                    <dt class="top-environment__item-label">NEWOLD Learning Program</dt>
                                     <dd class="top-environment__item-title">教育研修制度</dd>
                                 </dl>
                                 <div class="top-environment__button-arrow right-up-button__arrow">
@@ -698,7 +697,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <li class="top-environment__item">
                             <a href="<?php echo esc_url(home_url('/environment/#sec03')); ?>" class="top-environment__link right-up-button">
                                 <dl class="top-environment__item-head">
-                                    <dt class="top-environment__item-label">Employee Benefits</dt>
+                                    <dt class="top-environment__item-label">NEWOLD Benefits</dt>
                                     <dd class="top-environment__item-title">福利厚生・制度</dd>
                                 </dl>
                                 <div class="top-environment__button-arrow right-up-button__arrow">
@@ -713,7 +712,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <li class="top-environment__item">
                             <a href="<?php echo esc_url(home_url('/environment/#sec04')); ?>" class="top-environment__link right-up-button">
                                 <dl class="top-environment__item-head">
-                                    <dt class="top-environment__item-label">Number of NEWOLD</dt>
+                                    <dt class="top-environment__item-label">NEWOLD Insights</dt>
                                     <dd class="top-environment__item-title">数字で見るNEWOLD</dd>
                                 </dl>
                                 <div class="top-environment__button-arrow right-up-button__arrow">
@@ -735,8 +734,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
     <section class="top-recruit">
         <div class="top-recruit__visual js-top-recruit-image">
             <picture class="">
-                <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/recruitment-image.jpg" media="(min-width: 768px)" />
-                <img class="top-recruit__image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/recruitment-image_sp.jpg" alt="スーツ姿の男女3名が並ぶ採用イメージ" />
+                <img class="top-recruit__image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/top/recruitment-image.jpg" alt="スーツ姿の男女が並ぶ採用イメージ" />
             </picture>
         </div>
 
@@ -747,14 +745,10 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <p class="top-recruit__subtitle">採用情報</p>
                 </div>
                 <div class="top-recruit__lead">
-                    <p class="top-recruit__lead-en">NEWOLD CAPITALは、</p>
                     <p class="top-recruit__lead-text">
-                        「温故知新」の精神を大切にしながら、歴史や想いを受け継ぎ、<br>
-                        次世代へとつながる持続的な成長を共に実現していく存在を目指しています。
-                    </p>
-                    <p class="top-recruit__lead-text">
-                        私たちの志は、「企業・人・地域」の成長を実現し、<br>
-                        次世代の幸せを増やすことにあります。
+                        NEWOLD CAPITALでは、<br>
+                        私たちと候補者の双方が納得したうえで入社いただけるよう、<br>
+                        丁寧な選考プロセスを設けています。
                     </p>
                 </div>
 
@@ -809,9 +803,8 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <p class="top-movie__header-title top-sec-title">Company <br>introduction <br class="sp">video
                     </p>
                     <p class="top-movie__header-description top-sec-description">
-                        NEWOLD CAPITALでは、社員一人ひとりが最大限の力を発揮できるよう、<br />
-                        働きやすい環境や制度を用意しています。<br />
-                        キャリア形成の仕組みや数字で見るNEWOLDをご紹介します。
+                        NEWOLD CAPITALの事業や価値観、働く人の想いが分かる会社案内動画です。<br>
+                        私たちが目指す未来や仕事の魅力を、ぜひご覧ください。
                     </p>
                 </div>
 
@@ -851,7 +844,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     </div>
                 </div>
             </div>
-            <div class="cta-join__links">
+            <!-- <div class="cta-join__links">
                 <div class="cta-join__link-item cta-join__link-item--graduate">
                     <a href="#" class="cta-join__link right-up-button">
                         <p class="cta-join__link-text">新卒採用<span>はこちら</span></p>
@@ -873,6 +866,61 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                             </span>
                         </div>
                     </a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="cta-recruit">
+        <div class="cta-recruit__inner inner">
+            <div class="cta-recruit__heading">
+                <p class="cta-recruit__label">採用情報</p>
+                <h2 class="cta-recruit__title">Recruitment<br>Information</h2>
+            </div>
+
+            <div class="cta-recruit__cards">
+                <div class="cta-recruit__card cta-recruit__card--primary">
+                    <div class="cta-recruit__card-content">
+                        <p class="cta-recruit__card-label">Job Position</p>
+                        <p class="cta-recruit__card-title">現在募集中の職種</p>
+                        <p class="cta-recruit__card-text">
+                            NEWOLD CAPITALでは積極的に採用を行なっています。<br>
+                            エントリーお待ちしています。
+                        </p>
+                    </div>
+                    <div class="cta-recruit__card-action">
+                        <a class="cta-recruit__button button-anchor" href="#">
+                            <span class="cta-recruit__button-text">募集職種を確認する</span>
+                            <div class="cta-recruit__button-arrow">
+                                <span class="cta-recruit__button-icon button-anchor__icon">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cta-recruit__card cta-recruit__card--casual">
+                    <div class="cta-recruit__card-content">
+                        <p class="cta-recruit__card-label">Casual interview</p>
+                        <p class="cta-recruit__card-title">カジュアル面談</p>
+                        <p class="cta-recruit__card-text">
+                            お互いにまずは知っていくことを目的としています。<br>
+                            ぜひお気軽にお申し込みください。
+                        </p>
+                    </div>
+                    <div class="cta-recruit__card-action">
+                        <a class="cta-recruit__button button-anchor" href="#">
+                            <span class="cta-recruit__button-text">面談を希望する</span>
+                            <div class="cta-recruit__button-arrow">
+                                <span class="cta-recruit__button-icon button-anchor__icon">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                </span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

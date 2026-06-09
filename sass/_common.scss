@@ -350,22 +350,24 @@
 
 .cta-join__inner {
     padding: 0;
+    max-width: none;
 
     @include mq("md") {
         padding-left: 25px;
         padding-right: 25px;
+        max-width: 1310px;
     }
 }
 
 .cta-join__visual {
     position: relative;
-    width: rem(375);
-    height: rem(400);
+    width: 100%;
+    aspect-ratio: 75/46;
     overflow: hidden;
 
     @include mq('md') {
-        width: 100%;
         height: rem(520);
+        aspect-ratio: auto;
     }
 }
 
@@ -391,7 +393,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: rem(39);
+    padding-bottom: linear_func(375, 4, 767, 64);
     background-color: rgba($color: #000000, $alpha: 0.2);
 
     @include mq("md") {

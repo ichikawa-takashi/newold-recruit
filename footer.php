@@ -16,10 +16,7 @@
                 <nav class="footer__nav">
                     <ul class="footer__nav-items">
                         <li class="footer__nav-item">
-                            <a href="<?php echo esc_url(home_url('/about/')); ?>">私たちについて</a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="<?php echo esc_url(home_url('/environment/')); ?>">働く環境を知る</a>
+                            <a href="<?php echo esc_url(home_url('/about/')); ?>">NEWOLD CAPITALについて</a>
                         </li>
                         <li class="footer__nav-item">
                             <a href="<?php echo esc_url(home_url('/business/')); ?>">事業について</a>
@@ -28,14 +25,17 @@
                             <a href="<?php echo esc_url(home_url('/people/')); ?>">NEWOLD CAPITALの人</a>
                         </li>
                         <li class="footer__nav-item">
+                            <a href="<?php echo esc_url(home_url('/environment/')); ?>">働く環境</a>
+                        </li>
+                        <li class="footer__nav-item">
                             <a href="<?php echo esc_url(home_url('/recruitment/')); ?>">採用情報</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="<?php echo esc_url(home_url('/new-graduate/')); ?>">新卒情報</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="footer__sns">
-                    <a class="footer__sns-link" href="#" target="_blank" rel="noopener">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in.svg" alt="Linked in">
-                    </a>
                     <a class="footer__sns-link footer__sns-link--x" href="#" target="_blank" rel="noopener">
                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-black.svg" alt="X">
                     </a>
@@ -43,7 +43,13 @@
                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="Youtube">
                     </a>
                     <a class="footer__sns-link footer__sns-link--facebook" href="#" target="_blank" rel="noopener">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-black.svg" alt="facebook">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill.svg" alt="facebook">
+                    </a>
+                    <a class="footer__sns-link" href="#" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in-black.svg" alt="Linked in">
+                    </a>
+                    <a class="footer__sns-link footer__sns-link--instagram" href="#" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-black.svg" alt="facebook">
                     </a>
                 </div>
                 <small class="footer__copyright">&copy;All Rights Reserved.</small>

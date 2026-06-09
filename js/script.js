@@ -518,4 +518,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    // YouTube ファサード（サムネイル + PLAYボタン → クリックでiframe再生）
+    document.querySelectorAll('.js-youtube-facade').forEach(function (el) {
+        var thumb = el.querySelector('img');
+        if (thumb) {
+            var checkThumb = function () {
+                if (thumb.naturalWidth <= 120) {
+                    var videoId = el.dataset.videoId;
+                    thumb.src = 'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg';
+                }
+            };
+            if (thumb.complete) {
+                checkThumb();
+            } else {
+                thumb.addEventListener('load', checkThumb);
+                thumb.addEventListener('error', checkThumb);
+            }
+        }
+
+        el.addEventListener('click', function () {
+            var videoId = el.dataset.videoId;
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+            iframe.title = 'YouTube動画';
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.display = 'block';
+            el.innerHTML = '';
+            el.appendChild(iframe);
+        });
+    });
+
 });

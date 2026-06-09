@@ -97,6 +97,12 @@
     }
 }
 
+.sub-about__values .sub-about__topic-body {
+    @include mq('md') {
+        padding-inline: 0
+    }
+}
+
 .sub-about__topic-lead {
     @include font(20, null, 10, $medium);
 
@@ -114,6 +120,10 @@
         font-size: rem(16);
         margin-top: rem(50);
     }
+}
+
+.sub-about__topic-desc--mt0 {
+    margin-top: 0;
 }
 
 .sub-about__topic-desc p+p {
@@ -153,6 +163,8 @@
 
     @include mq('md') {
         gap: rem(40);
+        padding-inline: rem(40);
+        margin-top: rem(60);
     }
 }
 
@@ -366,28 +378,36 @@
     margin-top: rem(25);
 
     @include mq('md') {
-        margin-top: rem(55);
+        margin-top: rem(60);
         flex-direction: row;
         gap: rem(20);
-        padding-inline: rem(20);
+        max-width: 820px;
+        margin-inline: auto;
     }
 }
 
 .sub-about__initiative-movie {
     position: relative;
+    width: 100%;
 }
 
 .sub-about__initiative-movie__thumbnail {
     overflow: hidden;
-    aspect-ratio: 305 / 145;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    cursor: pointer;
 
     img {
+        width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
 
-    @include mq('md') {
-        aspect-ratio: 399 / 260;
+    iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
     }
 }
 
@@ -625,12 +645,8 @@
     color: $bg_black;
 
     @include mq('md') {
-        gap: linear_func_clamp(768, 60, 1200, 30);
         margin-top: rem(40);
-    }
-
-    @include mq('xl') {
-        gap: rem(20);
+        gap: rem(72);
     }
 
 }
@@ -640,8 +656,7 @@
     grid-template-columns: min(48vw, rem(200)) 1fr;
     grid-template-areas:
         "image info"
-        "message message"
-        "link link";
+        "message message";
     column-gap: rem(20);
     row-gap: rem(15);
 
@@ -649,8 +664,7 @@
         grid-template-columns: rem(235) 1fr;
         grid-template-areas:
             "image info"
-            "image message"
-            "image link";
+            "image message";
         column-gap: linear_func_clamp(1440, 60, 768, 20);
         row-gap: rem(25);
     }
@@ -719,24 +733,24 @@
     @include font(14, 180, 0, $regular);
 }
 
-.sub-about__member-link {
-    grid-area: link;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(10);
-    background: $bg_black;
-    padding: rem(10);
-    width: rem(150);
-    margin-left: 0;
+// .sub-about__member-link {
+//     grid-area: link;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: rem(10);
+//     background: $bg_black;
+//     padding: rem(10);
+//     width: rem(150);
+//     margin-left: 0;
 
-    @include mq('md') {
-        justify-self: end;
-        gap: rem(20);
-        width: rem(240);
-        padding: rem(15) rem(30);
-    }
-}
+//     @include mq('md') {
+//         justify-self: end;
+//         gap: rem(20);
+//         width: rem(240);
+//         padding: rem(15) rem(30);
+//     }
+// }
 
 .sub-about__member-link-text {
     @include f(9, 20, 3, $regular);
@@ -780,6 +794,7 @@
 
 .sub-about__book-item {
     display: grid;
+    justify-content: center;
     grid-template-columns: 27% 1fr;
     gap: rem(20);
 
@@ -790,15 +805,14 @@
 
 .sub-about__book-cover {
     overflow: hidden;
-    aspect-ratio: 15 / 17;
+    max-height: rem(300);
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
 
     img {
         height: 100%;
-        object-fit: cover;
-    }
-
-    @include mq('md') {
-        aspect-ratio: 1 /1
+        object-fit: contain;
     }
 }
 
@@ -810,11 +824,11 @@
 
 .sub-about__book-title {
     @include font(16, null, 0, $medium);
-    padding-right: rem(20);
 
     @include mq('md') {
         font-size: rem(20);
-        padding-right: 0;
+        max-width: 300px;
+        margin-inline: auto;
     }
 }
 
