@@ -134,17 +134,27 @@ body.new-graduate .header__logo-text {
 }
 
 // ========== Right wrapper ==========
+// ロゴは追従させず、ナビ側（SNS・リンク・ハンバーガー）だけを画面上部に固定し、
+// 下を通過するセクションの色に応じて自動で白⇔黒反転させる
+// position: fixed と座標(top/left)は script.js が実際のレイアウト位置を計測してセットする
+// （align-items: center 等でページ・ブレークポイントごとに実位置が変わるため、CSSで値を決め打ちしない）
 .header__right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: rem(10);
+    z-index: 900;
+    mix-blend-mode: difference;
 
     @include mq('md') {
         gap: rem(20);
         flex-direction: row;
         align-items: center;
     }
+}
+
+.header__right.js-fixed {
+    position: fixed;
 }
 
 // ========== SNS ==========
@@ -178,8 +188,8 @@ body.new-graduate .header__sns {
 
     img {
         display: block;
-        width: rem(17);
-        height: rem(17);
+        width: rem(21);
+        height: rem(21);
     }
 }
 
@@ -194,9 +204,15 @@ body.new-graduate .header__sns {
     }
 }
 
+.header__nav-sns-link--instagram {
+    img {
+        height: rem(21);
+    }
+}
+
 .header__nav-sns-link--youtube {
     img {
-        height: rem(14);
+        height: rem(19.2);
     }
 }
 
@@ -206,10 +222,6 @@ body.new-graduate .header__nav-sns-link--x img {
 
 body.new-graduate .header__nav-sns-link--facebook img {
     content: url('../img/common/facebook-fill.svg');
-}
-
-body.new-graduate .header__nav-sns-link--youtube img {
-    content: url('../img/common/youtube-black.svg');
 }
 
 .header__nav-wrapper {
@@ -254,6 +266,13 @@ body.new-graduate .header__nav-wrapper {
         @include mq('md') {
             @include f(12, 20, 10);
         }
+
+        transition: 0.3s;
+
+        &:hover {
+            opacity: 0.6;
+            transition: 0.3s;
+        }
     }
 }
 
@@ -262,18 +281,21 @@ body.new-graduate .header__nav-wrapper {
     background-color: $white;
 }
 
+// .header__right は mix-blend-mode: difference で白背景の上を通過すると反転されるため、
+// 「黒ピル・白文字」に見せるには、あえて逆の色（白ピル・黒文字）を指定しておく
 body.new-graduate .header__nav-item {
     a {
-        color: $white;
-        background: $bg_black;
+        color: $bg_black;
+        background: $white;
     }
 }
 
 body.new-graduate .header__nav-item--casual {
     a {
-        background: $white;
-        color: #000;
-        border: 1px solid $green;
+        background: #000;
+        color: $white;
+        // $green (#2EE5C4) を白背景上で反転した見た目にするための補色
+        border: 1px solid #D1123B;
     }
 }
 
@@ -333,13 +355,17 @@ body.new-graduate .header__nav-item--casual {
 }
 
 body.new-graduate .header__hamburger {
-    background: $bg_black;
+    background: $white;
     border-radius: rem(32);
     padding: rem(9) rem(20);
     width: rem(68);
 
     @include mq('md') {
         width: rem(61);
+    }
+
+    span {
+        background-color: $bg_black;
     }
 }
 
@@ -469,7 +495,7 @@ html.is-drawer-open {
         grid-template-columns: auto 1fr;
         grid-template-rows: repeat(3, 1fr);
         grid-auto-flow: column;
-        column-gap: rem(56);
+        column-gap: rem(70);
         row-gap: rem(20);
     }
 }
@@ -498,7 +524,7 @@ html.is-drawer-open {
     color: $white;
 
     @include mq('md') {
-        @include f(52, 43, 0, $regular);
+        @include f(48, 43, 0, $regular);
     }
 }
 

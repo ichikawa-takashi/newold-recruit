@@ -179,12 +179,20 @@
 }
 
 .sub-about__values-num {
+    font-family: $en;
     @include font(10, 600, 0, $regular);
     color: $white;
     background: $bg_black;
     padding: 0 rem(6);
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include mq('md') {
+        width: rem(60);
+        height: rem(60);
         @include font(16, 375);
         padding: 0 rem(30);
     }
@@ -294,6 +302,16 @@
 
     @include mq('md') {
         padding: rem(80);
+    }
+
+    &:first-child {
+        background: #fff;
+        border: 1px solid #303535;
+
+        .sub-about__initiative-title,
+        .sub-about__initiative-desc {
+            color: #191E1E;
+        }
     }
 }
 

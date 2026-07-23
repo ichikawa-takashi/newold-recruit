@@ -19,11 +19,10 @@
                 <ul class="people-card__list">
                     <?php if (have_posts()): while (have_posts()): the_post();
                             $p_title      = get_field('people_title');
-                            $p_name_ja    = get_field('people_name_ja');
+                            $p_name_ja    = get_the_title();
                             $p_department = get_field('people_department');
                             $p_year       = get_field('people_year');
                             $p_portrait   = get_field('people_portrait');
-                            $p_year_num   = preg_replace('/[^0-9]/', '', (string) $p_year);
                             $p_img_alt    = esc_attr($p_name_ja) . ' ポートレート';
                     ?>
                         <li class="people-card__item">
@@ -52,7 +51,7 @@
                                         </div>
                                         <div class="people-card__bottom">
                                             <?php if (!empty($p_year)): ?>
-                                                <time class="people-card__year" datetime="<?php echo esc_attr($p_year_num); ?>"><?php echo esc_html($p_year); ?></time>
+                                                <time class="people-card__year" datetime="<?php echo esc_attr($p_year); ?>"><?php echo esc_html($p_year); ?>年入社</time>
                                             <?php endif; ?>
                                             <div class="people-card__button-arrow right-up-button__arrow">
                                                 <span class="people-card__button-icon right-up-button__icon">
@@ -89,7 +88,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">募集職種を確認する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
@@ -103,7 +102,7 @@
 
                 <div class="cta-recruit__card cta-recruit__card--casual">
                     <div class="cta-recruit__card-content">
-                        <p class="cta-recruit__card-label">Casual interview</p>
+                        <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
                             お互いにまずは知っていくことを目的としています。<br>
@@ -111,7 +110,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">面談を希望する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">

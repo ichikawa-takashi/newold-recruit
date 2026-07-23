@@ -1,0 +1,149 @@
+/* 背景の変更 */
+body.login {
+    background-color: #fff;
+}
+
+body.login::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-image: url(./img/admin-image.jpg);
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: cover;
+    z-index: -1;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
+/* セッション切れ時などにwp-admin内のiframeで開く再ログイン(interim-login)は
+   WP標準の小さいモーダル表示に戻す（背景画像・100vh化を無効化） */
+body.interim-login {
+    background-color: transparent;
+}
+
+body.interim-login::before {
+    content: none;
+}
+
+body.login .language-switcher {
+    display: none;
+}
+
+#login-message {
+    border: none;
+    text-align: center;
+    box-shadow: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #000;
+}
+
+/* ログインボックスのカスタマイズ */
+.login form {
+    background-color: #fff;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    overflow: initial;
+    margin: initial;
+}
+
+#login {
+    background-color: #fff;
+    padding: 16px 50px;
+    max-width: 500px;
+    width: 100%;
+    /* margin-top: 80px; */
+    margin-left: auto;
+    margin-right: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow-y: auto;
+    @media screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    }
+}
+
+body.interim-login #login {
+    height: auto;
+    margin: 5px auto 20px;
+}
+
+#login .input {
+    border: none;
+    background-color: #efefef;
+}
+
+/* ロゴのカスタマイズ */
+.login h1 a {
+    background-image: url('./img/favicon.png');
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    /* height: auto; */
+}
+
+/* ログインボタンのカスタマイズ */
+.wp-core-ui .button-primary {
+    background-color: #191E1E;
+    /* サブカラー */
+    border-color: #191E1E;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.3s;
+}
+
+.wp-core-ui .button-primary:hover {
+    background-color: #191E1E;
+    border-color: #191E1E;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+/* エラーメッセージのカスタマイズ */
+.login .message,
+.login .error {
+    border-left-color: #68713E;
+}
+
+#nav {
+    text-align: center;
+}
+
+#backtoblog {
+    text-align: center;
+}
+
+.login form .forgetmenot {
+    float: initial;
+    text-align: right;
+}
+
+#login form p.submit {
+    margin-top: 40px;
+}
+
+.login .button-primary {
+    float: initial;
+    display: block;
+    margin: auto;
+    width: 250px;
+}
+
+.wp-core-ui .button.button-large {
+    padding: 10px 20px;
+    font-size: 16px;
+
+}

@@ -25,16 +25,16 @@
                         <a class="sub-page__nav-link" href="#sec01">事業紹介</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec02">M&amp;A</a>
+                        <a class="sub-page__nav-link" href="#sec02">NEWOLD M&amp;A</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec03">Agent</a>
+                        <a class="sub-page__nav-link" href="#sec03">NEWOLD Agent</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec04">Exparts</a>
+                        <a class="sub-page__nav-link" href="#sec04">NEWOLD Exparts</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec05">Asia</a>
+                        <a class="sub-page__nav-link" href="#sec05">NEWOLD Asia</a>
                     </li>
                 </ul>
             </nav>
@@ -45,7 +45,6 @@
             <section class="sub-business__section sub-business__intro" id="sec01">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔01〕</p>
                         <h2 class="sub-page__section-title">事業紹介</h2>
                     </div>
 
@@ -123,10 +122,11 @@
                                         <?php if (!empty($bs01_people)): ?>
                                             <ul class="sub-business__people-list">
                                                 <?php foreach ($bs01_people as $bp):
-                                                    $bp_portrait   = get_field('people_portrait', $bp->ID);
-                                                    $bp_name_ja    = get_field('people_name_ja', $bp->ID);
-                                                    $bp_department = get_field('people_department', $bp->ID);
-                                                    $bp_img_alt    = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_portrait      = get_field('people_portrait', $bp->ID);
+                                                    $bp_name_ja       = get_the_title($bp->ID);
+                                                    $bp_department    = get_field('people_department', $bp->ID);
+                                                    $bp_img_alt       = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_is_executive  = get_post_meta($bp->ID, 'people_is_executive', true) === '1';
                                                 ?>
                                                     <li class="sub-business__people-item">
                                                         <figure class="sub-business__people-avatar">
@@ -142,15 +142,17 @@
                                                         <?php if (!empty($bp_department)): ?>
                                                             <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
                                                         <?php endif; ?>
-                                                        <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
-                                                            <span class="sub-business__people-link-label">記事を読む</span>
-                                                            <div class="right-up-button__arrow">
-                                                                <span class="sub-business__people-link-icon right-up-button__icon">
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                </span>
-                                                            </div>
-                                                        </a>
+                                                        <?php if (!$bp_is_executive): ?>
+                                                            <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
+                                                                <span class="sub-business__people-link-label">記事を読む</span>
+                                                                <div class="right-up-button__arrow">
+                                                                    <span class="sub-business__people-link-icon right-up-button__icon">
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        <?php endif; ?>
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -208,10 +210,11 @@
                                         <?php if (!empty($bs02_people)): ?>
                                             <ul class="sub-business__people-list">
                                                 <?php foreach ($bs02_people as $bp):
-                                                    $bp_portrait   = get_field('people_portrait', $bp->ID);
-                                                    $bp_name_ja    = get_field('people_name_ja', $bp->ID);
-                                                    $bp_department = get_field('people_department', $bp->ID);
-                                                    $bp_img_alt    = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_portrait      = get_field('people_portrait', $bp->ID);
+                                                    $bp_name_ja       = get_the_title($bp->ID);
+                                                    $bp_department    = get_field('people_department', $bp->ID);
+                                                    $bp_img_alt       = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_is_executive  = get_post_meta($bp->ID, 'people_is_executive', true) === '1';
                                                 ?>
                                                     <li class="sub-business__people-item">
                                                         <figure class="sub-business__people-avatar">
@@ -227,15 +230,17 @@
                                                         <?php if (!empty($bp_department)): ?>
                                                             <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
                                                         <?php endif; ?>
-                                                        <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
-                                                            <span class="sub-business__people-link-label">記事を読む</span>
-                                                            <div class="right-up-button__arrow">
-                                                                <span class="sub-business__people-link-icon right-up-button__icon">
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                </span>
-                                                            </div>
-                                                        </a>
+                                                        <?php if (!$bp_is_executive): ?>
+                                                            <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
+                                                                <span class="sub-business__people-link-label">記事を読む</span>
+                                                                <div class="right-up-button__arrow">
+                                                                    <span class="sub-business__people-link-icon right-up-button__icon">
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        <?php endif; ?>
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -293,10 +298,11 @@
                                         <?php if (!empty($bs03_people)): ?>
                                             <ul class="sub-business__people-list">
                                                 <?php foreach ($bs03_people as $bp):
-                                                    $bp_portrait   = get_field('people_portrait', $bp->ID);
-                                                    $bp_name_ja    = get_field('people_name_ja', $bp->ID);
-                                                    $bp_department = get_field('people_department', $bp->ID);
-                                                    $bp_img_alt    = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_portrait      = get_field('people_portrait', $bp->ID);
+                                                    $bp_name_ja       = get_the_title($bp->ID);
+                                                    $bp_department    = get_field('people_department', $bp->ID);
+                                                    $bp_img_alt       = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_is_executive  = get_post_meta($bp->ID, 'people_is_executive', true) === '1';
                                                 ?>
                                                     <li class="sub-business__people-item">
                                                         <figure class="sub-business__people-avatar">
@@ -312,15 +318,17 @@
                                                         <?php if (!empty($bp_department)): ?>
                                                             <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
                                                         <?php endif; ?>
-                                                        <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
-                                                            <span class="sub-business__people-link-label">記事を読む</span>
-                                                            <div class="right-up-button__arrow">
-                                                                <span class="sub-business__people-link-icon right-up-button__icon">
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                </span>
-                                                            </div>
-                                                        </a>
+                                                        <?php if (!$bp_is_executive): ?>
+                                                            <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
+                                                                <span class="sub-business__people-link-label">記事を読む</span>
+                                                                <div class="right-up-button__arrow">
+                                                                    <span class="sub-business__people-link-icon right-up-button__icon">
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        <?php endif; ?>
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -378,10 +386,11 @@
                                         <?php if (!empty($bs04_people)): ?>
                                             <ul class="sub-business__people-list">
                                                 <?php foreach ($bs04_people as $bp):
-                                                    $bp_portrait   = get_field('people_portrait', $bp->ID);
-                                                    $bp_name_ja    = get_field('people_name_ja', $bp->ID);
-                                                    $bp_department = get_field('people_department', $bp->ID);
-                                                    $bp_img_alt    = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_portrait      = get_field('people_portrait', $bp->ID);
+                                                    $bp_name_ja       = get_the_title($bp->ID);
+                                                    $bp_department    = get_field('people_department', $bp->ID);
+                                                    $bp_img_alt       = !empty($bp_portrait['alt']) ? $bp_portrait['alt'] : esc_attr($bp_name_ja) . ' のポートレート';
+                                                    $bp_is_executive  = get_post_meta($bp->ID, 'people_is_executive', true) === '1';
                                                 ?>
                                                     <li class="sub-business__people-item">
                                                         <figure class="sub-business__people-avatar">
@@ -397,15 +406,17 @@
                                                         <?php if (!empty($bp_department)): ?>
                                                             <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
                                                         <?php endif; ?>
-                                                        <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
-                                                            <span class="sub-business__people-link-label">記事を読む</span>
-                                                            <div class="right-up-button__arrow">
-                                                                <span class="sub-business__people-link-icon right-up-button__icon">
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
-                                                                </span>
-                                                            </div>
-                                                        </a>
+                                                        <?php if (!$bp_is_executive): ?>
+                                                            <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
+                                                                <span class="sub-business__people-link-label">記事を読む</span>
+                                                                <div class="right-up-button__arrow">
+                                                                    <span class="sub-business__people-link-icon right-up-button__icon">
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                        <img src="<?php echo esc_url(get_theme_file_uri('/img/common/button-arrow-white.svg')); ?>" alt="右向き矢印アイコン" />
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        <?php endif; ?>
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -439,7 +450,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">募集職種を確認する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
@@ -453,7 +464,7 @@
 
                 <div class="cta-recruit__card cta-recruit__card--casual">
                     <div class="cta-recruit__card-content">
-                        <p class="cta-recruit__card-label">Casual interview</p>
+                        <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
                             お互いにまずは知っていくことを目的としています。<br>
@@ -461,7 +472,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">面談を希望する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">

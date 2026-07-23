@@ -1,19 +1,23 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const lenis = new Lenis({
-  duration: 2,        // ← 一定ペース
-  smoothWheel: true,
-  smoothTouch: false,
-});
+// 投稿詳細ページはlenisを生成しない（iframeとの干渉回避）
+if (!document.body.classList.contains('single')) {
+  const lenis = new Lenis({
+    duration: 2,
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+  window.lenis = lenis;
 
-lenis.on("scroll", ScrollTrigger.update);
+  lenis.on("scroll", ScrollTrigger.update);
 
-function raf(time) {
-  lenis.raf(time);
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
   requestAnimationFrame(raf);
 }
-
-requestAnimationFrame(raf);
 
 const section = document.querySelector(".js-scroll-text");
 
@@ -99,44 +103,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =========================
-    // 位置更新（中央に「マス」が来る）
+    // 位置更新
     // =========================
     function layoutGrid() {
         const w = window.innerWidth;
         const h = window.innerHeight;
-        const cellSize = getCellSize();
+        let cellSize;
 
-        const cx = w / 2;
-        const cy = h / 2;
+        // 縦線：デスクトップは左右端を基準に7本固定、モバイルは中央基準
+        if (w >= 768) {
+            // 左端: top-header-side幅 - 2px
+            const leftX = Math.max(91, (w / 1440) * 91) - 2;
+            // 右端: 右端からtop-people__bodyのmargin-right + 2px
+            const rightX = w - Math.max(89, (w / 1440) * 89) - 2;
+            // 左端 + 内側5本 + 右端 = 計7本、間隔を均等に算出
+            const intervals = 6;
+            cellSize = (rightX - leftX) / intervals;
 
-        // ★ マスの中心を中央にする半マスずらし
-        const startX = cx - cellSize / 2;
-        const startY = cy - cellSize / 2;
+            const vCount = intervals + 1;
+            ensureCount(vLines, vCount, "vertical");
+            for (let idx = 0; idx < vLines.length; idx++) {
+                const x = leftX + idx * cellSize;
+                vLines[idx].style.left = `${Math.round(x + 0.5)}px`;
+            }
+        } else {
+            // モバイル：中央基準 + 1本余分
+            cellSize = getCellSize();
+            const cx = w / 2;
+            const startX = cx - cellSize / 2;
+            const vNeeded = (Math.ceil(w / cellSize) + 3) * 2 + 1 + 1;
+            ensureCount(vLines, vNeeded, "vertical");
 
-        // 画面を覆うのに必要な本数（左右上下に余裕）
-        const vNeeded = (Math.ceil(w / cellSize) + 3) * 2 + 1;
-        const hNeeded = (Math.ceil(h / cellSize) + 3) * 2 + 1;
-
-        ensureCount(vLines, vNeeded, "vertical");
-        ensureCount(hLines, hNeeded, "horizontal");
-
-        // iを -N..N で振るための中心
-        const vMid = Math.floor(vNeeded / 2);
-        const hMid = Math.floor(hNeeded / 2);
-
-        // 縦線：中央基準
-        for (let idx = 0; idx < vLines.length; idx++) {
-            const i = idx - vMid;
-            const x = startX + i * cellSize;
-            // 1pxをキレイに見せたい場合の0.5補正（不要なら外してOK）
-            vLines[idx].style.left = `${Math.round(x) + 0.5}px`;
+            const vMid = Math.floor(vNeeded / 2);
+            for (let idx = 0; idx < vLines.length; idx++) {
+                const i = idx - vMid;
+                const x = startX + i * cellSize;
+                vLines[idx].style.left = `${Math.round(x + 0.5)}px`;
+            }
         }
 
-        // 横線：中央基準
+        // 横線：同じ cellSize で正方形セル、中央基準
+        const cy = h / 2;
+        const startY = cy - cellSize / 2;
+        const hNeeded = (Math.ceil(h / cellSize) + 3) * 2 + 1;
+        ensureCount(hLines, hNeeded, "horizontal");
+
+        const hMid = Math.floor(hNeeded / 2);
         for (let idx = 0; idx < hLines.length; idx++) {
             const i = idx - hMid;
             const y = startY + i * cellSize;
-            hLines[idx].style.top = `${Math.round(y) + 0.5}px`;
+            hLines[idx].style.top = `${Math.round(y + 0.5)}px`;
         }
     }
 
@@ -286,23 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 gsap.fromTo(
-  ".js-top-recruit-image",
-  {
-    scale: 0.8,
-  },
-  {
-    scale: 1,
-    ease: "none", // ← scrub時は必須レベルで重要
-    scrollTrigger: {
-      trigger: ".js-top-recruit-image",
-      start: "top 80%",
-      end: "top 30%",
-      scrub: 2,
-    }
-  }
-);
-
-gsap.fromTo(
   ".cta-join__image",
   {
     y:'15%'
@@ -312,6 +311,23 @@ gsap.fromTo(
     ease: "none", // ← scrub時は必須レベルで重要
     scrollTrigger: {
       trigger: ".cta-join__image",
+      start: "top bottom",
+      end: "bottom 100%",
+      scrub: 2,
+    }
+  }
+);
+
+gsap.fromTo(
+  ".top-recruit__image",
+  {
+    y:'15%'
+  },
+  {
+    y: '0%',
+    ease: "none", // ← scrub時は必須レベルで重要
+    scrollTrigger: {
+      trigger: ".top-recruit__image",
       start: "top bottom",
       end: "bottom 100%",
       scrub: 2,

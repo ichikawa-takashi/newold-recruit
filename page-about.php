@@ -47,7 +47,6 @@
             <section class="sub-about__section sub-about__about" id="sec01">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔01〕</p>
                         <h2 class="sub-page__section-title">NEWOLD CAPITALについて</h2>
                     </div>
                     <div class="sub-about__topics">
@@ -55,7 +54,7 @@
                         <!-- 創業理由 -->
                         <div class="sub-about__topic">
                             <div class="sub-about__topic-head">
-                                <p class="sub-about__topic-label-en">Reason for founding</p>
+                                <p class="sub-about__topic-label-en">Reason For Founding</p>
                                 <h3 class="sub-about__topic-title">創業理由</h3>
                             </div>
                             <div class="sub-about__topic-body">
@@ -212,7 +211,6 @@
             <section class="sub-about__section sub-about__vision" id="sec02">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔02〕</p>
                         <h2 class="sub-page__section-title">今後の展望</h2>
                     </div>
                     <div class="sub-about__vision-body">
@@ -233,7 +231,6 @@
             <section class="sub-about__section sub-about__initiatives" id="sec03">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔03〕</p>
                         <h2 class="sub-page__section-title">NEWOLDの取り組み</h2>
                     </div>
                     <div class="sub-about__initiative-list">
@@ -257,28 +254,28 @@
                                 <div class="sub-about__initiative-movie">
                                     <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="sK9V2cw000A">
                                         <img src="https://img.youtube.com/vi/sK9V2cw000A/maxresdefault.jpg" alt="" width="480" height="360">
-                                        <div class="sub-about__movie-play">
+                                        <!-- <div class="sub-about__movie-play">
                                             <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
                                                 <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
                                                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
                                 <div class="sub-about__initiative-movie">
                                     <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="UtKOjyCe6AA">
                                         <img src="https://img.youtube.com/vi/UtKOjyCe6AA/maxresdefault.jpg" alt="" width="480" height="360">
-                                        <div class="sub-about__movie-play">
+                                        <!-- <div class="sub-about__movie-play">
                                             <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
                                                 <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
                                                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +313,6 @@
             <section class="sub-about__section sub-about__ceo" id="sec04">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔04〕</p>
                         <h2 class="sub-page__section-title">代表挨拶</h2>
                     </div>
                     <div class="sub-about__ceo-body">
@@ -358,7 +354,6 @@
             <section class="sub-about__section sub-about__members" id="sec05">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔05〕</p>
                         <h2 class="sub-page__section-title">経営陣紹介</h2>
                     </div>
                     <ul class="sub-about__member-list">
@@ -461,7 +456,6 @@
             <section class="sub-about__section sub-about__books" id="sec06">
                 <div class="sub-page__section-inner inner">
                     <div class="sub-page__section-heading">
-                        <p class="sub-page__section-number">〔06〕</p>
                         <h2 class="sub-page__section-title">書籍紹介</h2>
                     </div>
                     <?php
@@ -546,7 +540,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">募集職種を確認する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
@@ -560,7 +554,7 @@
 
                 <div class="cta-recruit__card cta-recruit__card--casual">
                     <div class="cta-recruit__card-content">
-                        <p class="cta-recruit__card-label">Casual interview</p>
+                        <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
                             お互いにまずは知っていくことを目的としています。<br>
@@ -568,7 +562,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">面談を希望する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">

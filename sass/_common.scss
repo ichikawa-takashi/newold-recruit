@@ -483,6 +483,11 @@
 下層ページ
 ---------------------------*/
 
+/*-- 新卒ページのみ格子線を#2EE5C4に上書き --*/
+body.new-graduate .grid-line {
+    background: rgba(46, 229, 195, 0.5);
+}
+
 /*-- 下層ページ用 bg-grid（アニメなし・最初から表示） --*/
 body:not(.front-page) .bg-grid {
     content: "";
@@ -744,17 +749,23 @@ body:not(.front-page) .bg-grid {
 
 .sub-page__section-heading {}
 
-.sub-page__section-number {
-    @include font(12, 150, -1.9, $medium);
-    color: $bg-black;
-}
-
 .sub-page__section-title {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
     @include font(26, 150, -1.9, $regular);
     color: #000;
 
     @include mq('md') {
         font-size: rem(36);
+    }
+
+    &::before {
+        content: "";
+        width: rem(10);
+        height: rem(10);
+        flex-shrink: 0;
+        background: $green;
     }
 }
 
@@ -789,10 +800,10 @@ body:not(.front-page) .bg-grid {
 .cta-recruit__title {
     font-family: $en;
     margin-top: rem(10);
-    @include font(50, 100, 0, $light);
+    @include font(50, 100, 0, $regular);
 
     @include mq('md') {
-        @include f(70, 81);
+        @include f(70, 81, 0, $regular);
     }
 }
 
@@ -882,7 +893,7 @@ body:not(.front-page) .bg-grid {
     color: $bg_black;
     text-decoration: none;
     border-radius: rem(2);
-
+transition: 0.3s;
     @include mq('lg') {
         width: 100%;
         justify-content: space-between;
@@ -924,17 +935,21 @@ body:not(.front-page) .bg-grid {
 }
 
 .cta-recruit__card--primary .cta-recruit__button:hover {
+    transition: 0.3s;
     background: $bg_black;
 
     .cta-recruit__button-text {
+        transition: 0.3s;
         color: $white;
     }
 }
 
 .cta-recruit__card--casual .cta-recruit__button:hover {
+    transition: 0.3s;
     background: #DAE1E7;
 
     .cta-recruit__button-text {
+        transition: 0.3s;
         color: $bg_black;
     }
 }
@@ -1206,7 +1221,7 @@ sub-people (People一覧ページ)
 
 .floating-buttons__item--youtube {
     background-color: #2F3434;
-    border: 1px solid $green;
+    border: 1px solid #2F3434;
     font-family: $en;
     font-size: rem(15);
     color: $white;

@@ -36,20 +36,20 @@
                     </ul>
                 </nav>
                 <div class="footer__sns">
-                    <a class="footer__sns-link footer__sns-link--x" href="#" target="_blank" rel="noopener">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-black.svg" alt="X">
+                    <a class="footer__sns-link footer__sns-link--instagram" href="https://www.instagram.com/newoldcapital.official" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-black.svg" alt="Instagram">
                     </a>
-                    <a class="footer__sns-link footer__sns-link--youtube" href="#" target="_blank" rel="noopener">
+                    <a class="footer__sns-link footer__sns-link--youtube" href="https://www.youtube.com/@newoldcapital" target="_blank" rel="noopener">
                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="Youtube">
                     </a>
-                    <a class="footer__sns-link footer__sns-link--facebook" href="#" target="_blank" rel="noopener">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill.svg" alt="facebook">
+                    <a class="footer__sns-link footer__sns-link--x" href="https://x.com/newold_official" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-black.svg" alt="X">
                     </a>
-                    <a class="footer__sns-link" href="#" target="_blank" rel="noopener">
+                    <a class="footer__sns-link footer__sns-link--facebook" href="https://www.facebook.com/newoldcapital.official/" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill.svg" alt="Facebook">
+                    </a>
+                    <a class="footer__sns-link" href="https://www.linkedin.com/company/newold-official" target="_blank" rel="noopener">
                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in-black.svg" alt="Linked in">
-                    </a>
-                    <a class="footer__sns-link footer__sns-link--instagram" href="#" target="_blank" rel="noopener">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-black.svg" alt="facebook">
                     </a>
                 </div>
                 <small class="footer__copyright">&copy;All Rights Reserved.</small>

@@ -24,6 +24,7 @@
     img {
         aspect-ratio: 16 / 9;
         object-fit: cover;
+        height: auto;
     }
 }
 
@@ -109,46 +110,16 @@
 
 .single-people__video-wrap {
     position: relative;
+    aspect-ratio: 16 / 9;
 }
 
-.single-people__video-img {
-    aspect-ratio: 820.00/374.84;
-    object-fit: cover;
-}
-
-.single-people__video-play {
+.single-people__video-iframe {
     position: absolute;
-    width: rem(81);
-    height: rem(32);
-    bottom: rem(16);
-    right: rem(16);
-    background-color: $green;
-
-    @include mq('md') {
-        width: rem(168);
-        height: rem(52);
-        bottom: rem(30);
-        right: rem(30);
-
-    }
-}
-
-.single-people__video-play-button {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(10);
-
-    @include mq('md') {
-        gap: rem(20);
-    }
 }
-
-.single-people__video-play-text {}
-
-.single-people__video-play-icon {}
 
 .single-people__body {
     display: flex;
@@ -173,7 +144,7 @@
         width: rem(200);
         margin-top: 0;
         position: sticky;
-        top: rem(20);
+        top: rem(40);
         align-self: flex-start;
     }
 }
@@ -271,7 +242,7 @@
 .single-people__sidebar-btn--position {
     background-color: $bg_black;
     font-weight: $regular;
-    height: rem(60);
+    height: rem(51);
 }
 
 .single-people__sidebar-btn-icon {
@@ -305,6 +276,27 @@
         flex: 1;
         min-width: 0;
     }
+}
+
+.single-people__qa-lead,
+.single-people__qa-afterword {
+    padding: rem(18) rem(20);
+    background: #fffdf3;
+    border-left: 3px solid $gold;
+    @include font(13, 200, 0, $medium);
+
+    @include mq('md') {
+        font-size: rem(15);
+        padding: rem(24) rem(28);
+    }
+}
+
+.single-people__qa-lead {
+    margin-bottom: rem(40);
+}
+
+.single-people__qa-afterword {
+    margin-top: rem(40);
 }
 
 .single-people__qa-list {
@@ -365,6 +357,25 @@
 
     >*+* {
         margin-top: rem(20);
+    }
+}
+
+.single-people__rich-block {
+    margin-top: rem(40);
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    p {
+        margin-top: rem(16);
+        @include font(13, 200, 0, $regular);
+
+        @include mq('md') {
+            font-size: rem(15);
+        }
     }
 }
 
@@ -488,13 +499,22 @@
 }
 
 .people-others__image {
+    overflow: hidden;
+
     img {
         aspect-ratio: 120/132;
         object-fit: cover;
+        transition: transform 0.3s;
 
         @include mq('md') {
             aspect-ratio: 220 / 260;
         }
+    }
+}
+
+.people-others__item-link:hover {
+    .people-others__image img {
+        transform: scale(1.05);
     }
 }
 

@@ -4,7 +4,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php $site = get_bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
 
@@ -16,20 +15,17 @@
             <h1 class="header__logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <img class="header__logo--common" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/logo.svg" alt="NEWOLD CAPITAL">
-                    <span class="header__logo-text">Recruiting site</span>
+                    <span class="header__logo-text">Recruiting Site</span>
                 </a>
                 <span class="header__logo-text--new-graduate pc">Recruiting Information</span>
             </h1>
             <div class="header__right">
                 <ul class="header__sns">
-                    <li class="header__sns-link header__nav-sns-link--x"><a href="#">
-                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-gray.svg" alt="">
+                    <li class="header__sns-link header__nav-sns-link--instagram"><a href="https://www.instagram.com/newoldcapital.official" target="_blank" rel="noopener">
+                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-gray.svg" alt="Instagram">
                         </a></li>
-                    <li class="header__sns-link header__nav-sns-link--facebook"><a href="#">
-                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-gray.svg" alt="">
-                        </a></li>
-                    <li class="header__sns-link header__nav-sns-link--youtube"><a href="#">
-                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-gray.svg" alt="">
+                    <li class="header__sns-link header__nav-sns-link--youtube"><a href="https://www.youtube.com/@newoldcapital" target="_blank" rel="noopener">
+                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-gray.svg" alt="YouTube">
                         </a></li>
                 </ul>
                 <div class="header__nav-wrapper">
@@ -42,7 +38,7 @@
                                 <a href="<?php echo esc_url(home_url('/recruitment/')); ?>">中途採用</a>
                             </li>
                             <li class="header__nav-item header__nav-item--casual">
-                                <a href="#">カジュアル面談</a>
+                                <a href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">カジュアル面談</a>
                             </li>
                         </ul>
                     </nav>
@@ -53,10 +49,14 @@
                     </button>
                 </div>
             </div>
-            <div class="header__drawer js-drawer" data-lenis-prevent>
-                <div class="header__drawer-inner">
+        </div>
+    </header>
+    <div class="header__drawer js-drawer" data-lenis-prevent>
+        <div class="header__drawer-inner">
                     <div class="header__drawer-logo">
-                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/logo-header.svg" alt="NEWOLD CAPITAL">
+                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                            <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/logo-header.svg" alt="NEWOLD CAPITAL">
+                        </a>
                     </div>
                     <div class="header__drawer-content">
                         <nav class="header__drawer-nav">
@@ -101,23 +101,23 @@
                         </nav>
                         <ul class="header__drawer-sns">
                             <li class="header__drawer-sns-item header__drawer-sns-item--x">
-                                <a href="#"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-white.svg" alt="X"></a>
+                                <a href="https://x.com/newold_official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-white.svg" alt="X"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--youtube">
-                                <a href="#"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-white.svg" alt="Facebook"></a>
+                                <a href="https://www.youtube.com/@newoldcapital" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-white.svg" alt="YouTube"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--facebook">
-                                <a href="#"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill-white.svg" alt="YouTube"></a>
+                                <a href="https://www.facebook.com/newoldcapital.official/" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill-white.svg" alt="Facebook"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--linkedin">
-                                <a href="#"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in-square.svg" alt="YouTube"></a>
+                                <a href="https://www.linkedin.com/company/newold-official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in-square.svg" alt="LinkedIn"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--instagram">
-                                <a href="#"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-white.svg" alt="YouTube"></a>
+                                <a href="https://www.instagram.com/newoldcapital.official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-white.svg" alt="Instagram"></a>
                             </li>
                         </ul>
                         <div class="header__drawer-cta">
-                            <a href="#" class="header__drawer-cta-btn header__drawer-cta-btn--white right-up-button">
+                            <a href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer" class="header__drawer-cta-btn header__drawer-cta-btn--white right-up-button">
                                 <span>現在募集中の職種</span>
                                 <div class="right-up-button__arrow">
                                     <span class="header__drawer-cta-icon right-up-button__icon">
@@ -126,7 +126,7 @@
                                     </span>
                                 </div>
                             </a>
-                            <a href="#" class="header__drawer-cta-btn header__drawer-cta-btn--green right-up-button">
+                            <a href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer" class="header__drawer-cta-btn header__drawer-cta-btn--green right-up-button">
                                 <span>カジュアル面談へ</span>
                                 <div class="right-up-button__arrow">
                                     <span class="header__drawer-cta-icon right-up-button__icon">
@@ -139,6 +139,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <span class="header__hamburger-close">CLOSE</span>
-    </header>
+    <span class="header__hamburger-close">CLOSE</span>

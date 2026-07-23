@@ -1,5 +1,27 @@
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
+    // ナビ側（SNS・リンク・ハンバーガー）だけを画面上部に固定して追従させる。
+    // align-items: center 等でページ／ブレークポイントごとに実際の表示位置が変わるため、
+    // 一旦 static に戻して本来の配置位置を計測 → その座標で fixed 化する
+    const headerRight = document.querySelector(".header__right");
+    if (headerRight) {
+        const pinHeaderRight = () => {
+            headerRight.classList.remove("js-fixed");
+            headerRight.style.top = "";
+            headerRight.style.left = "";
+            const rect = headerRight.getBoundingClientRect();
+            // getBoundingClientRect() はビューポート基準のため、リロード時など
+            // スクロール位置が復元された状態で計測すると画面外の座標を拾ってしまう。
+            // スクロール量を足して「ページ最上部を基準にした座標」に変換してから固定する。
+            headerRight.style.top = (rect.top + window.scrollY) + "px";
+            headerRight.style.left = (rect.left + window.scrollX) + "px";
+            headerRight.classList.add("js-fixed");
+        };
+        pinHeaderRight();
+        window.addEventListener("resize", pinHeaderRight);
+        window.addEventListener("load", pinHeaderRight);
+    }
+
     const businessVisuals = Array.from(document.querySelectorAll(".top-business__visual-list, .top-business__visual-sp-list"));
     if (businessVisuals.length) {
         const businessPcItems = Array.from(document.querySelectorAll(".top-business__visual-item"));
@@ -115,6 +137,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     if (newsAnchor && newsItems.length > 1) {
         let activeNewsIndex = newsItems.findIndex((item) => item.classList.contains("is-active"));
         activeNewsIndex = activeNewsIndex >= 0 ? activeNewsIndex : 0;
+        let autoTimer = null;
 
         function activateNewsItem(nextIndex) {
             if (nextIndex === activeNewsIndex) return;
@@ -138,9 +161,40 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             activeNewsIndex = nextIndex;
         }
 
-        window.setInterval(() => {
-            activateNewsItem((activeNewsIndex + 1) % newsItems.length);
-        }, 4000);
+        function startAutoPlay() {
+            autoTimer = window.setInterval(() => {
+                activateNewsItem((activeNewsIndex + 1) % newsItems.length);
+            }, 4000);
+        }
+
+        function resetAutoPlay() {
+            window.clearInterval(autoTimer);
+            startAutoPlay();
+        }
+
+        startAutoPlay();
+
+        const prevBtn = document.querySelector(".js-fv-news-prev");
+        const nextBtn = document.querySelector(".js-fv-news-next");
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const prevIndex = (activeNewsIndex - 1 + newsItems.length) % newsItems.length;
+                activateNewsItem(prevIndex);
+                resetAutoPlay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                activateNewsItem((activeNewsIndex + 1) % newsItems.length);
+                resetAutoPlay();
+            });
+        }
     }
 
     var topBtn = $('.pagetop');
@@ -178,16 +232,19 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
+    const HEADER_HEIGHT = 100;
 
     $(document).on('click', 'a[href*="#"]', function () {
-        let time = 400;
-        let header = $('header').innerHeight() || 0;
         let target = $(this.hash);
         if (!target.length) return;
-        let targetY = target.offset().top - header;
-        $('html,body').animate({
-            scrollTop: targetY
-        }, time, 'swing');
+        let offset = -HEADER_HEIGHT;
+        if (window.lenis) {
+            window.lenis.scrollTo(target[0], { offset: offset, duration: 1.2 });
+        } else {
+            $('html,body').animate({
+                scrollTop: target.offset().top + offset
+            }, 400, 'swing');
+        }
         return false;
     });
 
@@ -261,7 +318,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     let scrollEndTimer = null;
     
     function getNavOffset() {
-      return $("header").innerHeight() || 0;
+      return HEADER_HEIGHT;
     }
     
     function updateCurrentLink() {
@@ -326,21 +383,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     const body = document.body;
     const black = document.querySelector('.top-people');
 
-    window.addEventListener('scroll', () => {
-        const rect = black.getBoundingClientRect();
-        const viewportCenter = window.innerHeight / 2;
-        const blackTop = rect.top;
-        const blackBottom = rect.bottom;
+    if (black) {
+        window.addEventListener('scroll', () => {
+            const rect = black.getBoundingClientRect();
+            const viewportCenter = window.innerHeight / 2;
+            const blackTop = rect.top;
+            const blackBottom = rect.bottom;
 
-        // .bg-black の範囲に「画面中央」が含まれているかを判定
-        const inCenter = blackTop <= viewportCenter && blackBottom >= viewportCenter;
+            // .bg-black の範囲に「画面中央」が含まれているかを判定
+            const inCenter = blackTop <= viewportCenter && blackBottom >= viewportCenter;
 
-        if (inCenter) {
-            body.classList.add('bg-brightness');
-        } else {
-            body.classList.remove('bg-brightness');
-        }
-    });
+            if (inCenter) {
+                body.classList.add('bg-brightness');
+            } else {
+                body.classList.remove('bg-brightness');
+            }
+        });
+    }
 
 // 他のメンバー スライダー
 if (document.querySelector('.people-others__swiper')) {
@@ -451,6 +510,24 @@ triggersR.forEach(trigger => {
 // =============================================
 document.addEventListener('DOMContentLoaded', function () {
 
+    // ---- Hero image swiper ----
+    if (typeof Swiper !== 'undefined' && document.querySelector('.ng-hero__swiper')) {
+        new Swiper('.ng-hero__swiper', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true,
+            },
+            speed: 3000,
+            loop: true,
+            autoHeight: true,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    }
+
     // ---- Interview swiper ----
     if (typeof Swiper !== 'undefined' && document.querySelector('.ng-interview__swiper')) {
         var prevBtn = document.querySelector('.ng-interview__prev');
@@ -550,6 +627,74 @@ document.addEventListener('DOMContentLoaded', function () {
             iframe.style.display = 'block';
             el.innerHTML = '';
             el.appendChild(iframe);
+        });
+    });
+
+
+    // =============================================
+    // ENVIRONMENT PAGE - オフィス紹介 タブ切り替え / 執務エリアのフェードスライダー
+    // =============================================
+    document.querySelectorAll('.sub-environment__office').forEach(function (office) {
+        var tabs = office.querySelectorAll('.js-office-tab');
+        var panels = office.querySelectorAll('.js-office-panel');
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var target = tab.dataset.officeTab;
+
+                tabs.forEach(function (t) {
+                    var isActive = t === tab;
+                    t.classList.toggle('is-active', isActive);
+                    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                panels.forEach(function (panel) {
+                    panel.classList.toggle('is-active', panel.dataset.officePanel === target);
+                });
+            });
+        });
+
+        if (typeof Swiper !== 'undefined') {
+            var officeSwiperEl = office.querySelector('.sub-environment__office-swiper');
+            if (officeSwiperEl) {
+                new Swiper(officeSwiperEl, {
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true,
+                    },
+                    loop: true,
+                    speed: 1000,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    observer: true,
+                    observeParents: true,
+                });
+            }
+        }
+    });
+
+
+    // 常時表示のiframe埋め込み上でLenisのスクロールが途切れないための透明シールド
+    // シールドは常に外さず、クリックはYouTube IFrame APIのpostMessageで再生/一時停止に変換する。
+    // （シールドを外してiframeへクリックを受け渡す方式だと、外れた瞬間からその上のホバーで
+    //   スクロールが再び不安定になるため、シールドは常設し操作は全てpostMessage経由で行う）
+    document.querySelectorAll('.js-scroll-shield').forEach(function (wrap) {
+        var shieldBtn = wrap.querySelector('.js-scroll-shield-btn');
+        var iframe = wrap.querySelector('.js-scroll-shield-iframe');
+        if (!shieldBtn || !iframe) return;
+
+        var isPlaying = false;
+
+        shieldBtn.addEventListener('click', function () {
+            isPlaying = !isPlaying;
+            shieldBtn.classList.toggle('is-playing', isPlaying);
+            shieldBtn.setAttribute('aria-label', isPlaying ? '動画を一時停止' : '動画を再生');
+            iframe.contentWindow.postMessage(
+                JSON.stringify({ event: 'command', func: isPlaying ? 'playVideo' : 'pauseVideo', args: [] }),
+                '*'
+            );
         });
     });
 

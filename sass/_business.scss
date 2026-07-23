@@ -159,12 +159,12 @@
 }
 
 .sub-business__service-card {
-    border: 4px solid #DAE1E7;
+    border: 4px solid $brown;
     overflow: hidden;
     padding: rem(30) rem(11) rem(60);
-
+    background-color: #fff;
     @include mq('md') {
-        border: 5px solid #DAE1E7;
+        border: 5px solid $brown;
         padding: rem(60);
     }
 }

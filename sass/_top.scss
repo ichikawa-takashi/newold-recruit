@@ -175,6 +175,8 @@ body.front-page.bg-brightness .top-business__inner {
     margin-right: calc(50% - 50vw);
     background-color: #2f3434;
     margin-top: rem(30);
+    display: flex;
+    align-items: stretch;
 
     @include mq("md") {
         width: vw(1440, 846);
@@ -187,6 +189,8 @@ body.front-page.bg-brightness .top-business__inner {
     color: $white;
     padding: rem(19.5) rem(14.3) rem(19.5) rem(15);
     align-items: center;
+    flex: 1;
+    min-width: 0;
 
     @include mq("md") {
         padding: rem(25) rem(30);
@@ -236,10 +240,7 @@ body.front-page.bg-brightness .top-business__inner {
     inset: 0;
     display: block;
     opacity: 0;
-    transform: translateY(100%) rotateX(-72deg);
-    transform-origin: center bottom;
-    transition: opacity 0.65s ease, transform 0.65s ease;
-    backface-visibility: hidden;
+    transition: opacity 0.65s ease;
 
     @include mq("md") {
         display: flex;
@@ -251,13 +252,10 @@ body.front-page.bg-brightness .top-business__inner {
 .fv__news-item.is-active {
     position: relative;
     opacity: 1;
-    transform: translateY(0) rotateX(0deg);
 }
 
 .fv__news-item.is-leaving {
     opacity: 0;
-    transform: translateY(-100%) rotateX(72deg);
-    transform-origin: center top;
 }
 
 .fv__news-date {
@@ -281,11 +279,71 @@ body.front-page.bg-brightness .top-business__inner {
     }
 }
 
-.fv__news-anchor svg {
+.fv__news-icon {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: rem(20);
+    height: rem(20);
     margin-top: rem(8);
 
     @include mq("md") {
         margin-top: initial;
+    }
+}
+
+.fv__news-icon svg:nth-of-type(2) {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.fv__news-icon svg:nth-of-type(1) {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transform: translate(-150%, 150%);
+    transition: 0.3s;
+}
+
+.fv__news-anchor:hover .fv__news-icon svg:nth-of-type(2) {
+    transform: translate(150%, -150%);
+    transition: 0.3s;
+}
+
+.fv__news-anchor:hover .fv__news-icon svg:nth-of-type(1) {
+    transform: translate(0%, 0%);
+    transition: 0.3s;
+}
+
+.fv__news-controls {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fv__news-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 rem(12);
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+
+    &:first-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &:hover {
+        opacity: 1;
     }
 }
 
@@ -329,7 +387,23 @@ body.front-page.bg-brightness .top-business__inner {
 
 .inner {}
 
-.top-where__heading-group {}
+.top-where__heading-group {
+    background-color: #191E1E;
+    color: #fff;
+    padding: rem(30) rem(16);
+    margin-inline: -$padding-sp;
+    
+    @include mq(376) {
+        margin-inline: 0;
+        max-width: rem(460);
+    }
+    
+    @include mq("md") {
+        padding: rem(30) rem(24);
+        max-width: fit-content;
+        margin-inline: auto;
+    }
+}
 
 .top-where__title {
     font-family: $mincho;
@@ -344,10 +418,21 @@ body.front-page.bg-brightness .top-business__inner {
 .top-where__lead-group {
     margin-top: rem(60);
     @include font(15, 180, 10, $regular);
+    background-color: #191E1E;
+    color: #fff;
+    padding: rem(30) rem(24);
+    margin-inline: -$padding-sp;
+
+    @include mq(376) {
+        margin-inline: 0;
+        max-width: rem(460);
+    }
 
     @include mq("md") {
         margin-top: rem(100);
         text-align: center;
+        max-width: fit-content;
+        margin-inline: auto;
     }
 }
 
@@ -401,10 +486,42 @@ body.front-page.bg-brightness .top-business__inner {
     }
 }
 
-.top-where__figure {}
+.top-where__figure {
+    &.parallax-image-wrap {
+        @include mq('md') {
+            height: auto;
+            overflow: visible;
+        }
+    }
+
+    .parallax-image {
+        @include mq('md') {
+            position: static;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
 
 .top-where__description-group {
     margin-top: rem(70);
+    background-color: #191E1E;
+    color: #fff;
+    padding: rem(30) rem(24);
+    margin-inline: -$padding-sp;
+
+    @include mq(376) {
+        margin-inline: 0;
+        max-width: rem(460);
+    }
+
+    @include mq("md") {
+        max-width: fit-content;
+        margin-inline: auto;
+    }
 }
 
 .js-karaoke {}
@@ -1305,13 +1422,14 @@ body.bg-brightness .top-people {
 
 .top-people__header-inner {
     @include mq("md") {
-        width: 100%;
+        // width: 100%;
         border-right: 1px solid #464a4a;
         padding: rem(100) 0 rem(40);
         margin-right: max(89px, vw(1440, 89));
     }
 
     @include mq(1100) {
+        width: 100%;
         display: flex;
         align-items: center;
         gap: rem(40);
@@ -1353,6 +1471,36 @@ body.bg-brightness .top-people {
     @include mq("md") {
         margin-top: initial;
         border-top: initial;
+    }
+
+    @include mq(1400) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* トップページ4カラム時のボーダー調整 */
+.top-people__body .people-card__item {
+    @include mq(1400) {
+        &:nth-of-type(3n) {
+            border-right: 1px solid #464a4a;
+        }
+
+        &:nth-of-type(4n) {
+            border-right: none;
+        }
+    }
+}
+
+/* トップページのみフォントサイズ変更（アーカイブは変更なし） */
+.top-people .people-card__text {
+    @include mq("md") {
+        @include f(16, 30);
+    }
+}
+
+.top-people .people-card__name {
+    @include mq("md") {
+        @include f(16, 21);
     }
 }
 
@@ -1565,9 +1713,36 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
 .top-recruit {}
 
-.top-recruit__visual {}
+.top-recruit__visual-wrap {
+    padding: 0;
+    max-width: none;
 
-.top-recruit__image {}
+    @include mq('md') {
+        padding-inline: rem(25);
+        max-width: rem(1310);
+    }
+}
+
+.top-recruit__visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 75/46;
+    overflow: hidden;
+
+    @include mq('md') {
+        height: rem(520);
+        aspect-ratio: auto;
+    }
+}
+
+.top-recruit__image {
+    object-fit: cover;
+    height: 120%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 .top-recruit__overlay {}
 
@@ -1815,7 +1990,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
     @include font(50, 100, -4, $regular);
 
     @include mq("md") {
-        @include font(70);
+        @include f(70,81);
     }
 }
 
@@ -1843,65 +2018,38 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
 .top-movie__media {
     position: relative;
+    aspect-ratio: 335 / 223;
 
     @include mq('md') {
         max-width: rem(756);
         width: 100%;
         margin-inline: auto;
-    }
-
-    img {
-        object-fit: cover;
-
-        @include mq('md') {
-            aspect-ratio: 756 / 504;
-        }
+        aspect-ratio: 756 / 504;
     }
 }
 
-.top-movie__play {
-    position: absolute;
-    top: rem(10);
-    right: rem(10);
-    width: rem(81);
-    height: rem(32);
-
-    @include mq('md') {
-        top: rem(23);
-        right: rem(20.5);
-        width: rem(128);
-        height: rem(52);
-    }
-}
-
-.top-movie__play-button {
+.top-movie__video-iframe {
     width: 100%;
-    background-color: $green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(10);
     height: 100%;
+    display: block;
 }
 
-.top-movie__play-text {
-    @include f(10, 20, 3, $medium);
-    color: $black;
+// iframeホバー中もLenisのスクロールを継続させるための透明シールド
+// 常設し、クリックはYouTube IFrame APIのpostMessageで再生/一時停止に変換する（js-scroll-shield-btn）
+.top-movie__media-shield {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1;
 
-    @include mq('md') {
-        @include f(16, 20);
-    }
-}
-
-.top-movie__play-icon {
-    width: rem(16);
-
-    @include mq('md') {
-        width: rem(18);
-    }
-
-    img {
-        aspect-ratio: 16 / 11.66;
-        object-fit: cover;
+    &.is-playing {
+        // 再生中はYouTube標準コントロール（シークバー等）が乗る下部帯だけシールドを外し、
+        // それ以外の領域はシールドを残してLenisのスクロール安定性を維持する
+        clip-path: inset(0 0 40px 0);
     }
 }

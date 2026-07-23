@@ -215,7 +215,9 @@ $brown: #7E6346;
 body {
     font-family: $sans;
     color: $black;
-    // background-color: $black;
+    // mix-blend-mode(差分反転)は「何も描画されていない透過部分」には効かないため、
+    // 常に実体のある背景色を敷いて、ヘッダーが確実に反転計算できるようにする
+    background-color: $white;
 }
 
 // ==============================

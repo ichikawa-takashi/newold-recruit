@@ -45,7 +45,6 @@
                 <?php
                 // 基本情報
                 $people_title      = get_field('people_title');
-                $people_name_ja    = get_field('people_name_ja');
                 $people_name_en    = get_field('people_name_en');
                 $people_department = get_field('people_department');
                 $people_year       = get_field('people_year');
@@ -53,26 +52,37 @@
 
                 // 動画関連
                 $video_url         = get_field('people_video_url');
-                $video_thumb       = get_field('people_video_thumb');
-                $video_catch       = get_field('people_video_catch');
+                $video_lead        = get_field('people_video_catch');
                 $video_description = get_field('people_video_text');
+                $video_afterword   = get_field('people_video_afterword');
 
-                // 動画URLに入力があるかで表示を分岐
-                $has_video = !empty($video_url);
+                // コンテンツ種別ラジオで表示を分岐
+                $has_video = get_field('people_has_video') === '1';
 
-                // Q&Aをまとめて取得
-                $qa_items = [];
+                // Q&Aリード文・後書き・繰り返し（カスタムメタ）
+                $post_id      = get_the_ID();
+                $qa_lead      = get_post_meta($post_id, 'people_qa_lead', true);
+                $qa_afterword = get_post_meta($post_id, 'people_qa_afterword', true);
 
-                for ($i = 1; $i <= 15; $i++) {
-                    $question = get_field('people_q' . $i);
-                    $answer   = get_field('people_a' . $i);
-
-                    // 質問または回答のどちらかに入力があるものだけ表示
-                    if (!empty($question) || !empty($answer)) {
+                $qa_items   = [];
+                $qa_rows    = get_post_meta($post_id, 'people_qa_items', true) ?: [];
+                $qa_counter = 0;
+                foreach ($qa_rows as $row) {
+                    $type = $row['type'] ?? 'qa';
+                    if ($type === 'qa') {
+                        if (!empty($row['question']) || !empty($row['answer'])) {
+                            $qa_counter++;
+                            $qa_items[] = [
+                                'type'     => 'qa',
+                                'number'   => $qa_counter,
+                                'question' => $row['question'] ?? '',
+                                'answer'   => $row['answer']   ?? '',
+                            ];
+                        }
+                    } elseif ($type === 'rich' && !empty($row['content'])) {
                         $qa_items[] = [
-                            'number'   => $i,
-                            'question' => $question,
-                            'answer'   => $answer,
+                            'type'    => 'rich',
+                            'content' => $row['content'],
                         ];
                     }
                 }
@@ -97,11 +107,9 @@
 
                             <div class="single-people__profile">
                                 <div class="single-people__profile-name">
-                                    <?php if (!empty($people_name_ja)): ?>
-                                        <p class="single-people__name-ja">
-                                            <?php echo esc_html($people_name_ja); ?>
-                                        </p>
-                                    <?php endif; ?>
+                                    <p class="single-people__name-ja">
+                                        <?php echo esc_html(get_the_title()); ?>
+                                    </p>
 
                                     <?php if (!empty($people_name_en)): ?>
                                         <p class="single-people__name-en">
@@ -118,7 +126,7 @@
 
                                 <?php if (!empty($people_year)): ?>
                                     <p class="single-people__year">
-                                        <?php echo esc_html($people_year); ?>
+                                        <?php echo esc_html($people_year); ?>年入社
                                     </p>
                                 <?php endif; ?>
                             </div>
@@ -126,39 +134,21 @@
 
                         <!-- 動画：動画URLが入力されている時のみ表示 -->
                         <?php if ($has_video): ?>
-                            <div class="single-people__video">
-                                <div class="single-people__video-wrap">
-
-                                    <?php if (!empty($video_thumb)): ?>
-                                        <img
-                                            src="<?php echo esc_url($video_thumb['url']); ?>"
-                                            alt="<?php echo esc_attr(!empty($video_thumb['alt']) ? $video_thumb['alt'] : 'インタビュー動画サムネイル'); ?>"
-                                            class="single-people__video-img" />
-                                    <?php else: ?>
-                                        <img
-                                            src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>"
-                                            alt="インタビュー動画サムネイル"
-                                            class="single-people__video-img" />
-                                    <?php endif; ?>
-
-                                    <div class="single-people__video-play">
-                                        <a
-                                            href="<?php echo esc_url($video_url); ?>"
-                                            class="single-people__video-play-button"
-                                            target="_blank"
-                                            rel="noopener noreferrer">
-                                            <span class="single-people__video-play-text top-movie__play-text">PLAY</span>
-
-                                            <div class="single-people__video-play-icon top-movie__play-icon">
-                                                <img
-                                                    src="<?php echo esc_url(get_theme_file_uri('/img/common/youtube-black.svg')); ?>"
-                                                    alt="YouTubeのアイコン">
-                                            </div>
-                                        </a>
+                            <?php $embed_url = get_youtube_embed_url($video_url); ?>
+                            <?php if (!empty($embed_url)): ?>
+                                <div class="single-people__video">
+                                    <div class="single-people__video-wrap" data-lenis-prevent>
+                                        <iframe
+                                            class="single-people__video-iframe"
+                                            src="<?php echo esc_url($embed_url); ?>"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
+                                            loading="lazy">
+                                        </iframe>
                                     </div>
-
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         <?php endif; ?>
 
                     </div>
@@ -173,17 +163,15 @@
                                         <?php if (!empty($people_portrait)): ?>
                                             <img
                                                 src="<?php echo esc_url($people_portrait['url']); ?>"
-                                                alt="<?php echo esc_attr(!empty($people_portrait['alt']) ? $people_portrait['alt'] : $people_name_ja . ' プロフィール写真'); ?>"
+                                                alt="<?php echo esc_attr(!empty($people_portrait['alt']) ? $people_portrait['alt'] : get_the_title() . ' プロフィール写真'); ?>"
                                                 class="single-people__portrait" />
                                         <?php endif; ?>
                                     </div>
 
                                     <div class="single-people__sidebar-meta">
-                                        <?php if (!empty($people_name_ja)): ?>
-                                            <p class="single-people__sidebar-name">
-                                                <?php echo esc_html($people_name_ja); ?>
-                                            </p>
-                                        <?php endif; ?>
+                                        <p class="single-people__sidebar-name">
+                                            <?php echo esc_html(get_the_title()); ?>
+                                        </p>
 
                                         <?php if (!empty($people_department)): ?>
                                             <p class="single-people__sidebar-dept">
@@ -201,7 +189,8 @@
 
                                 <div class="single-people__sidebar-cta-buttons">
                                     <a
-                                        href="#"
+                                        href="https://hrmos.co/pages/newold/jobs/0000001"
+                                        target="_blank" rel="noopener noreferrer"
                                         class="single-people__sidebar-btn single-people__sidebar-btn--casual right-up-button">
                                         <span>カジュアル面談へ</span>
                                         <div class="right-up-button__arrow">
@@ -217,7 +206,8 @@
                                     </a>
 
                                     <a
-                                        href="#"
+                                        href="https://hrmos.co/pages/newold"
+                                        target="_blank" rel="noopener noreferrer"
                                         class="single-people__sidebar-btn single-people__sidebar-btn--position right-up-button">
                                         <span>現在募集中の職種</span>
                                         <div class="right-up-button__arrow">
@@ -240,53 +230,71 @@
 
                             <?php if ($has_video): ?>
 
-                                <!-- 動画あり：キャッチフレーズ＋説明文 -->
-                                <div class="single-people__movie-content">
+                                <!-- 動画あり：リード文・説明文・後書き -->
+                                <?php if (!empty($video_lead)): ?>
+                                    <div class="single-people__qa-lead">
+                                        <p><?php echo nl2br(esc_html($video_lead)); ?></p>
+                                    </div>
+                                <?php endif; ?>
 
-                                    <?php if (!empty($video_catch)): ?>
-                                        <p class="single-people__movie-catch single-people__qa-question">
-                                            <?php echo nl2br(esc_html($video_catch)); ?>
-                                        </p>
-                                    <?php endif; ?>
+                                <?php if (!empty($video_description)): ?>
+                                    <div class="single-people__movie-description single-people__qa-answer">
+                                        <p><?php echo nl2br(esc_html($video_description)); ?></p>
+                                    </div>
+                                <?php endif; ?>
 
-                                    <?php if (!empty($video_description)): ?>
-                                        <div class="single-people__movie-description single-people__qa-answer">
-                                            <p>
-                                                <?php echo nl2br(esc_html($video_description)); ?>
-                                            </p>
-                                        </div>
-                                    <?php endif; ?>
-
-                                </div>
+                                <?php if (!empty($video_afterword)): ?>
+                                    <div class="single-people__qa-afterword">
+                                        <p><?php echo nl2br(esc_html($video_afterword)); ?></p>
+                                    </div>
+                                <?php endif; ?>
 
                             <?php else: ?>
 
                                 <!-- 動画なし：Q&A -->
+                                <?php if (!empty($qa_lead)): ?>
+                                    <div class="single-people__qa-lead">
+                                        <p><?php echo nl2br(esc_html($qa_lead)); ?></p>
+                                    </div>
+                                <?php endif; ?>
+
                                 <?php if (!empty($qa_items)): ?>
                                     <div class="single-people__qa-list">
 
-                                        <?php foreach ($qa_items as $qa): ?>
-                                            <div class="single-people__qa-item">
-                                                <div class="single-people__qa-header">
-                                                    <span class="single-people__qa-number">
-                                                        Q<span class="single-people__qa-num-digit"><?php echo esc_html($qa['number']); ?></span>
-                                                    </span>
+                                        <?php foreach ($qa_items as $block): ?>
+                                            <?php if ($block['type'] === 'qa'): ?>
+                                                <div class="single-people__qa-item">
+                                                    <div class="single-people__qa-header">
+                                                        <span class="single-people__qa-number">
+                                                            Q<span class="single-people__qa-num-digit"><?php echo esc_html($block['number']); ?></span>
+                                                        </span>
 
-                                                    <div class="single-people__qa-question-wrap">
-                                                        <p class="single-people__qa-question">
-                                                            <?php echo nl2br(esc_html($qa['question'])); ?>
-                                                        </p>
+                                                        <div class="single-people__qa-question-wrap">
+                                                            <p class="single-people__qa-question">
+                                                                <?php echo nl2br(esc_html($block['question'])); ?>
+                                                            </p>
+                                                        </div>
                                                     </div>
+
+                                                    <?php if (!empty($block['answer'])): ?>
+                                                        <div class="single-people__qa-answer">
+                                                            <p><?php echo nl2br(esc_html($block['answer'])); ?></p>
+                                                        </div>
+                                                    <?php endif; ?>
                                                 </div>
-
-                                                <?php if (!empty($qa['answer'])): ?>
-                                                    <div class="single-people__qa-answer">
-                                                        <p><?php echo nl2br(esc_html($qa['answer'])); ?></p>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
+                                            <?php elseif ($block['type'] === 'rich'): ?>
+                                                <div class="single-people__rich-block">
+                                                    <img src="<?php echo esc_url($block['content']); ?>" alt="">
+                                                </div>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
 
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if (!empty($qa_afterword)): ?>
+                                    <div class="single-people__qa-afterword">
+                                        <p><?php echo nl2br(esc_html($qa_afterword)); ?></p>
                                     </div>
                                 <?php endif; ?>
 
@@ -304,7 +312,7 @@
             <div class="people-others__slide">
                 <div class="inner people-others__inner">
                     <div class="people-others__head">
-                        <h2 class="people-others__title">他のメンバー</h2>
+                        <h2 class="people-others__title">Other Members</h2>
                         <div class="people-others__nav">
                             <button class="people-others__btn people-others__btn--prev" type="button"
                                 aria-label="前の社員を見る">
@@ -327,17 +335,28 @@
                                 'orderby'        => 'date',
                                 'order'          => 'DESC',
                                 'post__not_in'   => [get_the_ID()],
+                                'meta_query'     => [
+                                    'relation' => 'OR',
+                                    [
+                                        'key'     => 'people_is_executive',
+                                        'compare' => 'NOT EXISTS',
+                                    ],
+                                    [
+                                        'key'     => 'people_is_executive',
+                                        'value'   => '1',
+                                        'compare' => '!=',
+                                    ],
+                                ],
                             ]);
 
                             if ($others_query->have_posts()):
                                 while ($others_query->have_posts()):
                                     $others_query->the_post();
-                                    $o_name_ja    = get_field('people_name_ja');
                                     $o_name_en    = get_field('people_name_en');
                                     $o_department = get_field('people_department');
                                     $o_year       = get_field('people_year');
                                     $o_portrait   = get_field('people_portrait');
-                                    $o_alt        = !empty($o_portrait['alt']) ? $o_portrait['alt'] : esc_attr($o_name_ja) . ' プロフィール写真';
+                                    $o_alt        = !empty($o_portrait['alt']) ? $o_portrait['alt'] : get_the_title() . ' プロフィール写真';
                             ?>
                                     <li class="swiper-slide people-others__item">
                                         <a href="<?php the_permalink(); ?>" class="people-others__item-link right-up-button">
@@ -345,16 +364,14 @@
                                                 <?php if (!empty($o_portrait)): ?>
                                                     <img src="<?php echo esc_url($o_portrait['url']); ?>" alt="<?php echo esc_attr($o_alt); ?>" />
                                                 <?php elseif (has_post_thumbnail()): ?>
-                                                    <?php the_post_thumbnail('full', ['alt' => esc_attr($o_name_ja) . ' プロフィール写真']); ?>
+                                                    <?php the_post_thumbnail('full', ['alt' => get_the_title() . ' プロフィール写真']); ?>
                                                 <?php else: ?>
-                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo esc_attr($o_name_ja); ?> プロフィール写真" />
+                                                    <img src="<?php echo esc_url(get_theme_file_uri('/img/common/no-image.jpg')); ?>" alt="<?php echo get_the_title(); ?> プロフィール写真" />
                                                 <?php endif; ?>
                                             </div>
                                             <div class="people-others__content">
                                                 <div class="people-others__profile-name">
-                                                    <?php if (!empty($o_name_ja)): ?>
-                                                        <p class="people-others__name-ja"><?php echo esc_html($o_name_ja); ?></p>
-                                                    <?php endif; ?>
+                                                    <p class="people-others__name-ja"><?php echo esc_html(get_the_title()); ?></p>
                                                     <?php if (!empty($o_name_en)): ?>
                                                         <p class="people-others__name-en"><?php echo esc_html($o_name_en); ?></p>
                                                     <?php endif; ?>
@@ -363,7 +380,7 @@
                                                     <p class="people-others__department"><?php echo esc_html($o_department); ?></p>
                                                 <?php endif; ?>
                                                 <?php if (!empty($o_year)): ?>
-                                                    <p class="people-others__year"><?php echo esc_html($o_year); ?></p>
+                                                    <p class="people-others__year"><?php echo esc_html($o_year); ?>年入社</p>
                                                 <?php endif; ?>
                                             </div>
                                         </a>
@@ -422,7 +439,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">募集職種を確認する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
@@ -436,7 +453,7 @@
 
                 <div class="cta-recruit__card cta-recruit__card--casual">
                     <div class="cta-recruit__card-content">
-                        <p class="cta-recruit__card-label">Casual interview</p>
+                        <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
                             お互いにまずは知っていくことを目的としています。<br>
@@ -444,7 +461,7 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="#">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">面談を希望する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">

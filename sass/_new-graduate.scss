@@ -43,7 +43,7 @@
     @include font(50, 80, 0, $regular);
 
     @include mq('md') {
-        font-size: rem(110);
+        font-size: rem(90);
     }
 }
 
@@ -104,6 +104,20 @@
     }
 }
 
+.ng-hero__swiper {
+    width: 100%;
+}
+
+// .ng-hero__swiper.swiper-fade .swiper-slide {
+//     transition-property: opacity, clip-path;
+//     transition-timing-function: ease-in-out;
+//     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+// }
+
+// .ng-hero__swiper.swiper-fade .swiper-slide-active {
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+// }
+
 .ng-hero__lead {
     text-align: right;
     @include font(54, 100, -8, $bold);
@@ -118,7 +132,7 @@
         padding-left: rem(0);
         padding-right: linear_func_clamp(1440, 25, 1024, 0);
         width: auto;
-        margin: 0;
+        margin-top: rem(35);
     }
 }
 
@@ -314,7 +328,7 @@
     color: transparent;
 
     @include mq('md') {
-        font-size: min(3.2vw, rem(46));
+        font-size: min(3.2vw, rem(40));
         line-height: 1.45;
         letter-spacing: 0.1em;
     }
@@ -392,6 +406,12 @@
     }
 }
 
+.ng-interview__slide-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
 .ng-interview__img-wrap {
     position: relative;
 }
@@ -432,18 +452,41 @@
     justify-content: center;
     text-decoration: none;
 
-    svg {
-        width: rem(15);
-        height: auto;
-
-        @include mq('md') {
-            width: rem(22);
-        }
-    }
-
     @include mq('md') {
         width: rem(70);
         height: rem(70);
+    }
+}
+
+.ng-interview__link-btn-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: rem(15);
+    height: rem(15);
+
+    @include mq('md') {
+        width: rem(22);
+        height: rem(22);
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        transition: 0.3s;
+    }
+
+    svg:nth-of-type(1) {
+        position: relative;
+    }
+
+    svg:nth-of-type(2) {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        transform: translate(-140%, 140%);
     }
 }
 
@@ -456,6 +499,23 @@
     img {
         height: 100%;
         object-fit: cover;
+        transition: transform 0.3s;
+    }
+}
+
+.ng-interview__slide-link:hover {
+    .ng-interview__img img {
+        transform: scale(1.05);
+    }
+
+    .ng-interview__link-btn-icon {
+        svg:nth-of-type(1) {
+            transform: translate(140%, -140%);
+        }
+
+        svg:nth-of-type(2) {
+            transform: translate(0, 0);
+        }
     }
 }
 
@@ -467,10 +527,11 @@
     @include font(20, 120, 0, $bold);
     background: $bg_black;
     padding: rem(3) rem(10);
-    display: inline-block;
+    display: block;
+    width: fit-content;
 
     @include mq('md') {
-        @include font(36, 120);
+        @include font(32, 120);
     }
 }
 
@@ -921,14 +982,56 @@
     align-items: center;
     justify-content: center;
 
-    img {
-        width: rem(17);
-        height: rem(14);
-        transform: rotate(-45deg);
-    }
-
     @include mq('md') {
         width: linear_func_clamp(1440, 40, 768, 25);
+    }
+}
+
+.ng-entry__btn-arrow-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: rem(17);
+    height: rem(14);
+
+    img {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: rem(17);
+        height: rem(14);
+    }
+
+    img:nth-of-type(1) {
+        display: none;
+
+        @include mq('md') {
+            display: block;
+            transform: translate(-200%, 200%) rotate(-45deg);
+            transition: 0.3s;
+        }
+    }
+
+    img:nth-of-type(2) {
+        transform: rotate(-45deg);
+
+        @include mq('md') {
+            transition: 0.3s;
+        }
+    }
+}
+
+.ng-entry__btn:hover .ng-entry__btn-arrow-icon {
+    img:nth-of-type(1) {
+        transform: translate(0%, 0%) rotate(-45deg);
+        transition: 0.3s;
+    }
+
+    img:nth-of-type(2) {
+        transform: translate(200%, -200%) rotate(-45deg);
+        transition: 0.3s;
     }
 }
 
