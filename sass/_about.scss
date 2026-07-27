@@ -610,7 +610,6 @@
 
     h3 {
         @include font(24, null, 10, 800);
-        font-family: $mincho;
 
         @include mq('md') {
             @include f(36, 50, 10, $bold);

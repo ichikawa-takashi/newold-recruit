@@ -56,7 +56,7 @@
     position: relative;
     background: #F2F1ED;
     overflow: hidden;
-    padding: rem(20) rem(10) rem(44);
+    padding: rem(20) rem(18) rem(44);
     margin-top: rem(40);
 
     @include mq('md') {
@@ -522,11 +522,13 @@
     gap: rem(5);
     padding: rem(15) rem(10);
     background: #FAF9F7;
+    min-height: rem(130);
 
     @include mq('md') {
         padding-block: rem(50);
         padding-inline: linear_func_clamp(1440, 30, 768, 15);
         gap: rem(10);
+        min-height: rem(200);
     }
 }
 
@@ -599,6 +601,19 @@
 
     @include mq('md') {
         @include font(28, 150, 0, $medium);
+    }
+}
+
+.sub-environment__stats-note {
+    margin-top: rem(15);
+    text-align: right;
+    color: $bg_black;
+    opacity: 0.5;
+    @include font(11, null, 3, $regular);
+
+    @include mq('md') {
+        margin-top: rem(20);
+        font-size: rem(12);
     }
 }
 

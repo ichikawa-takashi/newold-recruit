@@ -96,7 +96,7 @@
                     </div>
                     <p class="sub-environment__career-lead">企業や人の成長を支援し、自身の成長に繋がる</p>
                     <p class="sub-environment__career-desc">
-                        お客様の成長実現を支援するなかでご自身の経験が積み重なっていくのはもちろん、<br class="pc">結果として更なるプロフェッショナル人材と成長していきます。<br>
+                        お客様の成長実現を支援する中でご自身の経験が積み重なっていくのはもちろん、<br class="pc">結果として更なるプロフェッショナル人材へと成長していきます。<br>
                         そして、当社の業態だからこその強みを活かし、当社内でのキャリアステップだけでなく、買収先や投資先での責任者、<br
                             class="pc">ご自身の起業支援など幅広い可能性を提供できます。</p>
 
@@ -150,7 +150,7 @@
                                 <div class="sub-environment__training-block">
                                     <h3 class="sub-environment__training-title">入社時研修</h3>
                                     <p class="sub-environment__training-text">
-                                        入社後1か月間にわたり、弊社オリジナルの教育システムを使用した研修を受講いただきます。<br>必要知識のインプットとアウトプットを繰り返し、着実に必須となる基礎知識を習得いただきます。
+                                        入社後1か月間にわたり、当社オリジナルの教育システムを使用した研修を受講いただきます。<br>必要知識のインプットとアウトプットを繰り返し、着実に必須となる基礎知識を習得いただきます。
                                     </p>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                             <div class="sub-environment__training-content">
                                 <div class="sub-environment__training-block">
                                     <h3 class="sub-environment__training-title">入社後面談</h3>
-                                    <p class="sub-environment__training-text">入社1か月、3か月、5か月後に役員との1on1面談がございます。</p>
+                                    <p class="sub-environment__training-text">入社1か月、3か月、5か月後に役員との1on1面談があります。</p>
                                 </div>
                             </div>
                         </li>
@@ -177,7 +177,7 @@
                                 <div class="sub-environment__training-block">
                                     <h3 class="sub-environment__training-title">職位別研修</h3>
                                     <p class="sub-environment__training-text">
-                                        月一でアナリスト、アソシエイトなど職位に応じた専門研修を受講いただきます。<br>時には外部講師や譲渡オーナーから、より専門的で成長できる研修内容を準備しています。
+                                        月1回ほど、アナリスト、アソシエイトなど職位に応じた専門研修を受講いただきます。<br>時には外部講師や譲渡オーナーから、より専門的で成長できる研修内容を準備しています。
                                     </p>
                                 </div>
                                 <div class="sub-environment__training-block">
@@ -207,12 +207,12 @@
                             <p class="sub-environment__welfare-text">通勤にかかる交通費を、月額30,000円を上限として支給し、日々の通勤をサポートしています。</p>
                         </li>
                         <li class="sub-environment__welfare-item">
-                            <h3 class="sub-environment__welfare-title">産休/育休制度</h3>
+                            <h3 class="sub-environment__welfare-title">産休・育休制度</h3>
                             <p class="sub-environment__welfare-text">産休・育休制度をはじめ、育児短時間勤務やテレワーク制度など、ライフステージに合わせて柔軟に働ける環境を整えています。</p>
                         </li>
                         <li class="sub-environment__welfare-item">
                             <h3 class="sub-environment__welfare-title">資格取得補助制度</h3>
-                            <p class="sub-environment__welfare-text">税理士や公認会計士といった専門資格から、日商簿記検定やMOS（マイクロソフト オフィス スペシャリスト）など実務に活かせる資格まで、幅広い資格取得にかかる費用の一部補助しています。</p>
+                            <p class="sub-environment__welfare-text">税理士や公認会計士といった専門資格から、日商簿記検定やMOS（マイクロソフト オフィス スペシャリスト）など実務に活かせる資格まで、幅広い資格取得にかかる費用を一部補助しています。</p>
                         </li>
                         <li class="sub-environment__welfare-item">
                             <h3 class="sub-environment__welfare-title">慶弔見舞金</h3>
@@ -220,7 +220,7 @@
                         </li>
                         <li class="sub-environment__welfare-item">
                             <h3 class="sub-environment__welfare-title">インフルエンザ<br>予防接種補助金</h3>
-                            <p class="sub-environment__welfare-text">従業員の健康維持と働きやすい環境づくりを目的に、希望者へ予防接種費用の補助を行っています。</p>
+                            <p class="sub-environment__welfare-text">従業員の健康維持と働きやすい環境づくりを目的に、希望者へ予防接種費用の補助を行なっています。</p>
                         </li>
                         <li class="sub-environment__welfare-item">
                             <h3 class="sub-environment__welfare-title">定期健康診断</h3>
@@ -284,6 +284,8 @@
                         </div>
                     </div>
 
+                    <p class="sub-environment__stats-note">2026年7月時点</p>
+
                 </div>
             </section>
 
@@ -325,7 +327,7 @@
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>

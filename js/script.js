@@ -162,9 +162,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
 
         function startAutoPlay() {
-            autoTimer = window.setInterval(() => {
+            autoTimer = window.setTimeout(() => {
                 activateNewsItem((activeNewsIndex + 1) % newsItems.length);
-            }, 4000);
+                autoTimer = window.setInterval(() => {
+                    activateNewsItem((activeNewsIndex + 1) % newsItems.length);
+                }, 6000);
+            }, 6500);
         }
 
         function resetAutoPlay() {

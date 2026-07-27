@@ -501,7 +501,7 @@
                             <p class="cta-recruit__card-label">Casual Interview</p>
                             <p class="cta-recruit__card-title">カジュアル面談</p>
                             <p class="cta-recruit__card-text">
-                                お互いにまずは知っていくことを目的としています。<br>
+                                まずはざっくばらんに情報交換することを目的としています。<br>
                                 ぜひお気軽にお申し込みください。
                             </p>
                         </div>

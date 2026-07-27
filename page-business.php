@@ -50,7 +50,7 @@
 
                     <div class="sub-business__intro-body">
                         <h3 class="sub-business__intro-heading">
-                            さまざまな成長支援アプローチで<br>企業の経営課題に向き合います。
+                            様々な成長支援アプローチで<br>企業の経営課題に向き合います。
                         </h3>
                         <div class="sub-business__intro-content">
                             <div class="sub-business__intro-desc">
@@ -113,7 +113,7 @@
                                 </div>
 
                                 <div class="sub-business__service-block sub-business__service-block--people">
-                                    <p class="sub-business__service-block-label">働いてる人</p>
+                                    <p class="sub-business__service-block-label">働いている人</p>
                                     <div class="sub-business__service-block-body">
                                         <?php
                                         $bs01_raw    = get_field('business_01_people');
@@ -201,7 +201,7 @@
                                 </div>
 
                                 <div class="sub-business__service-block sub-business__service-block--people">
-                                    <p class="sub-business__service-block-label">働いてる人</p>
+                                    <p class="sub-business__service-block-label">働いている人</p>
                                     <div class="sub-business__service-block-body">
                                         <?php
                                         $bs02_raw    = get_field('business_02_people');
@@ -289,7 +289,7 @@
                                 </div>
 
                                 <div class="sub-business__service-block sub-business__service-block--people">
-                                    <p class="sub-business__service-block-label">働いてる人</p>
+                                    <p class="sub-business__service-block-label">働いている人</p>
                                     <div class="sub-business__service-block-body">
                                         <?php
                                         $bs03_raw    = get_field('business_03_people');
@@ -377,7 +377,7 @@
                                 </div>
 
                                 <div class="sub-business__service-block sub-business__service-block--people">
-                                    <p class="sub-business__service-block-label">働いてる人</p>
+                                    <p class="sub-business__service-block-label">働いている人</p>
                                     <div class="sub-business__service-block-body">
                                         <?php
                                         $bs04_raw    = get_field('business_04_people');
@@ -467,7 +467,7 @@
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>

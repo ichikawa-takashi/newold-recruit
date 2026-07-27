@@ -231,7 +231,7 @@
     @include mq('md') {
         display: grid;
         grid-template-columns: 1fr linear_func_clamp(1023, 700, 768, 440);
-        gap: rem(40);
+        gap: rem(24);
     }
 
     @include mq('lg') {

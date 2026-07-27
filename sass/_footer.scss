@@ -187,12 +187,13 @@
     display: block;
     margin-top: rem(60);
     text-align: center;
-    @include font(14, null, 3, $regular);
+    @include font(11, null, 3, $regular);
     color: $bg_black;
+    opacity: 0.5;
 
     @include mq('md') {
         margin-top: rem(40);
         text-align: right;
-        @include font(14);
+        @include font(11);
     }
 }

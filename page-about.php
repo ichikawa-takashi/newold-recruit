@@ -58,13 +58,13 @@
                                 <h3 class="sub-about__topic-title">創業理由</h3>
                             </div>
                             <div class="sub-about__topic-body">
-                                <p class="sub-about__topic-lead">M&A業界の構造的課題を乗り越え、<br>
+                                <p class="sub-about__topic-lead">構造的課題を乗り越え、<br>
                                     本質的成長支援を実現する</p>
                                 <div class="sub-about__topic-desc">
                                     <p>
                                         NEWOLD CAPITALの創業メンバーは、長年、大手M&A仲介会社の最前線でM&A支援業務に携わってきました。<br>
-                                        そのなかで、「M&Aという手段だけを提供する環境では、企業の成長戦略支援として本当に十分と言えるのだろうか」という共通の課題意識を持っていました。<br>
-                                        現場で経営者の声に向き合うなかで実感したのは、M&Aそのものではなく、その先にある企業変革と持続的な成長こそが、経営者の本質的な関心であるということでした。
+                                        その中で、「M&Aという手段だけを提供する環境では、企業の成長戦略支援として本当に十分と言えるのだろうか」という共通の課題意識を持っていました。<br>
+                                        現場で経営者の声に向き合う中で実感したのは、M&Aそのものではなく、その先にある企業変革と持続的な成長こそが、経営者の本質的な関心であるということでした。
                                     </p>
                                     <p>
                                         ワンストップで企業変革や成長戦略のご支援ができる会社を作りたい——そんな想いから、2022年6月にNEWOLD CAPITALを創業しました。<br>
@@ -94,9 +94,9 @@
                                     </picture>
                                 </div>
                                 <div class="sub-about__topic-desc">
-                                    <p>上部は「山」を表現し、地域に根ざした企業や人の力、そして長い歴史の中で培われてきた知恵を示しています。<br>
-                                        中央は「ビル」を表現し、最先端の知識や人材、資本が集まり、変化を生み出すエネルギーを映しています。<br>
-                                        下部の「アーチ」は、つながりと融合を象徴しています。
+                                    <p>上部は「山」を表現し、地域に根ざした企業や人の力、そして長い歴史の中で培われてきた知恵を表しています。<br>
+                                        中央は「ビル」を表現し、最先端の知識や人材、資本が集まり、変化を生み出すエネルギーを表しています。<br>
+                                        下部の「アーチ」は、繋がりと融合を象徴しています。
                                     </p>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                 <h3 class="sub-about__topic-title">私たちの信念</h3>
                             </div>
                             <div class="sub-about__topic-body">
-                                <p class="sub-about__topic-lead">期待値を超え続ける<br>
+                                <p class="sub-about__topic-lead">期待値を超え続ける<br class="sp">
                                     プロ集団たれ</p>
                                 <p class="sub-about__topic-desc">
                                     私たちは、経営者の期待に応えることにとどまらず、常にその一歩先の価値を提供することを信念としています。<br>
@@ -214,13 +214,13 @@
                         <h2 class="sub-page__section-title">今後の展望</h2>
                     </div>
                     <div class="sub-about__vision-body">
-                        <p class="sub-about__topic-lead">「成長戦略実現ファーム」としての<br>挑戦をし続ける</p>
+                        <p class="sub-about__topic-lead">「成長実現ファーム」として挑戦し続ける</p>
                         <div class="sub-about__topic-desc">
-                            <p>私たちが目指すのは、「成長戦略実現ファーム」としての確立です。<br>
+                            <p>私たちが目指すのは、「成長実現ファーム」としての確立です。<br>
                                 M&A実行支援、経営幹部人材紹介、エキスパート活用ソリューション、東南アジアM&A・進出支援と、事業の一つひとつに確かな存在感を持たせ、企業の成長戦略をワンストップで実現できる独自のポジションを築きます。加えて、「企業・人・地域」の成長実現に資する新たな事業も継続的に展開してまいります。
                             </p>
                             <p>
-                                M&お客様の成長を支えるためには、私たち自身が誰よりも成長し続けなければなりません。一人ひとりが学び、挑戦し、進化を重ねる。その積み重ねが、「成長戦略実現ファーム」としての真価を支える原動力です。<br>
+                                お客様の成長を支えるためには、私たち自身が誰よりも成長し続けなければなりません。一人ひとりが学び、挑戦し、進化を重ねる。その積み重ねが、「成長実現ファーム」としての真価を支える原動力です。<br>
                                 そして、「THANKS by NEWOLD（未来への再投資）」を通じて、企業や人が歩んできた歴史（OLD）を踏まえ、未来（NEW）へ再投資をすることで、「企業・人・地域」の成長実現の一役を担っていきます。
                             </p>
                         </div>
@@ -254,35 +254,35 @@
                                 <div class="sub-about__initiative-movie">
                                     <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="sK9V2cw000A">
                                         <img src="https://img.youtube.com/vi/sK9V2cw000A/maxresdefault.jpg" alt="" width="480" height="360">
-                                        <!-- <div class="sub-about__movie-play">
+                                        <div class="sub-about__movie-play">
                                             <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
                                                 <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
                                                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="sub-about__initiative-movie">
                                     <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="UtKOjyCe6AA">
                                         <img src="https://img.youtube.com/vi/UtKOjyCe6AA/maxresdefault.jpg" alt="" width="480" height="360">
-                                        <!-- <div class="sub-about__movie-play">
+                                        <div class="sub-about__movie-play">
                                             <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
                                                 <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
                                                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="sub-about__initiative-card">
                             <div class="sub-about__initiative-content">
-                                <p class="sub-about__initiative-label-en">M&amp;A E-learningサービス</p>
+                                <p class="sub-about__initiative-label-en">M&amp;A eラーニングサービス</p>
                                 <h3 class="sub-about__initiative-title">NEWOLD ABLE</h3>
                                 <div class="sub-about__initiative-able-wrapper">
                                     <figure class="sub-about__initiative-image sub-about__initiative-image--able">
@@ -333,13 +333,13 @@
                         </div>
                         <div class="sub-about__ceo-message">
                             <h3>貴方の情熱、経験、知識、人脈の全てをお客様の成長実現と自己実現につなげませんか？</h3>
-                            <p>当社は、「企業・人・地域の成長を実現し、次世代の幸せを増やす」という志を実現させるために、M&A（国内・東南アジア）、経営人材紹介、プロ人材の活用事業を行っています。
+                            <p>当社は、「企業・人・地域の成長を実現し、次世代の幸せを増やす」という志を実現させるために、M&A（国内・東南アジア）、経営人材紹介、プロ人材の活用事業を行なっています。
                             </p>
-                            <p>中堅中小企業の成長を実現することで、その地域に雇用が生まれ、働く従業員の生活水準が上がり、地域が活性化すると考えています。そして、それらの経済効果が未来を担う次世代の子供たちに循環され、結果的に、日本の未来を明るくすると考えています。
+                            <p>中堅中小企業の成長を実現することで、その地域に雇用が生まれ、働く従業員の生活水準が上がり、地域が活性化すると考えています。そして、それらの経済効果が未来を担う次世代の子どもたちに循環され、結果的に、日本の未来を明るくすると考えています。
                             </p>
                             <p>我々は、日々、様々な業界、規模の経営者の方とお話をさせていただいています。<br>
                                 百戦錬磨の経営者の方から信頼していただくことは、とても難しいことです。</p>
-                            <p>我々は、経営者の方から信頼されるための努力を常にできる方、自ら考え、学び、行動し、素直に成長し続ける人を求めています。<br>
+                            <p>我々は、経営者の方から信頼されるための努力を常にできる方、自ら考え、学び、行動し、素直に成長し続ける方を求めています。<br>
                                 未経験者であっても自らの努力次第でキャッチアップしていただくことは十分可能です。</p>
                             <p>当社は、『人』が唯一の資産です。<br>
                                 入社いただいた方に成長していただくことでしか、会社は成長できません。<br>
@@ -367,9 +367,9 @@
                             <div class="sub-about__member-info">
                                 <div class="sub-about__member-name-block">
                                     <p class="sub-about__member-name">塚田 壮一朗</p>
-                                    <p class="sub-about__member-name-en">Tsukada Soichiro</p>
+                                    <p class="sub-about__member-name-en">Soichiro Tsukada</p>
                                 </div>
-                                <p class="sub-about__member-role">共同創業者 ／ 取締役COO</p>
+                                <p class="sub-about__member-role">共同創業者 /<br class="sp"> 取締役COO</p>
                             </div>
                             <p class="sub-about__member-message">
                                 これからの日本は、どうあるべきでしょうか。<br>
@@ -398,15 +398,15 @@
                             <div class="sub-about__member-info">
                                 <div class="sub-about__member-name-block">
                                     <p class="sub-about__member-name">大野 智明</p>
-                                    <p class="sub-about__member-name-en">Tomoaki Ono</p>
+                                    <p class="sub-about__member-name-en">Tomoaki Ohno</p>
                                 </div>
                                 <p class="sub-about__member-role"> 取締役CSO</p>
                             </div>
                             <p class="sub-about__member-message">
                                 私たちは、「企業の未来をつくる成長支援」に本気で向き合っています。<br>
                                 当社は、経験や年次に関係なく、挑戦したいという想いを持つ仲間に、多くの機会と裁量を提供する環境が整っています。<br>
-                                そうした環境のなかで、私自身も国内M&Aの実行支援に留まらず、「東南アジアM&A・進出支援事業」を立ち上げました。一人ひとりの挑戦が新たな機会を生み、それが企業の成長を、ひいては地域や産業の未来を支える力になっていくと考えています。こうした好循環を実現したいと思っています。<br>
-                                国内外の垣根無く成長する企業を仲間とともに創っていきたい。そんな想いに共感してくださる方と、一緒に挑戦できることを楽しみにしています。
+                                そうした環境の中で、私自身も国内M&Aの実行支援にとどまらず、「東南アジアM&A・進出支援事業」を立ち上げました。一人ひとりの挑戦が新たな機会を生み、それが企業の成長を、ひいては地域や産業の未来を支える力になっていくと考えています。こうした好循環を実現したいと思っています。<br>
+                                国内外の垣根無く成長する企業を仲間と共に創っていきたい。そんな想いに共感してくださる方と、一緒に挑戦できることを楽しみにしています。
                             </p>
                         </li>
                         <li class="sub-about__member-item">
@@ -557,7 +557,7 @@
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>

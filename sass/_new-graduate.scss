@@ -104,8 +104,15 @@
     }
 }
 
-.ng-hero__swiper {
+.ng-hero__swiper,
+.ng-hero__image {
     width: 100%;
+}
+
+.ng-hero__image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 // .ng-hero__swiper.swiper-fade .swiper-slide {
@@ -119,7 +126,7 @@
 // }
 
 .ng-hero__lead {
-    text-align: right;
+    text-align: left;
     @include font(54, 100, -8, $bold);
     padding-right: rem(10);
 
@@ -556,6 +563,13 @@
     margin-top: rem(10);
 }
 
+.ng-interview__name-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(10);
+}
+
 .ng-interview__name {
     @include font(18, null, 0, $medium);
 
@@ -564,23 +578,28 @@
     }
 }
 
-.ng-interview__department {
-    margin-top: rem(3);
+.ng-interview__pos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $bg_black;
+    padding: rem(2) rem(8);
+    line-height: 1;
+    white-space: nowrap;
+    @include font(11, null, 0, $medium);
 
     @include mq('md') {
-        display: flex;
-        align-items: center;
-        gap: rem(5);
-        margin-top: rem(5);
+        padding: rem(4) rem(10);
+        font-size: rem(13);
     }
 }
 
-.ng-interview__pos {
-    @include font(12, 125, 0, $medium);
+.ng-interview__role {
+    margin-top: rem(3);
+    @include font(12, 150, 0, $regular);
 
     @include mq('md') {
-        font-size: rem(15);
-        line-height: 1;
+        font-size: rem(14);
     }
 }
 

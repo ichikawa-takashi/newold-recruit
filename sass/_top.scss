@@ -407,8 +407,9 @@ body.front-page.bg-brightness .top-business__inner {
 
 .top-where__title {
     font-family: $mincho;
-    @include font(29, 150, 3, $regular);
+    @include font(26, 150, 3, $regular);
     text-align: center;
+    word-break: keep-all;
 
     @include mq("md") {
         @include font(56);
@@ -439,9 +440,10 @@ body.front-page.bg-brightness .top-business__inner {
 .top-where__lead-text {}
 
 .top-where__lead-text--emphasis {
-    @include font(28, 150, 3, $medium);
+    @include font(25, 150, 3, $medium);
     font-family: $mincho;
     margin-top: rem(10);
+    word-break: keep-all;
 
     @include mq("md") {
         margin-top: rem(20);
@@ -1438,6 +1440,13 @@ body.bg-brightness .top-people {
 
 .top-people__header-title {
     color: $black;
+    font-size: vw(375, 70);
+    white-space: nowrap;
+
+    @include mq("md") {
+        font-size: rem(120);
+        white-space: normal;
+    }
 }
 
 .top-sec-title {}
@@ -1749,12 +1758,15 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 .top-recruit__heading {}
 
 .top-recruit__title {
-    @include font(70, 60, -4, $regular);
+    font-size: vw(375, 70);
+    @include font($line-height: 60, $letter-spacing: -4, $font-weight: $regular);
     font-family: $en;
     text-align: center;
+    white-space: nowrap;
 
     @include mq("md") {
-        @include font(120);
+        font-size: rem(120);
+        white-space: normal;
     }
 }
 
@@ -1906,7 +1918,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
     border-radius: rem(3);
 
     @include mq("md") {
-        padding: rem(50) rem(80);
+        padding: rem(35) rem(80);
         width: 100%;
     }
 }
@@ -2048,8 +2060,9 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
     z-index: 1;
 
     &.is-playing {
-        // 再生中はYouTube標準コントロール（シークバー等）が乗る下部帯だけシールドを外し、
-        // それ以外の領域はシールドを残してLenisのスクロール安定性を維持する
-        clip-path: inset(0 0 40px 0);
+        // 再生中は設定・字幕・音声などYouTube標準UIを操作できるよう、
+        // シールドへのポインター操作を無効化し、クリックをiframeへそのまま届ける
+        // （このためLenisのスクロール安定化は再生中のみ効かなくなる）
+        pointer-events: none;
     }
 }

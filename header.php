@@ -100,20 +100,20 @@
                             </ul>
                         </nav>
                         <ul class="header__drawer-sns">
-                            <li class="header__drawer-sns-item header__drawer-sns-item--x">
-                                <a href="https://x.com/newold_official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-white.svg" alt="X"></a>
+                            <li class="header__drawer-sns-item header__drawer-sns-item--instagram">
+                                <a href="https://www.instagram.com/newoldcapital.official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-white.svg" alt="Instagram"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--youtube">
                                 <a href="https://www.youtube.com/@newoldcapital" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-white.svg" alt="YouTube"></a>
+                            </li>
+                            <li class="header__drawer-sns-item header__drawer-sns-item--x">
+                                <a href="https://x.com/newold_official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/x-white.svg" alt="X"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--facebook">
                                 <a href="https://www.facebook.com/newoldcapital.official/" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/facebook-fill-white.svg" alt="Facebook"></a>
                             </li>
                             <li class="header__drawer-sns-item header__drawer-sns-item--linkedin">
                                 <a href="https://www.linkedin.com/company/newold-official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/linked-in-square.svg" alt="LinkedIn"></a>
-                            </li>
-                            <li class="header__drawer-sns-item header__drawer-sns-item--instagram">
-                                <a href="https://www.instagram.com/newoldcapital.official" target="_blank" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/insta-white.svg" alt="Instagram"></a>
                             </li>
                         </ul>
                         <div class="header__drawer-cta">

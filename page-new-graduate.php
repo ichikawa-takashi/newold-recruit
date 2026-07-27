@@ -10,41 +10,13 @@
                 ビジネス<br>アスリート<br>として生きる
             </h1>
             <div class="ng-hero__image-wrapper">
-                <div class="swiper ng-hero__swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <picture>
-                                <source media="(min-width: 768px)"
-                                    srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-pc.jpg">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-sp.jpg"
-                                    alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide">
-                            <picture>
-                                <source media="(min-width: 768px)"
-                                    srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-woman-pc.jpg">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-woman-sp.jpg"
-                                    alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide">
-                            <picture>
-                                <source media="(min-width: 768px)"
-                                    srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-pc.jpg">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-sp.jpg"
-                                    alt="">
-                            </picture>
-                        </div>
-                        <div class="swiper-slide">
-                            <picture>
-                                <source media="(min-width: 768px)"
-                                    srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-woman-pc.jpg">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-woman-sp.jpg"
-                                    alt="">
-                            </picture>
-                        </div>
-                    </div>
+                <div class="ng-hero__image">
+                    <picture>
+                        <source media="(min-width: 768px)"
+                            srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-pc.jpg">
+                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/hero-sp.jpg"
+                            alt="">
+                    </picture>
                 </div>
                 <div class="ng-hero__deck">
                     <p class="ng-hero__deck-label">Recruit</p>
@@ -97,7 +69,8 @@
                 <div class="ng-message__texts sp">
                     <p class="ng-message__para">
                         <span class="ng-message__line">中小企業の成長が、巡り巡って</span>
-                        <span class="ng-message__line">未来を担う子どもたちや地域へとつながり、</span>
+                        <span class="ng-message__line">未来を担う子どもたちや</span>
+                        <span class="ng-message__line">地域へとつながり、</span>
                         <span class="ng-message__line">日本の未来を明るくする。</span>
                     </p>
                     <p class="ng-message__para">
@@ -107,22 +80,28 @@
                         <span class="ng-message__line">手段は問わない。</span>
                     </p>
                     <p class="ng-message__para">
-                        <span class="ng-message__line">クライアントの成長を実現するために、</span>
-                        <span class="ng-message__line">私たち自身も成長し続ける必要がある。</span>
+                        <span class="ng-message__line">お客様の成長を実現するために、</span>
+                        <span class="ng-message__line">私たちも成長し続ける必要がある。</span>
                     </p>
                     <p class="ng-message__para">
                         <span class="ng-message__line">その覚悟があるなら。</span>
+                    </p>
+                    <p class="ng-message__para">
                         <span class="ng-message__line">あなたのこれまでの全てを、</span>
                         <span class="ng-message__line">ここで活かしてほしい。</span>
-                        <span class="ng-message__line">経験、知識、スキル、人脈、そして情熱。</span>
-                        <span class="ng-message__line">その全てで、次世代の幸せをともに増やそう。</span>
+                    </p>
+                    <p class="ng-message__para">
+                        <span class="ng-message__line">経験、知識、人脈、そして情熱。</span>
+                        <span class="ng-message__line">その全てを駆使し、</span>
+                        <span class="ng-message__line">次世代の幸せを共に増やそう。</span>
                     </p>
                 </div>
                 <!-- PC版 -->
                 <div class="ng-message__texts pc">
                     <p class="ng-message__para">
                         <span class="ng-message__line">中小企業の成長が、巡り巡って</span>
-                        <span class="ng-message__line">未来を担う子どもたちや地域へとつながり、</span>
+                        <span class="ng-message__line">未来を担う子どもたちや</span>
+                        <span class="ng-message__line">地域へとつながり、</span>
                         <span class="ng-message__line">日本の未来を明るくする。</span>
                     </p>
                     <p class="ng-message__para">
@@ -132,15 +111,20 @@
                         <span class="ng-message__line">手段は問わない。</span>
                     </p>
                     <p class="ng-message__para">
-                        <span class="ng-message__line">クライアントの成長を実現するために、</span>
-                        <span class="ng-message__line">私たち自身も成長し続ける必要がある。</span>
+                        <span class="ng-message__line">お客様の成長を実現するために、</span>
+                        <span class="ng-message__line">私たちも成長し続ける必要がある。</span>
                     </p>
                     <p class="ng-message__para">
                         <span class="ng-message__line">その覚悟があるなら。</span>
+                    </p>
+                    <p class="ng-message__para">
                         <span class="ng-message__line">あなたのこれまでの全てを、</span>
                         <span class="ng-message__line">ここで活かしてほしい。</span>
-                        <span class="ng-message__line">経験、知識、スキル、人脈、そして情熱。</span>
-                        <span class="ng-message__line">その全てで、次世代の幸せをともに増やそう。</span>
+                    </p>
+                    <p class="ng-message__para">
+                        <span class="ng-message__line">経験、知識、人脈、そして情熱。</span>
+                        <span class="ng-message__line">その全てを駆使し、</span>
+                        <span class="ng-message__line">次世代の幸せを共に増やそう。</span>
                     </p>
                 </div>
             </div>
@@ -160,7 +144,7 @@
                         <a class="sub-page__nav-link" href="#sec01">メッセージ</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec02">先輩のインタビュー</a>
+                        <a class="sub-page__nav-link" href="#sec02">先輩の声</a>
                     </li>
                     <li class="sub-page__nav-item">
                         <a class="sub-page__nav-link" href="#sec03">NEWOLD CAPITALで<br>働くということ</a>
@@ -271,15 +255,15 @@
                                                 <?php endif; ?>
                                             </div>
                                             <div class="ng-interview__profile">
-                                                <p class="ng-interview__name"><?php echo esc_html($ni_name); ?></p>
-                                                <div class="ng-interview__department">
+                                                <div class="ng-interview__name-row">
+                                                    <p class="ng-interview__name"><?php echo esc_html($ni_name); ?></p>
                                                     <?php if ($ni_tenure !== ''): ?>
                                                         <p class="ng-interview__pos"><?php echo esc_html($ni_tenure); ?></p>
                                                     <?php endif; ?>
-                                                    <?php if (!empty($ni_department)): ?>
-                                                        <p class="ng-interview__role"><?php echo esc_html($ni_department); ?></p>
-                                                    <?php endif; ?>
                                                 </div>
+                                                <?php if (!empty($ni_department)): ?>
+                                                    <p class="ng-interview__role"><?php echo esc_html($ni_department); ?></p>
+                                                <?php endif; ?>
                                             </div>
                                         </a>
                                     </div>
@@ -307,7 +291,7 @@
                                 <h3 class="ng-culture__title">早期から成長できる環境</h3>
                             </div>
                             <p class="ng-culture__text">
-                                <span>弊社オリジナルの教育システムを活用し、早期にM&amp;Aアドバイザーとしてキャッチアップいただく体制を整えています。</span>また、自らのソーシングに加え、連携部署のバックアップ体制が整っているため、サポート体制は万全です。
+                                <span>当社オリジナルの教育システムを活用し、早期にM&amp;Aアドバイザーとしてキャッチアップいただく体制を整えています。</span>また、自らのソーシングに加え、連携部署のバックアップ体制が整っているため、サポート体制は万全です。
                             </p>
                         </div>
                         <div class="ng-culture__item">
@@ -316,7 +300,7 @@
                                 <h3 class="ng-culture__title">フラットな組織体制</h3>
                             </div>
                             <p class="ng-culture__text">
-                                <span>360度評価やMBOを取り入れ、多角的な目線で評価できる環境</span>を整えています。また、社内では「役職」呼びはせず、座席もフリーアドレスのため、様々なメンバーとすぐにコミュニケーションをとることができ、仕事がしやすい雰囲気です。
+                                <span>定量評価だけではなく定性評価を取り入れ、多角的な目線で評価できる環境</span>を整えています。また、社内では「役職」呼びはせず、様々なメンバーと気兼ねなくコミュニケーションをとることができ、仕事がしやすい雰囲気です。
                             </p>
                         </div>
                         <div class="ng-culture__item">
@@ -459,7 +443,7 @@
                             </div>
                             <p class="ng-entry__desc">
                                 ビジネスアスリートとして、<br>
-                                ともに成長し、挑戦し続ける仲間をお待ちしています。
+                                共に成長し、挑戦し続ける仲間をお待ちしています。
                             </p>
                         </div>
                         <a href="https://hrmos.co/pages/newold/jobs?category=2161342350921977857" target="_blank" rel="noopener noreferrer" class="ng-entry__btn">
@@ -573,7 +557,7 @@
                             <div class="ng-faq__a">
                                 <span class="ng-faq__a-label">A</span>
                                 <span
-                                    class="ng-faq__a-text">高い成果を出したメンバーやプロジェクトを賞賛する文化があり、個人はもちろんですが、チームで成果を出すことに喜びを感じる社員が多く在籍しています。また、分からないことはすぐに上司や先輩に相談できる環境が整っています。互いに教えあう文化で、風通しの良く、コミュニケーションが活発な職場です。</span>
+                                    class="ng-faq__a-text">高い成果を出したメンバーやプロジェクトを賞賛する文化があり、個人はもちろんですが、チームで成果を出すことに喜びを感じる社員が多く在籍しています。また、分からないことはすぐに上司や先輩に相談できる環境が整っています。互いに教え合う文化で、風通しが良く、コミュニケーションが活発な職場です。</span>
                             </div>
                         </details>
                         <details class="ng-faq__item">
@@ -603,7 +587,7 @@
                         <details class="ng-faq__item">
                             <summary class="ng-faq__q">
                                 <span class="ng-faq__q-label">Q</span>
-                                <span class="ng-faq__q-text">キャリアアップのイメージが知りたいです。</span>
+                                <span class="ng-faq__q-text">キャリアアップのイメージを知りたいです。</span>
                                 <span class="ng-faq__icon" aria-hidden="true"></span>
                             </summary>
                             <div class="ng-faq__a">
@@ -621,7 +605,7 @@
                             <div class="ng-faq__a">
                                 <span class="ng-faq__a-label">A</span>
                                 <span
-                                    class="ng-faq__a-text">M&amp;A実行支援事業においては、約7～8か月ほどです。Agent事業においては、約3～4か月ほどです。</span>
+                                    class="ng-faq__a-text">M&amp;A実行支援事業においては、約7～8か月ほどです。経営幹部人材紹介事業においては、約3～4か月ほどです。</span>
                             </div>
                         </details>
                     </div>
@@ -668,7 +652,7 @@
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>

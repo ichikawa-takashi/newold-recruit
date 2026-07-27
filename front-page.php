@@ -137,7 +137,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
 
             <div class="top-where__lead-group">
                 <p class="top-where__lead-text">
-                    予測不可能な時代において、私たちNEWOLD CAPITALは
+                    予測不可能な時代において、私たち<br class="sp">NEWOLD CAPITALは
                 </p>
                 <h3 class="top-where__lead-text top-where__lead-text--emphasis">
                     成長を支える<br class="sp">経営パートナーとして<br>
@@ -155,7 +155,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 <p class="top-where__description-text">NEWOLD CAPITALは、</p>
                 <p class="top-where__description-text">
                     「温故知新」の精神を大切にしながら、歴史や想いを受け継ぎ、<br>
-                    次世代へとつながる持続的な成長を共実現していく存在を目指しています。
+                    次世代へとつながる持続的な成長を共に実現していく存在を目指しています。
                 </p>
                 <p class="top-where__description-text top-where__description-text--bottom">
                     私たちの志は、「企業・人・地域」の成長を実現し、<br>
@@ -322,7 +322,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-title">M&amp;A実行支援</p>
                                 <p class="top-business__detail-text">
                                     NEWOLD M&amp;Aは、「繋ぐ」だけでなく「伸ばす」ことを目的とした成長戦略型M&Aです。<br class="pc">
-                                    業種特化の専門性を活かし、初期段階からPMIや事業計画を議論し、最適な戦略を描きます。その戦略をスキームへと落とし込み、実効性の高いM&Aを実現します。
+                                    業種特化の専門性を活かし、初期段階からPMIや事業計画を議論し、最適な戦略を描きます。<br class="pc">その戦略をスキームへと落とし込み、実効性の高いM&Aを実現します。
                                 </p>
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec02')); ?>" class="top-business__detail-link right-up-button">
@@ -388,7 +388,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-title">経営幹部人材紹介</p>
                                 <p class="top-business__detail-text">
                                     NEWOLD Agentは、企業変革を担うキーパーソンの採用を支援します。<br class="pc">
-                                    連続的なM&Aを推進する責任者から、次期後継者やCxOクラスまで、経営課題に応じた最適な人材をご紹介。経営幹部人材の採用を通じて、持続的な成長を実現します。
+                                    連続的なM&Aを推進する責任者から、次期後継者やCxOクラスまで、経営課題に応じた最適な人材をご紹介。<br class="pc">経営幹部人材の採用を通じて、持続的な成長を実現します。
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec03')); ?>" class="top-business__detail-link right-up-button">
                                         <p class="top-business__detail-link-text">詳細を見る</p>
@@ -518,7 +518,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                 <p class="top-business__detail-label">NEWOLD Asia</p>
                                 <p class="top-business__detail-title">東南アジアM&A・進出支援</p>
                                 <p class="top-business__detail-text">
-                                    NEWOLD Asiaは東南アジアにおける市場調査・戦略立案から、M&Aのソーシング・実行、PMIまでを一気通貫で支援。現地事情に精通したプロフェッショナルが、日本企業の海外成長を実現します。
+                                    NEWOLD Asiaは、東南アジアにおける市場調査・戦略立案から、M&Aのソーシング・実行、PMIまでを一気通貫で支援。<br class="pc">現地事情に精通したプロフェッショナルが、日本企業の海外成長を実現します。
                                 </p>
                                 <div class="top-business__detail-button">
                                     <a href="<?php echo esc_url(home_url('/business/#sec05')); ?>" class="top-business__detail-link right-up-button">
@@ -721,7 +721,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                             <a href="<?php echo esc_url(home_url('/environment/#sec01')); ?>" class="top-environment__link right-up-button">
                                 <dl class="top-environment__item-head">
                                     <dt class="top-environment__item-label">NEWOLD Growth Path</dt>
-                                    <dd class="top-environment__item-title">キャリアステップ・アップ</dd>
+                                    <dd class="top-environment__item-title">キャリアステップ</dd>
                                 </dl>
                                 <div class="top-environment__button-arrow right-up-button__arrow">
                                     <span class="top-environment__button-icon right-up-button__icon">
@@ -876,50 +876,6 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
     </section>
 
 
-    <section class="cta-join">
-        <div class="inner cta-join__inner">
-            <div class="cta-join__visual">
-                <picture class="">
-                    <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/join-image.jpg" media="(min-width: 768px)" />
-                    <img class="cta-join__image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/join-image_sp.jpg" alt="スーツ姿の男女が笑顔で会話する様子" />
-                </picture>
-                <div class="cta-join__overlay">
-                    <div class="cta-join__heading">
-                        <h2 class="cta-join__title">Join our team!</h2>
-                        <p class="cta-join__lead">
-                            NEWOLD CAPITALでは積極的に採用を行なっています。<br />
-                            エントリーお待ちしています。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="cta-join__links">
-                <div class="cta-join__link-item cta-join__link-item--graduate">
-                    <a href="#" class="cta-join__link right-up-button">
-                        <p class="cta-join__link-text">新卒採用<span>はこちら</span></p>
-                        <div class="cta-join__button-arrow right-up-button__arrow">
-                            <span class="cta-join__button-icon right-up-button__icon">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cta-join__link-item cta-join__link-item--career">
-                    <a href="#" class="cta-join__link right-up-button">
-                        <p class="cta-join__link-text">中途採用<span>はこちら</span></p>
-                        <div class="cta-join__button-arrow right-up-button__arrow">
-                            <span class="cta-join__button-icon right-up-button__icon">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div> -->
-        </div>
-    </section>
-
     <section class="cta-recruit">
         <div class="cta-recruit__inner inner">
             <div class="cta-recruit__heading">
@@ -955,7 +911,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>
@@ -972,6 +928,46 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="cta-join">
+        <div class="inner cta-join__inner">
+            <div class="cta-join__visual">
+                <picture class="">
+                    <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/join-image.jpg" media="(min-width: 768px)" />
+                    <img class="cta-join__image" src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/join-image_sp.jpg" alt="スーツ姿の男女が笑顔で会話する様子" />
+                </picture>
+                <div class="cta-join__overlay">
+                    <div class="cta-join__heading">
+                        <h2 class="cta-join__title">Join our team!</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="cta-join__links">
+                <div class="cta-join__link-item cta-join__link-item--graduate">
+                    <a href="#" class="cta-join__link right-up-button">
+                        <p class="cta-join__link-text">新卒採用<span>はこちら</span></p>
+                        <div class="cta-join__button-arrow right-up-button__arrow">
+                            <span class="cta-join__button-icon right-up-button__icon">
+                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
+                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="cta-join__link-item cta-join__link-item--career">
+                    <a href="#" class="cta-join__link right-up-button">
+                        <p class="cta-join__link-text">中途採用<span>はこちら</span></p>
+                        <div class="cta-join__button-arrow right-up-button__arrow">
+                            <span class="cta-join__button-icon right-up-button__icon">
+                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
+                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-white.svg" alt="右向き矢印アイコン" />
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
         </div>
     </section>
 </main>

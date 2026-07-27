@@ -19,10 +19,10 @@
                             <a href="<?php echo esc_url(home_url('/about/')); ?>">NEWOLD CAPITALについて</a>
                         </li>
                         <li class="footer__nav-item">
-                            <a href="<?php echo esc_url(home_url('/business/')); ?>">事業について</a>
+                            <a href="<?php echo esc_url(home_url('/business/')); ?>">事業を知る</a>
                         </li>
                         <li class="footer__nav-item">
-                            <a href="<?php echo esc_url(home_url('/people/')); ?>">NEWOLD CAPITALの人</a>
+                            <a href="<?php echo esc_url(home_url('/people/')); ?>">働く人を知る</a>
                         </li>
                         <li class="footer__nav-item">
                             <a href="<?php echo esc_url(home_url('/environment/')); ?>">働く環境</a>
@@ -31,7 +31,7 @@
                             <a href="<?php echo esc_url(home_url('/recruitment/')); ?>">採用情報</a>
                         </li>
                         <li class="footer__nav-item">
-                            <a href="<?php echo esc_url(home_url('/new-graduate/')); ?>">新卒情報</a>
+                            <a href="<?php echo esc_url(home_url('/new-graduate/')); ?>">新卒採用</a>
                         </li>
                     </ul>
                 </nav>

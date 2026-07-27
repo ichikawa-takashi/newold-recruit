@@ -374,12 +374,16 @@
 .cta-join__image {
     //   aspect-ratio: 1260 / 520;
     object-fit: cover;
-    height: 120%;
+    height: 110%;
     position: absolute;
     //   top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+
+    @include mq('md') {
+        height: 120%;
+    }
 }
 
 .cta-join__overlay {
@@ -765,7 +769,7 @@ body:not(.front-page) .bg-grid {
         width: rem(10);
         height: rem(10);
         flex-shrink: 0;
-        background: $green;
+        background: $brown;
     }
 }
 

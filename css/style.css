@@ -534,11 +534,16 @@ select::-ms-expand {
 
 .cta-join__image {
   object-fit: cover;
-  height: 120%;
+  height: 110%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+}
+@media screen and (min-width: 768px) {
+  .cta-join__image {
+    height: 120%;
+  }
 }
 
 .cta-join__overlay {
@@ -946,7 +951,7 @@ body:not(.front-page) .bg-grid {
   width: 0.625rem;
   height: 0.625rem;
   flex-shrink: 0;
-  background: #2EE5C4;
+  background: #7E6346;
 }
 
 .cta-recruit {
@@ -1865,11 +1870,12 @@ body.front-page.bg-brightness .top-business__inner {
 
 .top-where__title {
   font-family: "Shippori Mincho", sans-serif;
-  font-size: 1.8125rem;
+  font-size: 1.625rem;
   line-height: 1.5;
   letter-spacing: 0.03em;
   font-weight: 400;
   text-align: center;
+  word-break: keep-all;
 }
 @media screen and (min-width: 768px) {
   .top-where__title {
@@ -1904,12 +1910,13 @@ body.front-page.bg-brightness .top-business__inner {
 }
 
 .top-where__lead-text--emphasis {
-  font-size: 1.75rem;
+  font-size: 1.5625rem;
   line-height: 1.5;
   letter-spacing: 0.03em;
   font-weight: 500;
   font-family: "Shippori Mincho", sans-serif;
   margin-top: 0.625rem;
+  word-break: keep-all;
 }
 @media screen and (min-width: 768px) {
   .top-where__lead-text--emphasis {
@@ -2891,6 +2898,14 @@ body.bg-brightness .top-people {
 
 .top-people__header-title {
   color: #1A1A1A;
+  font-size: 18.6666666667vw;
+  white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .top-people__header-title {
+    font-size: 7.5rem;
+    white-space: normal;
+  }
 }
 
 .top-people__header-description {
@@ -3161,16 +3176,18 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 }
 
 .top-recruit__title {
-  font-size: 4.375rem;
+  font-size: 18.6666666667vw;
   line-height: 0.6;
   letter-spacing: -0.04em;
   font-weight: 400;
   font-family: "Jost", sans-serif;
   text-align: center;
+  white-space: nowrap;
 }
 @media screen and (min-width: 768px) {
   .top-recruit__title {
     font-size: 7.5rem;
+    white-space: normal;
   }
 }
 
@@ -3339,7 +3356,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 }
 @media screen and (min-width: 768px) {
   .top-recruit__button {
-    padding: 3.125rem 5rem;
+    padding: 2.1875rem 5rem;
     width: 100%;
   }
 }
@@ -3463,7 +3480,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   z-index: 1;
 }
 .top-movie__media-shield.is-playing {
-  clip-path: inset(0 0 40px 0);
+  pointer-events: none;
 }
 
 .test {
@@ -3757,29 +3774,28 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   display: grid;
   gap: 0.375rem;
   align-items: center;
-  --flow-bg-opacity: 0.10;
-  background: rgba(125, 99, 70, var(--flow-bg-opacity));
+  background: #F2EFED;
 }
 @media screen and (min-width: 768px) {
   .sub-recruitment__flow-item {
     min-height: 6.25rem;
     padding: 1.875rem 2.5rem;
     grid-template-columns: 8.75rem minmax(0, 1fr);
-    align-items: end;
+    align-items: center;
     gap: 0;
   }
 }
 
 .sub-recruitment__flow-item:nth-child(2) {
-  --flow-bg-opacity: 0.20;
+  background: #E5E0DA;
 }
 
 .sub-recruitment__flow-item:nth-child(3) {
-  --flow-bg-opacity: 0.40;
+  background: #CBC1B5;
 }
 
 .sub-recruitment__flow-item:nth-child(4) {
-  --flow-bg-opacity: 0.70;
+  background: #A4927E;
 }
 
 .sub-recruitment__flow-item:nth-child(5) {
@@ -3888,6 +3904,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   position: relative;
   cursor: pointer;
   list-style: none;
+  background: #ffffff;
 }
 
 .sub-recruitment-faq__question::-webkit-details-marker {
@@ -3932,6 +3949,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
 .sub-recruitment-faq__answer {
   padding-inline: 1.25rem;
+  background: #ffffff;
 }
 
 .sub-recruitment-faq__answer-inner {
@@ -3939,7 +3957,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: 1.25rem;
-  align-items: start;
+  align-items: center;
   transform: translateY(-0.75rem);
   transition: transform 0.45s ease;
 }
@@ -4672,7 +4690,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   position: relative;
   background: #F2F1ED;
   overflow: hidden;
-  padding: 1.25rem 0.625rem 2.75rem;
+  padding: 1.25rem 1.125rem 2.75rem;
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 768px) {
@@ -5164,12 +5182,14 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   gap: 0.3125rem;
   padding: 0.9375rem 0.625rem;
   background: #FAF9F7;
+  min-height: 8.125rem;
 }
 @media screen and (min-width: 768px) {
   .sub-environment__welfare-item {
     padding-block: 3.125rem;
     padding-inline: clamp(15px, -15 * (100vw - 1440px) / -672 + 30px, 30px);
     gap: 0.625rem;
+    min-height: 12.5rem;
   }
 }
 
@@ -5252,6 +5272,22 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
     line-height: 1.5;
     letter-spacing: 0em;
     font-weight: 500;
+  }
+}
+
+.sub-environment__stats-note {
+  margin-top: 0.9375rem;
+  text-align: right;
+  color: #191E1E;
+  opacity: 0.5;
+  font-size: 0.6875rem;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .sub-environment__stats-note {
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -5716,7 +5752,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   .sub-business__service-block {
     display: grid;
     grid-template-columns: 1fr clamp(440px, -260 * (100vw - 1023px) / -255 + 700px, 700px);
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -6596,7 +6632,6 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   font-size: 1.5rem;
   letter-spacing: 0.1em;
   font-weight: 800;
-  font-family: "Shippori Mincho", sans-serif;
 }
 @media screen and (min-width: 768px) {
   .sub-about__ceo-message h3 {
@@ -7119,6 +7154,7 @@ body.new-graduate .header__nav-wrapper {
   text-decoration: none;
   border-radius: 4.625rem;
   border: 0.5px solid #D4D4D4;
+  transition: 0.3s;
 }
 @media screen and (min-width: 768px) {
   .header__nav-item a {
@@ -7126,9 +7162,6 @@ body.new-graduate .header__nav-wrapper {
     line-height: 1.6666666667;
     letter-spacing: 0.1em;
   }
-}
-.header__nav-item a {
-  transition: 0.3s;
 }
 .header__nav-item a:hover {
   opacity: 0.6;
@@ -7661,16 +7694,17 @@ html.is-drawer-open {
   display: block;
   margin-top: 3.75rem;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.03em;
   font-weight: 400;
   color: #191E1E;
+  opacity: 0.5;
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {
     margin-top: 2.5rem;
     text-align: right;
-    font-size: 0.875rem;
+    font-size: 0.6875rem;
   }
 }
 
@@ -7783,12 +7817,19 @@ html.is-drawer-open {
   }
 }
 
-.ng-hero__swiper {
+.ng-hero__swiper,
+.ng-hero__image {
   width: 100%;
 }
 
+.ng-hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .ng-hero__lead {
-  text-align: right;
+  text-align: left;
   font-size: 3.375rem;
   line-height: 1;
   letter-spacing: -0.08em;
@@ -8241,6 +8282,13 @@ html.is-drawer-open {
   margin-top: 0.625rem;
 }
 
+.ng-interview__name-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
 .ng-interview__name {
   font-size: 1.125rem;
   letter-spacing: 0em;
@@ -8252,28 +8300,35 @@ html.is-drawer-open {
   }
 }
 
-.ng-interview__department {
-  margin-top: 0.1875rem;
-}
-@media screen and (min-width: 768px) {
-  .ng-interview__department {
-    display: flex;
-    align-items: center;
-    gap: 0.3125rem;
-    margin-top: 0.3125rem;
-  }
-}
-
 .ng-interview__pos {
-  font-size: 0.75rem;
-  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #191E1E;
+  padding: 0.125rem 0.5rem;
+  line-height: 1;
+  white-space: nowrap;
+  font-size: 0.6875rem;
   letter-spacing: 0em;
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .ng-interview__pos {
-    font-size: 0.9375rem;
-    line-height: 1;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.8125rem;
+  }
+}
+
+.ng-interview__role {
+  margin-top: 0.1875rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .ng-interview__role {
+    font-size: 0.875rem;
   }
 }
 

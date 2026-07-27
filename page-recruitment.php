@@ -51,7 +51,7 @@
                             </p>
 
                             <p class="sub-recruitment__interview-description">
-                                私たちNEWOLD CAPITALが皆さまの求めている環境なのか力を発揮いただけるのかなど、ズレを生まないために、カジュアルにお話しする場をご用意しています。
+                                私たちNEWOLD CAPITALが皆さまの求めている環境なのか、力を発揮いただけるのかなど、ズレを生まないために、カジュアルにお話しする場をご用意しています。
                             </p>
 
                             <div class="sub-recruitment__interview-action">
@@ -88,7 +88,8 @@
                         <div class="sub-recruitment__entry-top">
                             <p class="sub-recruitment__entry-label">Entry</p>
                             <p class="sub-recruitment__entry-text">
-                                私たちNEWOLD CAPITALが皆さまの求めている環境なのか力を発揮いただけるのかなど、ズレを生まないために、カジュアルにお話しする場をご用意しています。
+                                NEWOLD CAPITALでは積極的に採用を行なっています。<br>
+                                エントリーお待ちしています。
                             </p>
                         </div>
 
@@ -151,7 +152,7 @@
                         <ol class="sub-recruitment__flow-list">
                             <li class="sub-recruitment__flow-item">
                                 <div class="sub-recruitment__flow-item-head">
-                                    <span class="sub-recruitment__flow-item-step">STEP1</span>
+                                    <span class="sub-recruitment__flow-item-step">STEP 01</span>
                                     <h3 class="sub-recruitment__flow-item-title">エントリー</h3>
                                 </div>
                                 <p class="sub-recruitment__flow-item-text">まずは「募集職種」からお申し込みください。</p>
@@ -159,35 +160,34 @@
 
                             <li class="sub-recruitment__flow-item">
                                 <div class="sub-recruitment__flow-item-head">
-                                    <span class="sub-recruitment__flow-item-step">STEP2</span>
-                                    <h3 class="sub-recruitment__flow-item-title">書類選考</h3>
+                                    <span class="sub-recruitment__flow-item-step">STEP 02</span>
+                                    <h3 class="sub-recruitment__flow-item-title">一次面接</h3>
                                 </div>
-                                <p class="sub-recruitment__flow-item-text">エントリー後、書類選考の結果をメールでお知らせします。</p>
+                                <p class="sub-recruitment__flow-item-text">人事による面接を実施します。Web面接も可能です。<br>一次面接前にWebにて適性検査①を受検いただきます。</p>
                             </li>
 
                             <li class="sub-recruitment__flow-item">
                                 <div class="sub-recruitment__flow-item-head">
-                                    <span class="sub-recruitment__flow-item-step">STEP3</span>
-                                    <h3 class="sub-recruitment__flow-item-title">面接</h3>
+                                    <span class="sub-recruitment__flow-item-step">STEP 03</span>
+                                    <h3 class="sub-recruitment__flow-item-title">二次面接</h3>
                                 </div>
-                                <p class="sub-recruitment__flow-item-text">3回程度の面接を予定しています。</p>
+                                <p class="sub-recruitment__flow-item-text">事業部長による面接を行なう予定です。Web面接も可能です。</p>
                             </li>
 
                             <li class="sub-recruitment__flow-item">
                                 <div class="sub-recruitment__flow-item-head">
-                                    <span class="sub-recruitment__flow-item-step">STEP4</span>
+                                    <span class="sub-recruitment__flow-item-step">STEP 04</span>
+                                    <h3 class="sub-recruitment__flow-item-title">最終面接</h3>
+                                </div>
+                                <p class="sub-recruitment__flow-item-text">役員による面接を実施します。原則、対面面接です。<br>最終面接前にWebにて適性検査②を受検いただきます。</p>
+                            </li>
+
+                            <li class="sub-recruitment__flow-item">
+                                <div class="sub-recruitment__flow-item-head">
+                                    <span class="sub-recruitment__flow-item-step">STEP 05</span>
                                     <h3 class="sub-recruitment__flow-item-title">内定</h3>
                                 </div>
                                 <p class="sub-recruitment__flow-item-text">エントリーから内定まで、通常3〜4週間程度かかります。</p>
-                            </li>
-
-                            <li class="sub-recruitment__flow-item">
-                                <div class="sub-recruitment__flow-item-head">
-                                    <span class="sub-recruitment__flow-item-step">STEP5</span>
-                                    <h3 class="sub-recruitment__flow-item-title">オファー面談</h3>
-                                </div>
-                                <p class="sub-recruitment__flow-item-text">NEWOLD
-                                    CAPITALに入社いただきたい想いや条件面などをお伝えさせてください。</p>
                             </li>
                         </ol>
                     </div>
@@ -339,7 +339,7 @@
                                     <span class="sub-recruitment-faq__icon sub-recruitment-faq__icon--answer"
                                         aria-hidden="true">A</span>
                                     <p class="sub-recruitment-faq__answer-text">
-                                        高い成果を出したメンバーやプロジェクトを賞賛する文化があり、個人はもちろんですが、チームで成果を出すことに喜びを感じる社員が多く在籍しています。また、分からないことはすぐに上司や先輩に相談できる環境が整っています。互いに教えあう文化で、風通しの良く、コミュニケーションが活発な職場です。
+                                        高い成果を出したメンバーやプロジェクトを賞賛する文化があり、個人はもちろんですが、チームで成果を出すことに喜びを感じる社員が多く在籍しています。また、分からないことはすぐに上司や先輩に相談できる環境が整っています。互いに教え合う文化で、風通しが良く、コミュニケーションが活発な職場です。
                                     </p>
                                 </div>
                             </div>
@@ -385,7 +385,7 @@
                             <summary class="sub-recruitment-faq__question">
                                 <span class="sub-recruitment-faq__icon" aria-hidden="true">Q</span>
                                 <span class="sub-recruitment-faq__question-text">
-                                    キャリアアップのイメージが知りたいです。
+                                    キャリアアップのイメージを知りたいです。
                                 </span>
                             </summary>
                             <div class="sub-recruitment-faq__answer">
@@ -411,7 +411,7 @@
                                     <span class="sub-recruitment-faq__icon sub-recruitment-faq__icon--answer"
                                         aria-hidden="true">A</span>
                                     <p class="sub-recruitment-faq__answer-text">
-                                        M&A実行支援事業においては、約7～8か月ほどです。Agent事業においては、約3～4か月ほどです。
+                                        M&A実行支援事業においては、約7～8か月ほどです。経営幹部人材紹介事業においては、約3～4か月ほどです。
                                     </p>
                                 </div>
                             </div>
@@ -457,7 +457,7 @@
                         <p class="cta-recruit__card-label">Casual Interview</p>
                         <p class="cta-recruit__card-title">カジュアル面談</p>
                         <p class="cta-recruit__card-text">
-                            お互いにまずは知っていくことを目的としています。<br>
+                            まずはざっくばらんに情報交換することを目的としています。<br>
                             ぜひお気軽にお申し込みください。
                         </p>
                     </div>
