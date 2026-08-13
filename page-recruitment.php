@@ -357,7 +357,7 @@
                                     <span class="sub-recruitment-faq__icon sub-recruitment-faq__icon--answer"
                                         aria-hidden="true">A</span>
                                     <p class="sub-recruitment-faq__answer-text">
-                                        入社前までに日商簿記2級の取得を必須としています。既に取得されている方は、マイクロソフト オフィス スペシャリスト（MOS）の取得を推奨しています。
+                                        中途採用でM&Aアドバイザーとしてご入社予定の方は、日商簿記2級の取得を推奨しています。
                                     </p>
                                 </div>
                             </div>

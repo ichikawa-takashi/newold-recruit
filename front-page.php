@@ -137,7 +137,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
 
             <div class="top-where__lead-group">
                 <p class="top-where__lead-text">
-                    予測不可能な時代において、私たち<br class="sp">NEWOLD CAPITALは
+                    予測不可能な時代において、<br class="sp">私たちNEWOLD CAPITALは
                 </p>
                 <h3 class="top-where__lead-text top-where__lead-text--emphasis">
                     成長を支える<br class="sp">経営パートナーとして<br>
@@ -204,8 +204,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 <div class="top-business__header top-col02__header">
                     <h2 class="top-business__header-title top-sec-title">Business</h2>
                     <p class="top-business__header-description top-sec-description">
-                        私たちは、企業・人・地域の成長を実現する<br>
-                        サービスを提供しています。
+                        私たちは、企業・人・地域の成長を実現するサービスを提供しています。
                     </p>
                     <a href="<?php echo esc_url(home_url('/business/')); ?>" class="top-business__header-button top-sec-button sp">詳しく見る</a>
                 </div>
@@ -603,9 +602,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <div class="top-people__header-inner">
                         <p class="top-people__header-title top-sec-title">People</p>
                         <p class="top-people__header-description top-sec-description">
-                            多様なバックグラウンドを持つプロフェッショナルたちが、<br>
-                            それぞれの強みを活かしながら、<br>
-                            経営パートナーとして企業の成長に向き合っています。
+                            多様なバックグラウンドを持つプロフェッショナルたちが、それぞれの強みを活かしながら、<br class="pc">経営パートナーとして企業の成長に向き合っています。
                         </p>
                         <a href="<?php echo esc_url(home_url('/people/')); ?>" class="top-people__header-button top-sec-button sp">詳しく見る</a>
                     </div>
@@ -642,7 +639,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                                             <div class="people-card__meta">
                                                 <div class="people-card__info">
                                                     <?php if (!empty($tp_department)): ?>
-                                                        <p class="people-card__department"><?php echo esc_html($tp_department); ?></p>
+                                                        <p class="people-card__department"><?php echo nl2br(esc_html($tp_department)); ?></p>
                                                     <?php endif; ?>
                                                     <?php if (!empty($tp_name_ja)): ?>
                                                         <p class="people-card__name"><?php echo esc_html($tp_name_ja); ?></p>
@@ -691,8 +688,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 <div class="top-environment__header top-col02__header">
                     <h2 class="top-environment__header-title top-sec-title">Environment</h2>
                     <p class="top-environment__header-description top-sec-description">
-                        NEWOLD CAPITALでは、社員一人ひとりが最大限の力を発揮できるよう、<br />
-                        働きやすい環境や制度を用意しています。<br />
+                        NEWOLD CAPITALでは、社員一人ひとりが最大限の力を発揮できるよう、働きやすい環境や制度を用意しています。<br />
                         キャリア形成の仕組みや数字で見るNEWOLDをご紹介します。
                     </p>
                 </div>
@@ -801,9 +797,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                 </div>
                 <div class="top-recruit__lead">
                     <p class="top-recruit__lead-text">
-                        NEWOLD CAPITALでは、<br>
-                        私たちと候補者の双方が納得したうえで入社いただけるよう、<br>
-                        丁寧な選考プロセスを設けています。
+                        NEWOLD CAPITALでは、<br class="pc">私たちと候補者の双方が納得したうえで入社いただけるよう、<br class="pc">丁寧な選考プロセスを設けています。
                     </p>
                 </div>
 
@@ -851,8 +845,7 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <p class="top-movie__header-title top-sec-title">Company <br>introduction <br class="sp">video
                     </p>
                     <p class="top-movie__header-description top-sec-description">
-                        NEWOLD CAPITALの事業や価値観、働く人の想いが分かる会社案内動画です。<br>
-                        私たちが目指す未来や仕事の魅力を、ぜひご覧ください。
+                        NEWOLD CAPITALの事業や価値観、働く人の想いが分かる会社案内動画です。<br>私たちが目指す未来や仕事の魅力を、ぜひご覧ください。
                     </p>
                 </div>
 

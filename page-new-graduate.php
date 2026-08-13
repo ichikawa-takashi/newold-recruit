@@ -199,7 +199,7 @@
                                     $ni_year        = get_field('people_year', $ni_person->ID);
                                     $ni_quote_main  = get_field('people_quote_main', $ni_person->ID);
                                     $ni_quote_sub   = get_field('people_quote_sub', $ni_person->ID);
-                                    $ni_portrait    = get_field('people_portrait', $ni_person->ID);
+                                    $ni_portrait    = get_field('people_portrait_ng', $ni_person->ID);
                                     $ni_counter_cur = str_pad($ni_index + 1, 2, '0', STR_PAD_LEFT);
                                     $ni_counter_tot = str_pad($ng_interview_total, 2, '0', STR_PAD_LEFT);
 
@@ -291,7 +291,7 @@
                                 <h3 class="ng-culture__title">早期から成長できる環境</h3>
                             </div>
                             <p class="ng-culture__text">
-                                <span>当社オリジナルの教育システムを活用し、早期にM&amp;Aアドバイザーとしてキャッチアップいただく体制を整えています。</span>また、自らのソーシングに加え、連携部署のバックアップ体制が整っているため、サポート体制は万全です。
+                                <span>当社オリジナルの教育プログラムを活用し、早期にM&amp;Aアドバイザーとしてキャッチアップいただく体制を整えています。</span>また、自らのソーシングに加え、連携部署のバックアップ体制が整っているため、サポート体制は万全です。
                             </p>
                         </div>
                         <div class="ng-culture__item">
@@ -355,7 +355,7 @@
                             </div>
                             <div class="ng-flow__step-text">
                                 <div class="ng-flow__label">一次面接</div>
-                                <p class="ng-flow__desc">人事による面接を実施します。Web面接も可能です。<br>一次面接前にWebにて適性検査①を受検いただきます。</p>
+                                <p class="ng-flow__desc">人事による面接を実施します。※Web面接も可能<br>一次面接前にWebにて適性検査①を受検いただきます。</p>
                             </div>
                         </li>
                         <li class="ng-flow__item">
@@ -371,7 +371,7 @@
                             </div>
                             <div class="ng-flow__step-text">
                                 <div class="ng-flow__label">二次面接</div>
-                                <p class="ng-flow__desc">事業部長による面接を行なう予定です。Web面接も可能です。</p>
+                                <p class="ng-flow__desc">事業部長による面接を行なう予定です。<br>※Web面接も可能</p>
                             </div>
                         </li>
                         <li class="ng-flow__item">
@@ -387,7 +387,7 @@
                             </div>
                             <div class="ng-flow__step-text">
                                 <div class="ng-flow__label">最終面接</div>
-                                <p class="ng-flow__desc">役員による面接を実施します。原則、対面面接です。<br>最終面接前にWebにて適性検査②を受検いただきます。</p>
+                                <p class="ng-flow__desc">役員による面接を実施します。※原則、対面面接<br>最終面接前にWebにて適性検査②を受検いただきます。</p>
                             </div>
                         </li>
                         <li class="ng-flow__item ng-flow__item--last">
@@ -417,6 +417,8 @@
                         width="150" height="187">
                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip04.jpg" alt=""
                         width="150" height="187">
+                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip05.jpg" alt=""
+                        width="150" height="187">
                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip01.jpg" alt=""
                         width="150" height="187">
                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip02.jpg" alt=""
@@ -424,6 +426,8 @@
                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip03.jpg" alt=""
                         width="150" height="187">
                     <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip04.jpg" alt=""
+                        width="150" height="187">
+                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/new-graduate/strip05.jpg" alt=""
                         width="150" height="187">
                 </div>
             </div>
@@ -521,7 +525,7 @@
                             </summary>
                             <div class="ng-faq__a">
                                 <span class="ng-faq__a-label">A</span>
-                                <span class="ng-faq__a-text">はい、あります。当社の志や信念に合致する事業領域については、積極的に新規事業の立ち上げを検討しています。</span>
+                                <span class="ng-faq__a-text">ございます。当社の志や信念に合致する事業領域については、積極的に新規事業の立ち上げを検討しています。</span>
                             </div>
                         </details>
                         <details class="ng-faq__item">

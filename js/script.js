@@ -1,25 +1,24 @@
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
-    // ナビ側（SNS・リンク・ハンバーガー）だけを画面上部に固定して追従させる。
-    // align-items: center 等でページ／ブレークポイントごとに実際の表示位置が変わるため、
-    // 一旦 static に戻して本来の配置位置を計測 → その座標で fixed 化する
-    const headerRight = document.querySelector(".header__right");
-    if (headerRight) {
-        const pinHeaderRight = () => {
-            headerRight.classList.remove("js-fixed");
-            headerRight.style.top = "";
-            headerRight.style.left = "";
-            const rect = headerRight.getBoundingClientRect();
-            // getBoundingClientRect() はビューポート基準のため、リロード時など
-            // スクロール位置が復元された状態で計測すると画面外の座標を拾ってしまう。
-            // スクロール量を足して「ページ最上部を基準にした座標」に変換してから固定する。
-            headerRight.style.top = (rect.top + window.scrollY) + "px";
-            headerRight.style.left = (rect.left + window.scrollX) + "px";
-            headerRight.classList.add("js-fixed");
+    // ヘッダー（ロゴ＋ナビ）は position: sticky で追従する。
+    // サイドバーの追従リンクがヘッダーと重ならないよう、実測したヘッダーの高さを
+    // CSSカスタムプロパティとして公開し、各サイドバーの sticky top 位置合わせに使う。
+    const headerEl = document.querySelector(".header");
+    if (headerEl) {
+        const setHeaderHeightVar = () => {
+            document.documentElement.style.setProperty("--header-height", headerEl.offsetHeight + "px");
         };
-        pinHeaderRight();
-        window.addEventListener("resize", pinHeaderRight);
-        window.addEventListener("load", pinHeaderRight);
+        // 少しでもスクロールしたら追従状態にし、ロゴ・ナビを別背景の縮小サイズへ切り替える
+        const updateHeaderScrolledState = () => {
+            headerEl.classList.toggle("is-scrolled", window.scrollY > 10);
+            setHeaderHeightVar();
+        };
+        updateHeaderScrolledState();
+        window.addEventListener("resize", updateHeaderScrolledState);
+        window.addEventListener("load", updateHeaderScrolledState);
+        window.addEventListener("scroll", updateHeaderScrolledState, { passive: true });
+        // ロゴの縮小トランジション終了後に高さを再計測し、サイドナビの位置ズレを防ぐ
+        headerEl.addEventListener("transitionend", setHeaderHeightVar);
     }
 
     const businessVisuals = Array.from(document.querySelectorAll(".top-business__visual-list, .top-business__visual-sp-list"));
@@ -412,6 +411,22 @@ if (document.querySelector('.people-others__swiper')) {
         navigation: {
             prevEl: '.people-others__btn--prev',
             nextEl: '.people-others__btn--next',
+        },
+    });
+}
+
+// ABOUTページ Value画像 無限マーキースライダー（右から左へ一定速度で流れ続ける）
+if (typeof Swiper !== 'undefined' && document.querySelector('.sub-about__values-swiper')) {
+    new Swiper('.sub-about__values-swiper', {
+        slidesPerView: 'auto',
+        loop: true,
+        loopAdditionalSlides: 6,
+        allowTouchMove: false,
+        speed: 4000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
         },
     });
 }

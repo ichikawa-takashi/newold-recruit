@@ -233,39 +233,37 @@
     }
 }
 
-.sub-about__values-images-inner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    @include mq('md') {
-        grid-template-columns: 36% 36% 28%;
-    }
+.sub-about__values-swiper {
+    overflow: visible;
+    clip-path: inset(0 -9999px 0 0);
+    // autoplayの既定イージング(ease)だと減速・加速で速度にムラが出るため、線形に固定する
+    --swiper-wrapper-transition-timing-function: linear;
 }
 
-.sub-about__values-image {
+.sub-about__values-images-inner {
+    align-items: stretch;
+}
+
+// swiper-bundle.cssの `.swiper-slide{width:100%}` は読み込み順の都合で
+// 詳細度が同じだと後勝ちで上書きしてしまうため、親要素を含めて詳細度を上げて確実に効かせる
+.sub-about__values-images-inner .sub-about__values-image {
     flex-shrink: 0;
-    overflow: hidden;
-    aspect-ratio: 1/1;
-    width: 100%;
+    width: rem(160);
+    height: rem(160);
+    margin-right: rem(12);
 
     img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include mq('md') {
-        aspect-ratio: auto;
         width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
     }
-}
-
-
-.sub-about__values-image:last-child {
 
     @include mq('md') {
-        img {
-            width: auto;
-        }
+        width: rem(320);
+        height: rem(320);
+        margin-right: rem(20);
     }
 }
 
@@ -609,10 +607,10 @@
     color: #000;
 
     h3 {
-        @include font(24, null, 10, 800);
+        @include font(24, null, 10, $regular);
 
         @include mq('md') {
-            @include f(36, 50, 10, $bold);
+            @include f(36, 50, 10, $regular);
         }
     }
 
@@ -697,6 +695,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top;
     }
 
     @include mq('md') {

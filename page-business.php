@@ -140,7 +140,7 @@
                                                             <p class="sub-business__people-name"><?php echo esc_html($bp_name_ja); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!empty($bp_department)): ?>
-                                                            <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
+                                                            <p class="sub-business__people-role"><?php echo nl2br(esc_html($bp_department)); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!$bp_is_executive): ?>
                                                             <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
@@ -228,7 +228,7 @@
                                                             <p class="sub-business__people-name"><?php echo esc_html($bp_name_ja); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!empty($bp_department)): ?>
-                                                            <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
+                                                            <p class="sub-business__people-role"><?php echo nl2br(esc_html($bp_department)); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!$bp_is_executive): ?>
                                                             <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
@@ -316,7 +316,7 @@
                                                             <p class="sub-business__people-name"><?php echo esc_html($bp_name_ja); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!empty($bp_department)): ?>
-                                                            <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
+                                                            <p class="sub-business__people-role"><?php echo nl2br(esc_html($bp_department)); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!$bp_is_executive): ?>
                                                             <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">
@@ -404,7 +404,7 @@
                                                             <p class="sub-business__people-name"><?php echo esc_html($bp_name_ja); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!empty($bp_department)): ?>
-                                                            <p class="sub-business__people-role"><?php echo esc_html($bp_department); ?></p>
+                                                            <p class="sub-business__people-role"><?php echo nl2br(esc_html($bp_department)); ?></p>
                                                         <?php endif; ?>
                                                         <?php if (!$bp_is_executive): ?>
                                                             <a href="<?php echo esc_url(get_permalink($bp->ID)); ?>" class="sub-business__people-link right-up-button">

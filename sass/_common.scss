@@ -277,6 +277,7 @@
         display: flex;
         align-items: center;
         gap: rem(40);
+        max-width: rem(1110);
     }
 }
 
@@ -328,7 +329,8 @@
 
     @include mq("md") {
         position: sticky;
-        top: rem(100);
+        // 追従するヘッダーの実測高さ + 余白ぶん下げて、ロゴ・ナビと重ならないようにする
+        top: rem(200);
     }
 }
 
@@ -520,7 +522,7 @@ body:not(.front-page) .bg-grid {
     padding-block: rem(64) rem(62);
 
     @include mq('md') {
-        padding-block: rem(67) rem(60);
+        padding-block: rem(200) rem(60);
     }
 }
 
@@ -696,7 +698,8 @@ body:not(.front-page) .bg-grid {
         flex: 0 0 auto;
         position: sticky;
         padding-top: rem(120);
-        top: rem(30);
+        // 追従するヘッダーの実測高さ + 余白ぶん下げて、ロゴ・ナビと重ならないようにする
+        top: rem(120);
         height: max-content;
     }
 }
@@ -1085,6 +1088,15 @@ People カード共通コンポーネント
     }
 }
 
+.people-card__button-arrow{
+    margin-left: auto;
+
+    // @include mq("md") {
+    //     margin-top: rem(-16);
+    // }
+
+}
+
 .people-card__button-icon {
     overflow: hidden;
     background-color: #1a1a1a;
@@ -1092,10 +1104,6 @@ People カード共通コンポーネント
     height: rem(19.7);
     border-radius: rem(4);
     transition: 0.3s;
-
-    @include mq("md") {
-        margin-top: rem(-16);
-    }
 }
 
 .people-card__item-link>*,
@@ -1154,6 +1162,26 @@ sub-people (People一覧ページ)
     @include mq("md") {
         border-top: 1px solid #888166;
         ;
+    }
+}
+
+/* 入社年度を名前の下に配置（トップページと同様） */
+.sub-people .people-card__meta {
+    @include mq("md") {
+        display: block;
+    }
+}
+
+.sub-people .people-card__info {
+    @include mq("md") {
+        margin-right: 0;
+    }
+}
+
+.sub-people .people-card__bottom {
+    @include mq("md") {
+        flex: initial;
+        margin-top: rem(20);
     }
 }
 

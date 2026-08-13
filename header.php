@@ -4,6 +4,32 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    // OGP設定
+    $ogp_site_name = get_bloginfo('name');
+    $ogp_description = get_bloginfo('description');
+    $ogp_url = home_url(add_query_arg(null, null));
+    $ogp_type = is_front_page() ? 'website' : 'article';
+    $ogp_title = is_front_page() ? $ogp_site_name : wp_get_document_title();
+    $ogp_image = get_theme_file_uri() . '/img/ogp.jpg';
+
+    if (is_singular()) {
+        if (has_post_thumbnail()) {
+            $ogp_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        }
+        $post_excerpt = get_the_excerpt();
+        if ($post_excerpt) {
+            $ogp_description = $post_excerpt;
+        }
+    }
+    ?>
+    <meta property="og:title" content="<?php echo esc_attr($ogp_title); ?>">
+    <meta property="og:type" content="<?php echo esc_attr($ogp_type); ?>">
+    <meta property="og:url" content="<?php echo esc_url($ogp_url); ?>">
+    <meta property="og:image" content="<?php echo esc_url($ogp_image); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($ogp_description); ?>">
+    <meta property="og:site_name" content="<?php echo esc_attr($ogp_site_name); ?>">
+    <meta name="twitter:card" content="summary_large_image">
     <?php wp_head(); ?>
 </head>
 

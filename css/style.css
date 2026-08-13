@@ -424,6 +424,7 @@ select::-ms-expand {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+    max-width: 69.375rem;
   }
 }
 
@@ -485,7 +486,7 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .top-header-side__link {
     position: sticky;
-    top: 6.25rem;
+    top: 12.5rem;
   }
 }
 
@@ -686,7 +687,7 @@ body:not(.front-page) .bg-grid {
 }
 @media screen and (min-width: 768px) {
   .sub-page__hero {
-    padding-block: 4.1875rem 3.75rem;
+    padding-block: 12.5rem 3.75rem;
   }
 }
 
@@ -876,7 +877,7 @@ body:not(.front-page) .bg-grid {
     flex: 0 0 auto;
     position: sticky;
     padding-top: 7.5rem;
-    top: 1.875rem;
+    top: 7.5rem;
     height: max-content;
   }
 }
@@ -1306,6 +1307,10 @@ People カード共通コンポーネント
   }
 }
 
+.people-card__button-arrow {
+  margin-left: auto;
+}
+
 .people-card__button-icon {
   overflow: hidden;
   background-color: #1a1a1a;
@@ -1313,11 +1318,6 @@ People カード共通コンポーネント
   height: 1.23125rem;
   border-radius: 0.25rem;
   transition: 0.3s;
-}
-@media screen and (min-width: 768px) {
-  .people-card__button-icon {
-    margin-top: -1rem;
-  }
 }
 
 .people-card__item-link > *,
@@ -1372,6 +1372,26 @@ sub-people (People一覧ページ)
 @media screen and (min-width: 768px) {
   .sub-people .people-card__list {
     border-top: 1px solid #888166;
+  }
+}
+
+/* 入社年度を名前の下に配置（トップページと同様） */
+@media screen and (min-width: 768px) {
+  .sub-people .people-card__meta {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sub-people .people-card__info {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sub-people .people-card__bottom {
+    flex: initial;
+    margin-top: 1.25rem;
   }
 }
 
@@ -1544,12 +1564,7 @@ body.front-page.bg-brightness .top-business__inner {
 
 @media screen and (min-width: 768px) {
   .fv__top {
-    margin-top: -5.625rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .fv__top {
-    margin-top: -7.5rem;
+    padding-top: 5rem;
   }
 }
 
@@ -1611,7 +1626,8 @@ body.front-page.bg-brightness .top-business__inner {
 }
 @media screen and (min-width: 768px) {
   .fv__image img {
-    aspect-ratio: 846/630;
+    aspect-ratio: 846/503;
+    object-position: center;
     width: 100%;
   }
 }
@@ -2163,6 +2179,8 @@ body.front-page.bg-brightness .top-business__inner {
 @media screen and (min-width: 768px) {
   .top-business__header {
     padding-left: 2.5rem;
+    padding-right: 0;
+    max-width: 69.375rem;
   }
 }
 
@@ -2877,6 +2895,7 @@ body.bg-brightness .top-people {
   .top-people__header {
     border-bottom: 1px solid #464a4a;
     padding: 0rem 0 0 2.5rem;
+    max-width: none;
   }
 }
 
@@ -2910,6 +2929,11 @@ body.bg-brightness .top-people {
 
 .top-people__header-description {
   color: #1A1A1A;
+}
+@media screen and (min-width: 768px) {
+  .top-people__header-description {
+    max-width: 44.0625rem;
+  }
 }
 
 .top-people__header-button {
@@ -3003,6 +3027,26 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
 body.bg-brightness .top-people .people-card__item-link:hover .people-card__year {
   border-color: #dae1e7;
+}
+
+/* トップページのみ、入社年度を名前の下に配置（4カラム時の折れ対策） */
+@media screen and (min-width: 768px) {
+  .top-people .people-card__meta {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .top-people .people-card__info {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .top-people .people-card__bottom {
+    flex: initial;
+    margin-top: 1.25rem;
+  }
 }
 
 .top-environment {
@@ -3426,12 +3470,12 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   .top-movie__header-title {
     font-size: 4.375rem;
     line-height: 1.1571428571;
+    flex-shrink: 0;
   }
 }
 
 @media screen and (min-width: 768px) {
   .top-movie__header-description {
-    max-width: 25.5625rem;
     width: 100%;
     font-size: 0.8125rem;
     line-height: 1.5;
@@ -5189,7 +5233,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
     padding-block: 3.125rem;
     padding-inline: clamp(15px, -15 * (100vw - 1440px) / -672 + 30px, 30px);
     gap: 0.625rem;
-    min-height: 12.5rem;
+    min-height: 16.25rem;
   }
 }
 
@@ -6233,36 +6277,34 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   }
 }
 
+.sub-about__values-swiper {
+  overflow: visible;
+  clip-path: inset(0 -9999px 0 0);
+  --swiper-wrapper-transition-timing-function: linear;
+}
+
 .sub-about__values-images-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-@media screen and (min-width: 768px) {
-  .sub-about__values-images-inner {
-    grid-template-columns: 36% 36% 28%;
-  }
+  align-items: stretch;
 }
 
-.sub-about__values-image {
+.sub-about__values-images-inner .sub-about__values-image {
   flex-shrink: 0;
-  overflow: hidden;
-  aspect-ratio: 1/1;
+  width: 10rem;
+  height: 10rem;
+  margin-right: 0.75rem;
+}
+.sub-about__values-images-inner .sub-about__values-image img {
   width: 100%;
-}
-.sub-about__values-image img {
   height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  display: block;
 }
 @media screen and (min-width: 768px) {
-  .sub-about__values-image {
-    aspect-ratio: auto;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .sub-about__values-image:last-child img {
-    width: auto;
+  .sub-about__values-images-inner .sub-about__values-image {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 1.25rem;
   }
 }
 
@@ -6631,14 +6673,14 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 .sub-about__ceo-message h3 {
   font-size: 1.5rem;
   letter-spacing: 0.1em;
-  font-weight: 800;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .sub-about__ceo-message h3 {
     font-size: 2.25rem;
     line-height: 1.3888888889;
     letter-spacing: 0.1em;
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 .sub-about__ceo-message p {
@@ -6719,6 +6761,7 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 @media screen and (min-width: 768px) {
   .sub-about__member-image {
@@ -6899,27 +6942,45 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 }
 
 .header {
-  background-color: #191E1E;
   color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: #191E1E;
+  transition: background-color 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+  }
 }
 
-body.front-page .header {
-  background: transparent;
+@media screen and (min-width: 768px) {
+  body:not(.new-graduate) .header.is-scrolled {
+    background-color: transparent;
+  }
 }
-
 body.new-graduate .header {
   background: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  body.new-graduate .header__right {
+    gap: 1.5rem;
+  }
 }
 
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 1.25rem 0.4375rem;
+  padding: 1rem 1.25rem 0.4375rem;
 }
 @media screen and (min-width: 768px) {
   .header__inner {
-    padding: 1.8125rem 1.25rem 0rem;
+    padding: 0rem 1.25rem 0rem;
     align-items: flex-start;
   }
 }
@@ -6945,6 +7006,7 @@ body.new-graduate .header__inner {
 
 .header__logo {
   flex-shrink: 0;
+  transition: 0.3s;
 }
 .header__logo a {
   display: flex;
@@ -6964,13 +7026,32 @@ body.new-graduate .header__inner {
 .header__logo img {
   width: 2.5rem;
   height: auto;
+  transition: width 0.3s ease;
+  margin-inline: auto;
 }
 @media screen and (min-width: 768px) {
   .header__logo img {
     width: 6.1875rem;
+    align-self: flex-start;
   }
 }
 
+@media screen and (min-width: 768px) {
+  body:not(.new-graduate) .header.is-scrolled .header__logo {
+    background-color: #191E1E;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    border-radius: 0 0 2rem 0;
+  }
+  body:not(.new-graduate) .header.is-scrolled .header__logo a {
+    border-radius: 0 0 2rem 0;
+    border-right: 4px solid #454545;
+    border-bottom: 4px solid #454545;
+    padding: 0.625rem 1.25rem;
+    display: inline-flex;
+  }
+}
 @media screen and (min-width: 768px) {
   body.new-graduate .header__logo {
     gap: 0.3125rem;
@@ -7015,6 +7096,10 @@ body.new-graduate .header__logo-text {
   }
 }
 
+body:not(.new-graduate) .header__logo-text--new-graduate {
+  display: none;
+}
+
 .header__logo-text--new-graduate {
   font-family: "Jost", sans-serif;
   color: #191E1E;
@@ -7043,26 +7128,50 @@ body.new-graduate .header__logo-text {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.625rem;
-  z-index: 900;
-  mix-blend-mode: difference;
 }
 @media screen and (min-width: 768px) {
   .header__right {
-    gap: 1.25rem;
+    gap: 0.5rem;
     flex-direction: row;
     align-items: center;
   }
 }
 
-.header__right.js-fixed {
-  position: fixed;
+@media screen and (min-width: 768px) {
+  body:not(.new-graduate) .header.is-scrolled .header__sns {
+    background-color: #191E1E;
+    transition: 0.3s;
+  }
+  body:not(.new-graduate) .header {
+    position: static;
+  }
+  body:not(.new-graduate) .header__logo {
+    position: fixed;
+    top: 1.5625rem;
+    left: 1.25rem;
+    z-index: 10000;
+  }
+  body:not(.new-graduate) .header__right {
+    position: fixed;
+    top: 0.9375rem;
+    right: 0rem;
+    z-index: 100000;
+    border-radius: 0.75rem;
+    padding: 0.625rem 1.25rem;
+  }
 }
-
 .header__sns {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .header__sns {
+    padding: 0.3125rem 1rem;
+    border-radius: 3.125rem;
+    margin-right: 0.75rem;
+  }
 }
 
 body.new-graduate .header__sns {
@@ -7115,6 +7224,14 @@ body.new-graduate .header__nav-sns-link--facebook img {
   content: url("../img/common/facebook-fill.svg");
 }
 
+body.new-graduate .header__nav-sns-link--instagram img {
+  content: url("../img/common/insta-black.svg");
+}
+
+body.new-graduate .header__nav-sns-link--youtube img {
+  content: url("../img/common/youtube-black.svg");
+}
+
 .header__nav-wrapper {
   display: flex;
   align-items: center;
@@ -7122,7 +7239,7 @@ body.new-graduate .header__nav-sns-link--facebook img {
 }
 @media screen and (min-width: 768px) {
   .header__nav-wrapper {
-    gap: 2.5rem;
+    gap: 1rem;
   }
 }
 
@@ -7154,14 +7271,17 @@ body.new-graduate .header__nav-wrapper {
   text-decoration: none;
   border-radius: 4.625rem;
   border: 0.5px solid #D4D4D4;
-  transition: 0.3s;
 }
 @media screen and (min-width: 768px) {
   .header__nav-item a {
     font-size: 0.75rem;
     line-height: 1.6666666667;
     letter-spacing: 0.1em;
+    background-color: #191E1E;
   }
+}
+.header__nav-item a {
+  transition: 0.3s;
 }
 .header__nav-item a:hover {
   opacity: 0.6;
@@ -7171,17 +7291,19 @@ body.new-graduate .header__nav-wrapper {
 .header__nav-item--casual a {
   color: #000;
   background-color: #ffffff;
+  border-color: #2EE5C4;
 }
 
 body.new-graduate .header__nav-item a {
-  color: #191E1E;
-  background: #ffffff;
+  background: #191E1E;
+  color: #ffffff;
+  border-color: rgba(25, 30, 30, 0.25);
 }
 
 body.new-graduate .header__nav-item--casual a {
-  background: #000;
-  color: #ffffff;
-  border: 1px solid #D1123B;
+  color: #191E1E;
+  background-color: #fff;
+  border: 1px solid #2EE5C4;
 }
 
 .header__hamburger {
@@ -7201,8 +7323,11 @@ body.new-graduate .header__nav-item--casual a {
 }
 @media screen and (min-width: 768px) {
   .header__hamburger {
-    width: 1.3125rem;
+    width: 3.8125rem;
     gap: 0.375rem;
+    background-color: #191E1E;
+    border-radius: 2rem;
+    padding: 0.5625rem 1.25rem;
   }
 }
 .header__hamburger span {
@@ -7234,19 +7359,13 @@ body.new-graduate .header__nav-item--casual a {
   opacity: 0;
 }
 
-body.new-graduate .header__hamburger {
-  background: #ffffff;
-  border-radius: 2rem;
-  padding: 0.5625rem 1.25rem;
-  width: 4.25rem;
-}
-@media screen and (min-width: 768px) {
-  body.new-graduate .header__hamburger {
-    width: 3.8125rem;
-  }
-}
 body.new-graduate .header__hamburger span {
   background-color: #191E1E;
+}
+@media screen and (min-width: 768px) {
+  body.new-graduate .header__hamburger span {
+    background-color: #ffffff;
+  }
 }
 
 .header__hamburger-close {
@@ -7786,6 +7905,7 @@ html.is-drawer-open {
 @media screen and (min-width: 768px) {
   .ng-hero {
     padding: 0;
+    padding-top: 5rem;
   }
 }
 
@@ -7869,6 +7989,7 @@ html.is-drawer-open {
   line-height: 1.4285714286;
   letter-spacing: 0em;
   font-weight: 500;
+  color: #ffffff;
 }
 @media screen and (min-width: 768px) {
   .ng-hero__deck-label {
@@ -7883,7 +8004,8 @@ html.is-drawer-open {
   font-size: 1rem;
   line-height: 1.25;
   letter-spacing: 0em;
-  font-weight: 700;
+  font-weight: 500;
+  color: #ffffff;
 }
 @media screen and (min-width: 768px) {
   .ng-hero__deck-title {
@@ -7926,12 +8048,6 @@ html.is-drawer-open {
     line-height: 1.4;
   }
 }
-@media screen and (min-width: 1024px) {
-  .ng-hero__deck-item {
-    background: transparent;
-  }
-}
-
 .ng-hero__deck-group--highlight .ng-hero__deck-item {
   color: #ffffff;
   background: #191E1E;

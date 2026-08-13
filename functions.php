@@ -236,7 +236,9 @@ function register_people_detail_fields()
                 'key'      => 'field_6a0b190defa95',
                 'label'    => '部署・役職',
                 'name'     => 'people_department',
-                'type'     => 'text',
+                'type'     => 'textarea',
+                'rows'     => 3,
+                'new_lines' => '',
                 'required' => 0,
             ],
             [
@@ -251,6 +253,16 @@ function register_people_detail_fields()
                 'label'         => 'プロフィール写真',
                 'name'          => 'people_portrait',
                 'type'          => 'image',
+                'return_format' => 'array',
+                'preview_size'  => 'medium',
+                'required'      => 0,
+            ],
+            [
+                'key'           => 'field_ng_portrait_ng',
+                'label'         => '新卒採用ページ用写真（先輩インタビュー）',
+                'name'          => 'people_portrait_ng',
+                'type'          => 'image',
+                'instructions'  => '新卒採用ページの先輩インタビュー枠（横長 14:9）に表示する専用の写真です。未設定の場合はno-imageが表示されます。',
                 'return_format' => 'array',
                 'preview_size'  => 'medium',
                 'required'      => 0,
@@ -820,6 +832,16 @@ function render_theme_manual_page()
                 <tr><td>部署・役職</td><td>1行テキスト</td><td>ほぼ全ての表示箇所で使われる重要フィールドです。</td></tr>
                 <tr><td>入社年度</td><td>1行テキスト</td><td>「◯◯年入社」表記に使用。新卒採用ページでは在籍年数の計算にも使われます。</td></tr>
                 <tr><td>プロフィール写真</td><td>画像</td><td>メインの顔写真です。原寸大で表示されるため、大きすぎる画像は事前にリサイズしてからアップロードしてください。</td></tr>
+                <tr>
+                    <td>新卒採用ページ用写真（先輩インタビュー）</td>
+                    <td>画像</td>
+                    <td>
+                        新卒採用ページの先輩インタビュー枠専用の写真です。この枠は横長（比率14:9）で表示されるため、
+                        「プロフィール写真」とは別に横長構図の写真を用意してアップロードしてください。
+                        <strong>「プロフィール写真」を設定していても、このフィールドが未設定だとno-image画像が表示されます。</strong>
+                        新卒採用ページの先輩インタビューに表示する人物のみ設定すれば十分です。
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -893,6 +915,7 @@ function render_theme_manual_page()
             <li>「役員として登録する」にチェックが入っていると、People一覧やスライダー、リンクから見えなくなります。表示されないという問い合わせがあった場合はまずこのチェックを確認してください。</li>
             <li>「動画あり／なし」の切り替えは保存されているデータを消しません。切り替えて選択し直しても、以前入力した内容はそのまま残ります。</li>
             <li>新卒採用ページの先輩インタビューは、Peopleを選択した順番で表示されるため、並び替えたい場合は新卒ページ側の「インタビューに表示するPeople」の選択順を変更してください。</li>
+            <li>新卒採用ページの先輩インタビュー画像は「プロフィール写真」ではなく「新卒採用ページ用写真（先輩インタビュー）」フィールドを見ています。表示枠が横長のため、専用の写真を別途アップロードしてください。</li>
         </ul>
     </div>
     <style>

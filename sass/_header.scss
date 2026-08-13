@@ -1,24 +1,47 @@
 .header {
-    background-color: $bg_black;
     color: $white;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    // 初期状態（タイトル上）は1枚の黒背景で、タイトル手前まで黒く見せる
+    background-color: $bg_black;
+    transition: background-color 0.3s ease;
+    @include mq('md'){
+            position: fixed;
+    width: 100%;
+    background-color: transparent;
+    }
 }
 
-body.front-page .header {
-    background: transparent;
+// md以上でスクロールして追従状態になったら、ロゴ・ナビをそれぞれ別の黒背景に切り替えるため、
+// ヘッダー自体の背景は消す（固定時の高さを抑えるため。新卒ページは対象外）
+@include mq('md') {
+
+    body:not(.new-graduate) .header.is-scrolled {
+        background-color: transparent;
+    }
 }
 
 body.new-graduate .header {
     background: $white;
 }
 
+body.new-graduate .header__right {
+    @include mq('md'){
+        gap: rem(24);
+    }
+}
+
+
+
 .header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(64) rem(20) rem(7);
+    padding: rem(16) rem(20) rem(7);
 
     @include mq('md') {
-        padding: rem(29) rem(20) rem(0);
+        padding: rem(0) rem(20) rem(0);
         align-items: flex-start;
     }
 }
@@ -31,6 +54,16 @@ body.front-page .header__inner {
     }
 }
 
+// スクロール追従状態は、固定される高さを抑えるため上の余白を詰める。
+// 右側は .header__right 自体が同じ分のパディングを持つようになるため、
+// ここで元の右パディングを引いておかないと合計が二重になって位置がガクッとズレる
+@include mq('md') {
+    // body:not(.new-graduate) .header.is-scrolled .header__inner {
+    //     padding-top: rem(10);
+    //     padding-right: 0;
+    // }
+}
+
 body.new-graduate .header__inner {
     padding: rem(10) rem(10) rem(0);
 
@@ -41,8 +74,12 @@ body.new-graduate .header__inner {
 }
 
 // ========== Logo ==========
+// 初期状態（タイトル上）は従来通りの見た目のまま。
+// md以上でスクロール追従状態になったら、ロゴ部分だけを正方形に近い黒背景で囲み、
+// ナビ側（.header__right）とは別の箱に分け、固定時の高さを抑えるためロゴを一回り小さくする
 .header__logo {
     flex-shrink: 0;
+    transition: 0.3s;
 
     a {
         display: flex;
@@ -62,11 +99,40 @@ body.new-graduate .header__inner {
     img {
         width: rem(40);
         height: auto;
-
+        transition: width 0.3s ease;
+        margin-inline: auto;
         @include mq('md') {
             width: rem(99);
+            // ロゴ画像がサブテキストより幅が狭くなっても中央寄せで位置がズレないよう、左端で固定する
+            align-self: flex-start;
         }
     }
+}
+
+@include mq('md') {
+    // 左右のパディングは初期状態と揃えたまま、上下だけ詰めて高さを抑える
+    // （左右を変えると視覚的な位置がガクッとズレるため）
+    body:not(.new-graduate) .header.is-scrolled .header__logo {
+        background-color: $bg_black;
+        top: 0;
+        left: 0;
+        transition: 0.3s;
+        border-radius: 0 0 rem(32) 0;
+
+        a {
+            border-radius: 0 0 rem(32) 0;
+                    border-right: 4px solid #454545;
+        border-bottom: 4px solid #454545;
+        padding: rem(10) rem(20);
+        display: inline-flex;
+        }
+
+        // img {
+        //     width: rem(78);
+        // }
+    }
+
+
 }
 
 body.new-graduate .header__logo {
@@ -116,6 +182,12 @@ body.new-graduate .header__logo-text {
     }
 }
 
+// 新卒ページ専用の表記だが、.pc クラス単体では他ページでも表示され、
+// 同色で見えないまま幅だけ確保してロゴ箱の縮小を妨げていたため、対象ページ以外は非表示にする
+body:not(.new-graduate) .header__logo-text--new-graduate {
+    display: none;
+}
+
 .header__logo-text--new-graduate {
     font-family: $en;
     color: $bg_black;
@@ -134,27 +206,48 @@ body.new-graduate .header__logo-text {
 }
 
 // ========== Right wrapper ==========
-// ロゴは追従させず、ナビ側（SNS・リンク・ハンバーガー）だけを画面上部に固定し、
-// 下を通過するセクションの色に応じて自動で白⇔黒反転させる
-// position: fixed と座標(top/left)は script.js が実際のレイアウト位置を計測してセットする
-// （align-items: center 等でページ・ブレークポイントごとに実位置が変わるため、CSSで値を決め打ちしない）
+// ヘッダー全体（ロゴ含む）が position: sticky で画面上部に追従するため、
+// ナビ側だけを個別に固定する処理は不要
 .header__right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: rem(10);
-    z-index: 900;
-    mix-blend-mode: difference;
 
     @include mq('md') {
-        gap: rem(20);
+        gap: rem(8);
         flex-direction: row;
         align-items: center;
     }
 }
 
-.header__right.js-fixed {
-    position: fixed;
+// md以上でスクロール追従状態になったら、ロゴとは別にナビ側だけの高さぶんの黒背景を敷く
+@include mq('md') {
+    body:not(.new-graduate) .header.is-scrolled .header__right {
+
+    }
+    body:not(.new-graduate) .header.is-scrolled .header__sns {
+        background-color: $bg_black;
+        transition: 0.3s;
+    }
+    body:not(.new-graduate) .header{
+        position: static;
+    }
+    body:not(.new-graduate) .header__logo {
+        position: fixed;
+        top: rem(25);
+        left: rem(20);
+        z-index: 10000;
+    }
+    body:not(.new-graduate) .header__right {
+        position: fixed;
+        top: rem(15);
+        right: rem(0);
+        z-index: 100000;
+        border-radius: rem(12);
+        padding: rem(10) rem(20);
+    }
+
 }
 
 // ========== SNS ==========
@@ -164,6 +257,11 @@ body.new-graduate .header__logo-text {
     align-items: center;
     list-style: none;
     gap: rem(20);
+    @include mq('md'){
+        padding: rem(5) rem(16);
+        border-radius: rem(50);
+        margin-right: rem(12);
+    }
 }
 
 body.new-graduate .header__sns {
@@ -224,13 +322,21 @@ body.new-graduate .header__nav-sns-link--facebook img {
     content: url('../img/common/facebook-fill.svg');
 }
 
+body.new-graduate .header__nav-sns-link--instagram img {
+    content: url('../img/common/insta-black.svg');
+}
+
+body.new-graduate .header__nav-sns-link--youtube img {
+    content: url('../img/common/youtube-black.svg');
+}
+
 .header__nav-wrapper {
     display: flex;
     align-items: center;
     gap: rem(20);
 
     @include mq('md') {
-        gap: rem(40);
+        gap: rem(16);
     }
 }
 
@@ -265,6 +371,7 @@ body.new-graduate .header__nav-wrapper {
 
         @include mq('md') {
             @include f(12, 20, 10);
+            background-color: $bg-black;
         }
 
         transition: 0.3s;
@@ -279,23 +386,23 @@ body.new-graduate .header__nav-wrapper {
 .header__nav-item--casual a {
     color: #000;
     background-color: $white;
+    border-color: #2EE5C4;
 }
 
-// .header__right は mix-blend-mode: difference で白背景の上を通過すると反転されるため、
-// 「黒ピル・白文字」に見せるには、あえて逆の色（白ピル・黒文字）を指定しておく
+// ヘッダー背景が白い新卒ページ用に、視認できる配色へ調整
 body.new-graduate .header__nav-item {
     a {
-        color: $bg_black;
-        background: $white;
+        background: $bg_black;
+        color: $white;
+        border-color: rgba($bg_black, 0.25);
     }
 }
 
 body.new-graduate .header__nav-item--casual {
     a {
-        background: #000;
-        color: $white;
-        // $green (#2EE5C4) を白背景上で反転した見た目にするための補色
-        border: 1px solid #D1123B;
+        color: $bg_black;
+        background-color: #fff;
+        border: 1px solid $green;
     }
 }
 
@@ -316,8 +423,11 @@ body.new-graduate .header__nav-item--casual {
     z-index: 1002;
 
     @include mq('md') {
-        width: rem(21);
+        width: rem(61);
         gap: rem(6);
+        background-color: $bg_black;
+        border-radius: rem(32);
+        padding: rem(9) rem(20);
     }
 
     span {
@@ -355,17 +465,12 @@ body.new-graduate .header__nav-item--casual {
 }
 
 body.new-graduate .header__hamburger {
-    background: $white;
-    border-radius: rem(32);
-    padding: rem(9) rem(20);
-    width: rem(68);
-
-    @include mq('md') {
-        width: rem(61);
-    }
-
     span {
         background-color: $bg_black;
+
+        @include mq('md') {
+            background-color: $white;
+        }
     }
 }
 

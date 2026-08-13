@@ -75,6 +75,7 @@
 
     @include mq('md') {
         padding: 0;
+        padding-top: rem(80);
     }
 }
 
@@ -158,14 +159,15 @@
 .ng-hero__deck-label {
     font-family: $en;
     @include f(14, 20, 0, $medium);
-
+    color: $white;
     @include mq('md') {
         @include f(14, 25, 0, $medium);
     }
 }
 
 .ng-hero__deck-title {
-    @include f(16, 20, 0, $bold);
+    @include f(16, 20, 0, $medium);
+    color: $white;
 
     @include mq('md') {
         @include f(20, 25);
@@ -205,7 +207,7 @@
 
     @include mq('lg') {
 
-        background: transparent;
+        // background: transparent;
     }
 }
 

@@ -104,12 +104,15 @@ body.front-page.bg-brightness .top-business__inner {
 
 .fv__top {
 
-    @include mq('md') {
-        margin-top: rem(-90);
-    }
+    // @include mq('md') {
+    //     margin-top: rem(-90);
+    // }
 
-    @include mq('lg') {
-        margin-top: rem(-120);
+    // @include mq('lg') {
+    //     margin-top: rem(-120);
+    // }
+    @include mq('md'){
+        padding-top: rem(80);
     }
 }
 
@@ -165,7 +168,8 @@ body.front-page.bg-brightness .top-business__inner {
         object-position: 53% center;
 
         @include mq("md") {
-            aspect-ratio: 846 / 630;
+            aspect-ratio: 846 / 503;
+            object-position: center;
             width: 100%;
         }
     }
@@ -691,6 +695,8 @@ body.front-page.bg-brightness .top-business__inner {
 
     @include mq("md") {
         padding-left: rem(40);
+        padding-right: 0;
+        max-width: rem(1110);
     }
 }
 
@@ -1419,6 +1425,7 @@ body.bg-brightness .top-people {
     @include mq("md") {
         border-bottom: 1px solid #464a4a;
         padding: rem(0) 0 0 rem(40);
+        max-width: none;
     }
 }
 
@@ -1453,6 +1460,9 @@ body.bg-brightness .top-people {
 
 .top-people__header-description {
     color: $black;
+    @include mq('md'){
+        max-width: rem(705);
+    }
 }
 
 .top-sec-description {}
@@ -1549,6 +1559,26 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
 body.bg-brightness .top-people .people-card__item-link:hover .people-card__year {
     border-color: #dae1e7;
+}
+
+/* トップページのみ、入社年度を名前の下に配置（4カラム時の折れ対策） */
+.top-people .people-card__meta {
+    @include mq("md") {
+        display: block;
+    }
+}
+
+.top-people .people-card__info {
+    @include mq("md") {
+        margin-right: 0;
+    }
+}
+
+.top-people .people-card__bottom {
+    @include mq("md") {
+        flex: initial;
+        margin-top: rem(20);
+    }
 }
 
 .top-environment {
@@ -2003,12 +2033,13 @@ body.bg-brightness .top-people .people-card__item-link:hover .people-card__year 
 
     @include mq("md") {
         @include f(70,81);
+        flex-shrink: 0;
     }
 }
 
 .top-movie__header-description {
     @include mq("md") {
-        max-width: rem(409);
+        // max-width: rem(409);
         width: 100%;
         @include font(13, 150, 10, $light);
     }

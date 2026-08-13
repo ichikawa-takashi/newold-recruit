@@ -89,8 +89,10 @@
                                 </div>
                                 <div class="sub-about__logo-diagram">
                                     <picture>
-                                        <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/logo-diagram-pc.jpg">
-                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/logo-diagram.jpg" alt="">
+                                        <source media="(min-width: 768px)"
+                                            srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/logo-diagram-pc.jpg">
+                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/logo-diagram.jpg"
+                                            alt="">
                                     </picture>
                                 </div>
                                 <div class="sub-about__topic-desc">
@@ -133,7 +135,8 @@
                                 </p>
 
                                 <div class="sub-about__belief-image">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/belief-img.jpg" alt="">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/belief-img.jpg"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
@@ -190,19 +193,23 @@
                         </div>
                     </div>
                     <div class="sub-about__values-images">
-                        <div class="sub-about__values-images-inner">
-                            <figure class="sub-about__values-image">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-01.jpg" alt="" width="" height="">
-                            </figure>
-                            <figure class="sub-about__values-image">
-                                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-02.jpg" alt="" width="" height="">
-                            </figure>
-                            <figure class="sub-about__values-image">
-                                <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-03-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-03.jpg" alt="" width="" height="">
-                                </picture>
-                            </figure>
+                        <div class="swiper sub-about__values-swiper">
+                            <div class="swiper-wrapper sub-about__values-images-inner">
+                                <?php for ($i = 0; $i < 3; $i++) : // 画像3枚をループ再生できるだけの枚数分複製 ?>
+                                <figure class="swiper-slide sub-about__values-image">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-01.jpg"
+                                        alt="" width="" height="">
+                                </figure>
+                                <figure class="swiper-slide sub-about__values-image">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-02.jpg"
+                                        alt="" width="" height="">
+                                </figure>
+                                <figure class="swiper-slide sub-about__values-image">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/value-03.jpg"
+                                        alt="" width="" height="">
+                                </figure>
+                                <?php endfor; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,7 +228,8 @@
                             </p>
                             <p>
                                 お客様の成長を支えるためには、私たち自身が誰よりも成長し続けなければなりません。一人ひとりが学び、挑戦し、進化を重ねる。その積み重ねが、「成長実現ファーム」としての真価を支える原動力です。<br>
-                                そして、「THANKS by NEWOLD（未来への再投資）」を通じて、企業や人が歩んできた歴史（OLD）を踏まえ、未来（NEW）へ再投資をすることで、「企業・人・地域」の成長実現の一役を担っていきます。
+                                そして、「THANKS by
+                                NEWOLD（未来への再投資）」を通じて、企業や人が歩んできた歴史（OLD）を踏まえ、未来（NEW）へ再投資をすることで、「企業・人・地域」の成長実現の一役を担っていきます。
                             </p>
                         </div>
                     </div>
@@ -246,19 +254,25 @@
                                     <picture>
                                         <source media="(min-width: 768px)"
                                             srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/initiative-01-pc.jpg">
-                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/initiative-01.jpg" alt="">
+                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/initiative-01.jpg"
+                                            alt="">
                                     </picture>
                                 </div>
                             </div>
                             <div class="sub-about__initiative-movies">
                                 <div class="sub-about__initiative-movie">
-                                    <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="sK9V2cw000A">
-                                        <img src="https://img.youtube.com/vi/sK9V2cw000A/maxresdefault.jpg" alt="" width="480" height="360">
+                                    <div class="sub-about__initiative-movie__thumbnail js-youtube-facade"
+                                        data-video-id="sK9V2cw000A">
+                                        <img src="https://img.youtube.com/vi/sK9V2cw000A/maxresdefault.jpg" alt=""
+                                            width="480" height="360">
                                         <div class="sub-about__movie-play">
-                                            <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
-                                                <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
+                                            <button class="sub-about__movie-play-button" type="button"
+                                                aria-label="動画を再生">
+                                                <span
+                                                    class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
-                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg"
+                                                        alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
                                         </div>
@@ -266,13 +280,18 @@
                                 </div>
 
                                 <div class="sub-about__initiative-movie">
-                                    <div class="sub-about__initiative-movie__thumbnail js-youtube-facade" data-video-id="UtKOjyCe6AA">
-                                        <img src="https://img.youtube.com/vi/UtKOjyCe6AA/maxresdefault.jpg" alt="" width="480" height="360">
+                                    <div class="sub-about__initiative-movie__thumbnail js-youtube-facade"
+                                        data-video-id="UtKOjyCe6AA">
+                                        <img src="https://img.youtube.com/vi/UtKOjyCe6AA/maxresdefault.jpg" alt=""
+                                            width="480" height="360">
                                         <div class="sub-about__movie-play">
-                                            <button class="sub-about__movie-play-button" type="button" aria-label="動画を再生">
-                                                <span class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
+                                            <button class="sub-about__movie-play-button" type="button"
+                                                aria-label="動画を再生">
+                                                <span
+                                                    class="sub-about__movie-play-text top-movie__play-text">PLAY</span>
                                                 <div class="sub-about__movie-play-icon top-movie__play-icon">
-                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg" alt="YouTubeのアイコン">
+                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/youtube-black.svg"
+                                                        alt="YouTubeのアイコン">
                                                 </div>
                                             </button>
                                         </div>
@@ -286,19 +305,23 @@
                                 <h3 class="sub-about__initiative-title">NEWOLD ABLE</h3>
                                 <div class="sub-about__initiative-able-wrapper">
                                     <figure class="sub-about__initiative-image sub-about__initiative-image--able">
-                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/initiative-02.jpg" alt="">
+                                        <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/initiative-02.jpg"
+                                            alt="">
                                     </figure>
                                     <div class="sub-about__initiative-able-body">
                                         <p class="sub-about__initiative-desc sub-about__initiative-desc--able">
                                             NEWOLD ABLEは、M&Aを正しく学び、より身近に感じていただくための教育コンテンツです。<br>
                                             約100本のアニメーション動画と「M&A辞書」を無料で提供し、基礎から実務までをサポートします。
                                         </p>
-                                        <a href="https://able.newold.co.jp/" target="_blank" class="sub-about__initiative-link right-up-button">
+                                        <a href="https://able.newold.co.jp/" target="_blank"
+                                            class="sub-about__initiative-link right-up-button">
                                             <span class="sub-about__initiative-link-text">詳細はこちら</span>
                                             <div class="right-up-button__arrow">
                                                 <span class="sub-about__initiative-link-icon right-up-button__icon">
-                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-black.svg" alt="右向き矢印アイコン" />
-                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-black.svg" alt="右向き矢印アイコン" />
+                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-black.svg"
+                                                        alt="右向き矢印アイコン" />
+                                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-black.svg"
+                                                        alt="右向き矢印アイコン" />
                                                 </span>
                                             </div>
                                         </a>
@@ -319,8 +342,10 @@
                         <div class="sub-about__ceo-info">
                             <figure class="sub-about__ceo-image">
                                 <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/ceo-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/ceo-sp.jpg" alt="代表取締役 栗原弘行">
+                                    <source media="(min-width: 768px)"
+                                        srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/ceo-pc.jpg">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/ceo-sp.jpg"
+                                        alt="代表取締役 栗原弘行">
                                 </picture>
                             </figure>
                             <div class="sub-about__ceo-meta">
@@ -332,7 +357,7 @@
                             </div>
                         </div>
                         <div class="sub-about__ceo-message">
-                            <h3>貴方の情熱、経験、知識、人脈の全てをお客様の成長実現と自己実現につなげませんか？</h3>
+                            <h3>貴方の情熱、経験、知識、人脈の全てをお客様の成長実現と自己実現に繋げませんか？</h3>
                             <p>当社は、「企業・人・地域の成長を実現し、次世代の幸せを増やす」という志を実現させるために、M&A（国内・東南アジア）、経営人材紹介、プロ人材の活用事業を行なっています。
                             </p>
                             <p>中堅中小企業の成長を実現することで、その地域に雇用が生まれ、働く従業員の生活水準が上がり、地域が活性化すると考えています。そして、それらの経済効果が未来を担う次世代の子どもたちに循環され、結果的に、日本の未来を明るくすると考えています。
@@ -360,8 +385,10 @@
                         <li class="sub-about__member-item">
                             <figure class="sub-about__member-image">
                                 <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-01-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-01.jpg" alt="塚田 壮一朗">
+                                    <source media="(min-width: 768px)"
+                                        srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-01-pc.jpg">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-01.jpg"
+                                        alt="塚田 壮一朗">
                                 </picture>
                             </figure>
                             <div class="sub-about__member-info">
@@ -391,8 +418,10 @@
                         <li class="sub-about__member-item">
                             <figure class="sub-about__member-image">
                                 <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-02-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-02.jpg" alt="大野 智明">
+                                    <source media="(min-width: 768px)"
+                                        srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-02-pc.jpg">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-02.jpg"
+                                        alt="大野 智明">
                                 </picture>
                             </figure>
                             <div class="sub-about__member-info">
@@ -412,8 +441,10 @@
                         <li class="sub-about__member-item">
                             <figure class="sub-about__member-image">
                                 <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03.jpg" alt="岩木 保樹">
+                                    <source media="(min-width: 768px)"
+                                        srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03-pc.jpg">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03.jpg"
+                                        alt="岩木 保樹">
                                 </picture>
                             </figure>
                             <div class="sub-about__member-info">
@@ -430,11 +461,13 @@
                                 高い基準を持ちながらも、失敗を恐れず挑戦できる。そんな環境で、自分自身も成長させながら、日本の未来を支える仕事に本気で向き合いたい方と、お会いできることを楽しみにしています。
                             </p>
                         </li>
-                        <!-- <li class="sub-about__member-item">
+                        <li class="sub-about__member-item">
                             <figure class="sub-about__member-image">
                                 <picture>
-                                    <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03-pc.jpg">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-03.jpg" alt="冨田 誠">
+                                    <source media="(min-width: 768px)"
+                                        srcset="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-04-pc.jpg">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/about/member-04.jpg"
+                                        alt="冨田 誠">
                                 </picture>
                             </figure>
                             <div class="sub-about__member-info">
@@ -446,9 +479,11 @@
                             </div>
                             <p class="sub-about__member-message">
                                 当社のCFOとして私が大切にしているのは、人が育ち、事業が育つための「土壌を作る」ことです。<br>
-                                この豊かな土壌があってこそ、私たちの志である『「企業・人・地域」の成長を実現し、次世代の幸せを増やす』ことができると考えています。 そして、この志における「人」には、他ならぬ自分自身も含まれています。 まずは自らが成長し、幸せになること。その姿勢こそが豊かな土壌となり、周囲へ良い影響を与えながら、次世代へ渡す最高のバトンになると信じています。<br>
+                                この豊かな土壌があってこそ、私たちの志である『「企業・人・地域」の成長を実現し、次世代の幸せを増やす』ことができると考えています。
+                                そして、この志における「人」には、他ならぬ自分自身も含まれています。
+                                まずは自らが成長し、幸せになること。その姿勢こそが豊かな土壌となり、周囲へ良い影響を与えながら、次世代へ渡す最高のバトンになると信じています。<br>
                                 この志を共有し、自らの人生と社会の成長を重ね合わせながら、共に挑戦し続けていける方と、一緒に働けることを楽しみにしています。 </p>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -479,12 +514,12 @@
                     ?>
 
                     <?php if (!empty($books)) : ?>
-                        <ul class="sub-about__book-list">
-                            <?php foreach ($books as $book) : ?>
-                                <li class="sub-about__book-item">
-                                    <?php if (!empty($book['image_id'])) : ?>
-                                        <figure class="sub-about__book-cover">
-                                            <?php
+                    <ul class="sub-about__book-list">
+                        <?php foreach ($books as $book) : ?>
+                        <li class="sub-about__book-item">
+                            <?php if (!empty($book['image_id'])) : ?>
+                            <figure class="sub-about__book-cover">
+                                <?php
                                             echo wp_get_attachment_image(
                                                 $book['image_id'],
                                                 'medium',
@@ -494,25 +529,25 @@
                                                 ]
                                             );
                                             ?>
-                                        </figure>
-                                    <?php endif; ?>
+                            </figure>
+                            <?php endif; ?>
 
-                                    <div class="sub-about__book-info">
-                                        <?php if (!empty($book['title'])) : ?>
-                                            <h3 class="sub-about__book-title">
-                                                <?php echo esc_html($book['title']); ?>
-                                            </h3>
-                                        <?php endif; ?>
+                            <div class="sub-about__book-info">
+                                <?php if (!empty($book['title'])) : ?>
+                                <h3 class="sub-about__book-title">
+                                    <?php echo esc_html($book['title']); ?>
+                                </h3>
+                                <?php endif; ?>
 
-                                        <?php if (!empty($book['author'])) : ?>
-                                            <p class="sub-about__book-author">
-                                                <?php echo esc_html($book['author']); ?>
-                                            </p>
-                                        <?php endif; ?>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                                <?php if (!empty($book['author'])) : ?>
+                                <p class="sub-about__book-author">
+                                    <?php echo esc_html($book['author']); ?>
+                                </p>
+                                <?php endif; ?>
+                            </div>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
                     <?php endif; ?>
 
                 </div>
@@ -540,12 +575,15 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold" target="_blank" rel="noopener noreferrer">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold"
+                            target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">募集職種を確認する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg"
+                                        alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg"
+                                        alt="→">
                                 </span>
                             </div>
                         </a>
@@ -562,12 +600,15 @@
                         </p>
                     </div>
                     <div class="cta-recruit__card-action">
-                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001" target="_blank" rel="noopener noreferrer">
+                        <a class="cta-recruit__button button-anchor" href="https://hrmos.co/pages/newold/jobs/0000001"
+                            target="_blank" rel="noopener noreferrer">
                             <span class="cta-recruit__button-text">面談を希望する</span>
                             <div class="cta-recruit__button-arrow">
                                 <span class="cta-recruit__button-icon button-anchor__icon">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
-                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg" alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg"
+                                        alt="→">
+                                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/common/button-arrow-green.svg"
+                                        alt="→">
                                 </span>
                             </div>
                         </a>
