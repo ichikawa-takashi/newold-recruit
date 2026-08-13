@@ -274,7 +274,7 @@
 
                     <!-- NEWOLD Exparts -->
                     <div class="sub-environment__stats-group">
-                        <h3 class="sub-environment__stats-group-heading">NEWOLD Exparts</h3>
+                        <h3 class="sub-environment__stats-group-heading">NEWOLD Experts</h3>
                         <div class="sub-environment__stats-num-image">
                             <picture class="">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/environment/new-num/ex-pc.svg"

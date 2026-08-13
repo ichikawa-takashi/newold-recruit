@@ -420,7 +420,7 @@
 
                         <!-- NEWOLD Exparts -->
                         <div class="sub-environment__stats-group">
-                            <h3 class="sub-environment__stats-group-heading">NEWOLD Exparts</h3>
+                            <h3 class="sub-environment__stats-group-heading">NEWOLD Experts</h3>
                             <ul class="sub-environment__stats-list">
                                 <li class="sub-environment__stats-item">
                                     <picture>

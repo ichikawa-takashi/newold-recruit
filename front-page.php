@@ -276,11 +276,11 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                         </li>
                         <li class="top-business__visual-sp-item top-business__visual-sp-item--03">
                             <div class="top-business__visual-sp-circle">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/img/top/top-business-logo03.svg')); ?>" alt="NEWOLD Exparts">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/img/top/top-business-logo03.svg')); ?>" alt="NEWOLD Experts">
                             </div>
                             <div class="top-business__visual-sp-content">
                                 <span class="top-business__visual-sp-number">03</span>
-                                <span class="top-business__visual-sp-label">NEWOLD Exparts</span>
+                                <span class="top-business__visual-sp-label">NEWOLD Experts</span>
                                 <span class="top-business__visual-sp-title">エキスパート<br>活用ソリューション</span>
                             </div>
                         </li>
@@ -448,10 +448,10 @@ $newold_first_news = !empty($newold_latest_news_items[0]) ? $newold_latest_news_
                     <li class="top-business__detail">
                         <div class="top-business__detail-inner">
                             <div class="top-business__detail-content">
-                                <p class="top-business__detail-label">NEWOLD Exparts</p>
+                                <p class="top-business__detail-label">NEWOLD Experts</p>
                                 <p class="top-business__detail-title">エキスパート活用ソリューション</p>
                                 <p class="top-business__detail-text">
-                                    NEWOLD Expartsは、企業の新しい挑戦において不足するリソースを、最適なエキスパートで補うソリューションです。<br class="pc">
+                                    NEWOLD Expertsは、企業の新しい挑戦において不足するリソースを、最適なエキスパートで補うソリューションです。<br class="pc">
                                     経営課題を正確に把握し、最適なエキスパートを迅速にアサイン。スピーディーな課題解決と、未来に向けた成長の実現を支援します。
                                 </p>
                                 <div class="top-business__detail-button">

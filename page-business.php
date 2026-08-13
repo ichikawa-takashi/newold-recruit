@@ -31,7 +31,7 @@
                         <a class="sub-page__nav-link" href="#sec03">NEWOLD Agent</a>
                     </li>
                     <li class="sub-page__nav-item">
-                        <a class="sub-page__nav-link" href="#sec04">NEWOLD Exparts</a>
+                        <a class="sub-page__nav-link" href="#sec04">NEWOLD Experts</a>
                     </li>
                     <li class="sub-page__nav-item">
                         <a class="sub-page__nav-link" href="#sec05">NEWOLD Asia</a>
@@ -259,7 +259,7 @@
                                 <span class="sub-business__service-num">03</span>
                                 <div class="sub-business__service-head-right">
                                     <span class="sub-business__service-name-ja">エキスパート活用ソリューション</span>
-                                    <span class="sub-business__service-name-en">NEWOLD Exparts</span>
+                                    <span class="sub-business__service-name-en">NEWOLD Experts</span>
                                 </div>
                             </div>
 
